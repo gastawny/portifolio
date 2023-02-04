@@ -1,11 +1,11 @@
 import BackGroundSVG from "components/BackgroundSVG"
-import Foto from "components/Foto"
+import Photograph from "components/Photograph"
 
 const HomePage = () => {
     return (
         <>
             <BackGroundSVG />
-            <Foto />
+            <Photograph />
         </>
     )
 }
