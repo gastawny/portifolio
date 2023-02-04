@@ -1,7 +1,12 @@
 @import './variaveis';
 
 body {
+    position: relative;
     background-color: $background-color;
     color: $font-color;
     font-family: $font;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

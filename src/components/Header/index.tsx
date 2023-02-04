@@ -1,9 +1,8 @@
-import styles from './Header.module.scss'
+import './Header.scss'
 
 const Header = () => {
     return (
         <div>
-            {/* <img src={foto} /> */}
         </div>
     )
 }
