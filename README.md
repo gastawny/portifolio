@@ -6,7 +6,7 @@ Criar um portifólio pessoal a fim de mostrar o meu desenvolvimento. O que foi u
  - [React](https://pt-br.reactjs.org/)
  - [TypeScript](https://www.typescriptlang.org/)
  - [Sass](https://sass-lang.com/)
- - [React-Icons](https://react-icons.netlify.com/)
+ - [React Router](https://reactrouter.com/en/main)
 
 ## 📥 Instalação e execução
 

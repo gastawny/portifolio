@@ -1,7 +1,7 @@
 import BackGroundSVG from "components/BackgroundSVG"
 import Photograph from "components/Photograph"
 
-const HomePage = () => {
+const Home = () => {
     return (
         <>
             <BackGroundSVG />
@@ -10,4 +10,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default Home
