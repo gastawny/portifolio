@@ -52,7 +52,7 @@ type SVGProps = {
 
 const GeometricShapesSVG = ({
     stroke = false,
-    color = `${['#7B68EE', '#B22222', '#808080', '#00ffff', '#4B0082', '#6A5ACD', '#1E90FF', '#8B0000', '#4682B4', '#B0C4DE'][Math.floor(Math.random() * 10)]}44`,
+    color = `${['#45F3FF', '#4596BA', '#808080', '#4596BA', '#B2229C', '#7C3992', '#455087', '#443875', '#573AFF', '#B0C4DE'][Math.floor(Math.random() * 10)]}${Math.floor(Math.random() * 40) + 20}`,
     zIndex = 10,
     width,
     icon,

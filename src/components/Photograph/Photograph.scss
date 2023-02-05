@@ -65,7 +65,7 @@
             width: 50rem;
             height: 15rem;
             transform: translate(-50%, -50%);
-            background: linear-gradient(transparent, $pink, $pink, $pink, transparent);
+            background: linear-gradient(transparent, $purple, $purple, $purple, transparent);
             animation: animate2 6s linear infinite;
         }
 
@@ -139,26 +139,7 @@
                 justify-content: space-between;
                 gap: 2rem;
 
-                button {
-                    font-weight: 600;
-                    padding: 1rem 3rem;
-                    border: none;
-                    outline: none;
-                    border-radius: .5rem;
-                    font-size: 1em;
-                    background: $blue;
-                    color: #222;
-                    cursor: pointer;
-                    opacity: 0.8;
 
-                    &:nth-child(2) {
-                        background: #fff;
-                    }
-
-                    &:hover {
-                        opacity: 1;
-                    }
-                }
             }
         }
     }
