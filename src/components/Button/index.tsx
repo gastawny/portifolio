@@ -39,7 +39,6 @@ const Button = ({ children, to, width = '0' }: ButtonProps) => {
     return (
         <Link to={to}>
             <button
-
                 onClick={() => click()}
                 className='Button'
                 ref={ref}

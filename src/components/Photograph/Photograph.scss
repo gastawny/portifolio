@@ -1,5 +1,29 @@
 @import 'styles/variaveis';
 
+.discordAlert {
+    display: none;
+
+    &.active {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100vw;
+        left: 0;
+        z-index: 1;
+        bottom: 10%;
+
+        span {
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 1.8rem;
+            background-color: mix($blue, #000, 10%);
+            border-radius: 1rem;
+            border: 2px solid $blue;
+            padding: 1rem;
+        }
+    }
+}
+
 .card {
     position: relative;
     width: 35rem;
@@ -115,21 +139,25 @@
                 }
             }
 
-            .data {
+            .medias {
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
-                margin: 2rem 0;
+                margin: 2.5rem 0;
 
-                h3 {
-                    font-size: 1.6rem;
-                    font-weight: 600;
-                    color: $blue;
-                    line-height: 1.92rem;
+                svg {
+                    opacity: 0.6;
+                    width: 3rem;
+                    height: auto;
+                    cursor: pointer;
+                    color: mix($purple, $background-color, 60%);
+                }
 
-                    span {
-                        font-size: 1.36rem;
-                        font-weight: 400;
-                        color: #fff;
+                a:hover svg {
+                    opacity: 1;
+
+                    path {
+                        animation: svg-animation 3s ease alternate;
                     }
                 }
             }
@@ -165,4 +193,23 @@
         transform: translate(-50%, -50%) rotate(0deg);
     }
 
+}
+
+@keyframes svg-animation {
+    0% {
+        stroke-width: 0;
+        stroke-dasharray: 1 100;
+        fill: transparent;
+    }
+
+    25% {
+        stroke-width: 1;
+    }
+
+    60%,
+    100% {
+        stroke-width: 0.3;
+        stroke-dasharray: 100 1;
+        fill: mix($blue, #000, 80%);
+    }
 }
