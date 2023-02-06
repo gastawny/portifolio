@@ -1,8 +1,8 @@
 import './Home.scss'
-import About from "components/About"
+import About from "./About"
 import BackGroundSVG from "components/BackgroundSVG"
-import Photograph from "components/Photograph"
-import Header from 'components/Header'
+import Photograph from "./Photograph"
+import Skills from './Skills'
 
 const Home = () => {
     return (

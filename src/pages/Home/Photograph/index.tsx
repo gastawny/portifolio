@@ -20,7 +20,7 @@ const Photograph = () => {
                     Usuário copiado para a<br />Área de Transferência
                 </span>
             </div>
-            <div className='Photograph'>
+            <main className='Photograph'>
                 <div className='card'>
                     <div className='lines'></div>
                     <div className='imgBx'>
@@ -53,7 +53,7 @@ const Photograph = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
         </>
     )
 }

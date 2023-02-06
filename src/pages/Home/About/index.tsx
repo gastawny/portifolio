@@ -3,7 +3,7 @@ import A from 'assets/A.png'
 import { ReactComponent as Avatar } from 'assets/avatar.svg'
 
 const About = () => (
-    <div className="About" id='About'>
+    <section className="About">
         <div className='avatar'>
             <Avatar />
         </div>
@@ -20,7 +20,7 @@ const About = () => (
             projetos/sites/softwares :)`}
             </p>
         </div>
-    </div >
+    </section >
 )
 
 export default About

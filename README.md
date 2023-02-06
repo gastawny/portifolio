@@ -7,6 +7,7 @@ Criar um portifólio pessoal a fim de mostrar o meu desenvolvimento. O que foi u
  - [TypeScript](https://www.typescriptlang.org/)
  - [Sass](https://sass-lang.com/)
  - [React Router](https://reactrouter.com/en/main)
+ - [Styled-Components](https://styled-components.com)
 
 ## 📥 Instalação e execução
 
