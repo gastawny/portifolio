@@ -1,0 +1,6 @@
+.Home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 70vh;
+    grid-template-areas: "Photograph" "About";
+}

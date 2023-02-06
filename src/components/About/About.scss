@@ -1,0 +1,50 @@
+@import 'styles/_variaveis.scss';
+
+.About {
+    position: relative;
+    grid-area: About;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .id {
+        position: absolute;
+        top: 0;
+    }
+
+    .avatar {
+        width: 40%;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+
+        .title-container {
+            position: relative;
+
+            img {
+                position: absolute;
+                width: 10rem;
+                bottom: 0;
+                left: -1rem;
+                z-index: -1;
+            }
+
+            .title {
+                font-size: 8rem;
+                letter-spacing: 1rem;
+                font-weight: 600;
+            }
+        }
+
+        .text {
+            margin-top: 5rem;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+            letter-spacing: .16rem;
+        }
+
+    }
+}
