@@ -1,0 +1,154 @@
+@import 'styles/_variables.scss';
+
+.Skills {
+    grid-area: Skills;
+
+    .title-container {
+        position: relative;
+        margin-left: 10%;
+        margin-bottom: 5rem;
+
+        .S {
+            position: absolute;
+            font-family: $font-spooky;
+            font-size: 12rem;
+            color: mix($purple, #000, 20%);
+            transform: rotate(-5deg);
+            bottom: -20%;
+            left: -2%;
+            z-index: -1;
+
+            &::selection {
+                background-color: transparent;
+            }
+        }
+
+        .title {
+            color: #FBFBFB;
+            font-size: 8rem;
+            letter-spacing: 1rem;
+            font-weight: 600;
+        }
+    }
+
+    .sub-title {
+        font-size: 4.5rem;
+        font-weight: 500;
+        letter-spacing: .5rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .horizontal-line {
+        display: block;
+        width: 40rem;
+        border: .16rem solid #FBFBFB;
+    }
+
+    .Programing-languages {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        margin: 0 10%;
+    }
+
+    .sub-skills {
+        display: flex;
+        margin: 10%;
+        margin-top: 8rem;
+        justify-content: space-between;
+    }
+
+    .language {
+        .language-type {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: .2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container-progress {
+            height: 2rem;
+            width: 40rem;
+            background-color: "#e0e0de";
+            border-radius: 2rem;
+
+            .label {
+                opacity: 0;
+                animation: fadeIn 1s linear forwards;
+                animation-delay: 2.2s;
+                position: absolute;
+                right: .4rem;
+                top: -1.5rem;
+                color: #FBFBFB;
+                font-size: 1.2rem;
+                font-weight: bold;
+                letter-spacing: .15rem;
+            }
+
+        }
+    }
+
+    .studies {
+
+        .circle {
+            animation: book-animation 5s linear forwards;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            background: linear-gradient(180deg, $blue, $purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .studies-content {
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+
+            .studies-type {
+                font-size: 2.5rem;
+                font-weight: 500;
+                letter-spacing: .2rem;
+                margin-bottom: .5rem;
+            }
+
+            .studies-complement {
+                font-size: 1.2rem;
+                font-weight: 300;
+                letter-spacing: .15rem;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes book-animation {
+    0% {
+        stroke-width: 0;
+        stroke-dasharray: 1 100;
+        fill: transparent;
+    }
+
+    25% {
+        stroke-width: 1;
+    }
+
+    60%,
+    100% {
+        stroke-width: 0.3;
+        stroke-dasharray: 100 1;
+        fill: mix($blue, #000, 80%);
+    }
+}

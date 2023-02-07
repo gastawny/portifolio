@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300;400;500;600&display=swap');
 
+@font-face {
+    font-family: 'Mistery Zero';
+    src: url(../assets/fonts/Misteryzero-Regular.ttf) format('opentype');
+}
+
 $font: 'Poppins';
 $font-brush: 'Alex Brush';
+$font-spooky: 'Mistery Zero';
 
 $background-color: #1a202b;
 $font-color: #FBFBFB;

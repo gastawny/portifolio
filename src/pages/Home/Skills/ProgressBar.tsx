@@ -1,10 +1,10 @@
 import { ReactElement } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-
 interface ProgressBarProps {
+    name: string | ReactElement
     progress: number
-    children: string | ReactElement
+    children: ReactElement
     fontSize: string
 }
 
@@ -13,7 +13,7 @@ interface StyledProps {
     fontSize?: string
 }
 
-export default ({ progress, children, fontSize }: ProgressBarProps) => (
+export default ({ progress, children, fontSize, name }: ProgressBarProps) => (
     <ProgressBar>
         <Percent>
             <Dot progress={progress}></Dot>
@@ -21,7 +21,10 @@ export default ({ progress, children, fontSize }: ProgressBarProps) => (
                 <CircleProgress cx='84' cy='84' r='84' ></CircleProgress>
                 <CircleProgress progress={progress} cx='84' cy='84' r='84'></CircleProgress>
             </CircleProgressContainer>
-            <Language fontSize={fontSize}><span>{children}</span></Language>
+            <Content>
+                {children}
+                <LanguageName fontSize={fontSize}>{name}</LanguageName>
+            </Content>
         </Percent>
     </ProgressBar >
 )
@@ -98,18 +101,24 @@ const CircleProgress = styled.circle<StyledProps>`
     }
 `
 
-const Language = styled.div<StyledProps>`
+const Content = styled.div`
     position: absolute;
     inset: 0;
     display: flex;
+    margin: 10% 0;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    animation: ${fadeIn} 1s linear forwards;
+    opacity: 0;
+    animation-delay: 2.2s;
+`
+
+const LanguageName = styled.div<StyledProps>`
     font-weight: 600;
     font-size: ${props => props.fontSize};
-    opacity: 0;
-    animation: ${fadeIn} 1s linear forwards;
-    animation-delay: 2.2s;
     text-align: center;
+    margin-bottom: 5%
 `
 
 const CircleProgressContainer = styled.svg`

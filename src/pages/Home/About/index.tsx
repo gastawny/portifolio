@@ -1,5 +1,4 @@
 import './About.scss'
-import A from 'assets/A.png'
 import { ReactComponent as Avatar } from 'assets/avatar.svg'
 
 const About = () => (
@@ -9,15 +8,15 @@ const About = () => (
         </div>
         <div className='about-container'>
             <div className='title-container'>
-                <img src={A} />
+                <span className='A'>A</span>
                 <h2 className='title'>About</h2>
             </div>
             <p className='text'>
-                {`Bem-vindo ao meu site! Estou usando esta página pessoal para mostrar 
-            alguns dos meus projetos e testar as coisas. Você pode ver os sites e 
-            ferramentas que eu gosto. Sou um aspirante a cientista da computação, no 
-            tempo livre passo raiva em jogos online e para desestressar desenvolvo 
-            projetos/sites/softwares :)`}
+                {`Welcome to my website! I'm using this personal page to showcase
+                some of my projects and test things out. You can see the sites and
+                tools that I like. I'm an aspiring computer scientist, in my spare
+                time I play online games and to de-stress I develop
+                projects/websites/software :)`}
             </p>
         </div>
     </section >

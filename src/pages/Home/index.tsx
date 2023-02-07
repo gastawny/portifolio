@@ -10,6 +10,7 @@ const Home = () => {
             <BackGroundSVG />
             <Photograph />
             <About />
+            <Skills />
         </div>
     )
 }
