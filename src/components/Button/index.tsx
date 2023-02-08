@@ -2,29 +2,30 @@ import { useRef } from 'react'
 import './Button.scss'
 
 interface ButtonProps {
+    fontSize?: string
     children: string
     width?: string
 }
 
-interface IstyesBtn {
+interface IStyesBtn {
     width?: string,
     display?: string,
     justifyContent?: string,
     alignItems?: string
+    fontSize?: string
 }
 
-const Button = ({ children, width = '0' }: ButtonProps) => {
+const Button = ({ children, width = '0', fontSize = '0' }: ButtonProps) => {
     const ref = useRef<HTMLButtonElement>(null)
-    let styles: IstyesBtn = {
-        width: '0'
+    let styles: IStyesBtn = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
     if (width != '0')
-        styles = {
-            width: width,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-        }
+        styles = { ...styles, width: width }
+    if (fontSize != '0')
+        styles = { ...styles, fontSize: fontSize }
 
     const click = () => {
         setTimeout(() => {

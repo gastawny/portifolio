@@ -1,7 +1,7 @@
 .Home {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100vh 70vh 95vh;
+    grid-template-rows: 10vh 50vh 90vh 95vh;
     gap: 20vh;
-    grid-template-areas: "Photograph" "About" "Skills";
+    grid-template-areas: "Header" "Photograph" "About" "Skills";
 }
