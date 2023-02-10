@@ -3,9 +3,11 @@ import './Photograph.scss'
 import foto from 'assets/images/photograph.png'
 import Button from 'components/Button'
 import { BsLinkedin, BsGithub, BsDiscord, BsTelegram, BsWhatsapp } from 'react-icons/bs'
+import { useScroll } from 'contexts/Scroll'
 
 const Photograph = () => {
     const alertRef = useRef<HTMLDivElement>(null)
+    const { scrollToLocal } = useScroll()
 
     const discordClick = () => {
         navigator.clipboard.writeText('Gastawny#5067')
@@ -47,8 +49,8 @@ const Photograph = () => {
                                 </a>
                             </div>
                             <div className='actionBtn'>
-                                <Button width='8.5rem'>About</Button>
-                                <Button width='8.5rem'>Skills</Button>
+                                <Button clicked={() => scrollToLocal('About')} width='8.5rem'>About</Button>
+                                <Button clicked={() => scrollToLocal('Skills')} width='8.5rem'>Skills</Button>
                             </div>
                         </div>
                     </div>

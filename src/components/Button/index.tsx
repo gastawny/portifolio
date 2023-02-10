@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import './Button.scss'
 
 interface ButtonProps {
+    clicked?: (() => void) | false
     fontSize?: string
     children: string
     width?: string
@@ -15,7 +16,7 @@ interface IStyesBtn {
     fontSize?: string
 }
 
-const Button = ({ children, width = '0', fontSize = '0' }: ButtonProps) => {
+const Button = ({ children, clicked = false, width = '0', fontSize = '0' }: ButtonProps) => {
     const ref = useRef<HTMLButtonElement>(null)
     let styles: IStyesBtn = {
         display: 'flex',
@@ -28,12 +29,13 @@ const Button = ({ children, width = '0', fontSize = '0' }: ButtonProps) => {
         styles = { ...styles, fontSize: fontSize }
 
     const click = () => {
+        if (clicked)
+            clicked()
         setTimeout(() => {
             ref.current?.classList.toggle('click')
         }, 400)
         ref.current?.classList.toggle('click')
     }
-
 
     return (
         <button

@@ -4,16 +4,19 @@ import BackGroundSVG from "components/BackgroundSVG"
 import Photograph from "./Photograph"
 import Skills from './Skills'
 import Header from './Header'
+import { ScrollProvider } from 'contexts/Scroll'
 
 const Home = () => {
     return (
-        <div className='Home'>
-            <BackGroundSVG />
-            <Header />
-            <Photograph />
-            <About />
-            <Skills />
-        </div>
+        <ScrollProvider>
+            <div className='Home'>
+                <BackGroundSVG />
+                <Photograph />
+                <Header />
+                <About />
+                <Skills />
+            </div>
+        </ScrollProvider>
     )
 }
 
