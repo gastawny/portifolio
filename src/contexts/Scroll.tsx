@@ -1,4 +1,4 @@
-import { IScroll } from "components/interfaces/Scroll";
+import { IScroll } from "interfaces/Scroll";
 import { createContext, ReactNode, useContext } from "react";
 
 interface ScrollProps {

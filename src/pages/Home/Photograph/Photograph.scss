@@ -165,6 +165,7 @@
 
                 a:hover svg {
                     opacity: 1;
+                    fill: mix($blue, #000, 80%);
 
                     path {
                         animation: svg-animation 3s ease alternate;
@@ -220,6 +221,5 @@
     100% {
         stroke-width: 0.3;
         stroke-dasharray: 100 1;
-        fill: mix($blue, #000, 80%);
     }
 }

@@ -1,9 +1,9 @@
 import './Header.scss'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import Button from 'components/Button'
 
-const Header = () => {
-    return (
+const Header = () => (
+    <>
         <header className='Header'>
             <div className='container'>
                 <h2 className='name'>Gabriel Stawny</h2>
@@ -18,7 +18,8 @@ const Header = () => {
                 </nav>
             </div>
         </header>
-    )
-}
+        <Outlet />
+    </>
+)
 
 export default Header
