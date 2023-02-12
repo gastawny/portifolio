@@ -63,7 +63,6 @@ const animateDot = (props: StyledProps) => keyframes`
 `
 
 const Dot = styled.div<StyledProps>`
-
     position: absolute;
     inset: .375rem;
     z-index: 10;
@@ -78,8 +77,8 @@ const Dot = styled.div<StyledProps>`
         width: .9rem;
         height: .9rem;
         border-radius: 50%;
-        background: #45f3ff;
-        box-shadow: 0 0 .75rem #45f3ff, 0 0 2.25rem #45f3ff;
+        background: var(--blue);
+        box-shadow: 0 0 .75rem var(--blue), 0 0 2.25rem var(--blue);
     }
 `
 
@@ -92,7 +91,7 @@ const CircleProgress = styled.circle<StyledProps>`
     transform: translate(.375rem, .375rem);
     
     &:nth-child(2) {
-        stroke: #45f3ff;
+        stroke: var(--blue);
         stroke-dasharray: 528;
         stroke-dashoffset: calc(528 - (528 * ${props => props.progress}) / 100);
         opacity: 0;

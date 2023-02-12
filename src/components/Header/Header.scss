@@ -21,17 +21,5 @@
         display: flex;
         gap: 2.2rem;
         align-items: center;
-
-        .link {
-            color: $font-color;
-            font-size: 1.5rem;
-            text-decoration: none;
-            letter-spacing: .08rem;
-            transition: .3s linear;
-
-            &:hover {
-                color: $blue;
-            }
-        }
     }
 }

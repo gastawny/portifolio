@@ -3,7 +3,6 @@ import ProgressBar from './ProgressBar'
 import { DiJava, DiReact, DiNodejsSmall, DiGit, DiMysql } from 'react-icons/di'
 import { FiBook } from 'react-icons/fi'
 import styled, { keyframes } from 'styled-components'
-import Variables from 'styles/variables'
 import { useEffect, useRef } from 'react'
 import { useScroll } from 'contexts/Scroll'
 
@@ -18,7 +17,6 @@ const Skills = () => {
 
     return (
         <section ref={SkillsRef} className="Skills">
-            <Variables />
             <div className='title-container'>
                 <span className='S'>S</span>
                 <h2 className='title'>Skills</h2>

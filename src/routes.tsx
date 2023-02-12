@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router"
 import { BrowserRouter } from "react-router-dom"
 import BackGroundSVG from "components/BackgroundSVG"
 import Header from "components/Header"
+import Contact from "pages/Contact"
+import Projects from "pages/Projects"
 
 const AppRoutes = () => {
     return (
@@ -11,8 +13,8 @@ const AppRoutes = () => {
             <Routes>
                 <Route path="/" element={<Header />}>
                     <Route index element={<Home />} />
-                    <Route path="contact" />
-                    <Route path="projects" />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="projects" element={<Projects />} />
                 </Route>
             </Routes>
         </BrowserRouter>
