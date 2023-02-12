@@ -47,7 +47,7 @@ type SVGProps = {
     zIndex?: number
     left: string
     top: string
-    hiddenMobile?: boolean
+    hidden?: boolean
 }
 
 const GeometricShapesSVG = ({
@@ -58,14 +58,14 @@ const GeometricShapesSVG = ({
     icon,
     left,
     top,
-    hiddenMobile = false,
+    hidden
 }: SVGProps): JSX.Element => (
     <chakra.svg
         sx={{
             position: `absolute`,
             stroke: stroke ? `currentColor` : `none`,
             fill: stroke ? `none` : `currentColor`,
-            display: hiddenMobile ? { base: `none`, md: `block` } : `block`,
+            display: hidden ? `none` : `block`,
             overflow: `visible`,
             color: color,
             zIndex,
