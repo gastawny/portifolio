@@ -1,57 +1,56 @@
 @import 'styles/_variables.scss';
 
 .About {
-    position: relative;
-    grid-area: About;
+  position: relative;
+  grid-area: About;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .id {
+    position: absolute;
+    top: 0;
+  }
+
+  .avatar {
+    width: 40%;
+  }
+
+  .about-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    width: 40%;
 
-    .id {
+    .title-container {
+      position: relative;
+
+      .A {
         position: absolute;
-        top: 0;
-    }
+        font-family: $font-spooky;
+        font-size: 14rem;
+        color: mix($purple, #000, 20%);
+        transform: rotate(-5deg);
+        bottom: -2rem;
+        left: -1rem;
+        z-index: -1;
 
-    .avatar {
-        width: 40%;
-    }
-
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-
-        .title-container {
-            position: relative;
-
-            .A {
-                position: absolute;
-                font-family: $font-spooky;
-                font-size: 14rem;
-                color: mix($purple, #000, 20%);
-                transform: rotate(-5deg);
-                bottom: -2rem;
-                left: -1rem;
-                z-index: -1;
-
-                &::selection {
-                    background-color: transparent;
-                }
-            }
-
-            .title {
-                font-size: 8rem;
-                letter-spacing: 1rem;
-                font-weight: 600;
-            }
+        &::selection {
+          background-color: transparent;
         }
+      }
 
-        .text {
-            margin-top: 5rem;
-            font-size: 1.6rem;
-            line-height: 2.2rem;
-            letter-spacing: .16rem;
-        }
-
+      .title {
+        font-size: 8rem;
+        letter-spacing: 1rem;
+        font-weight: 600;
+      }
     }
+
+    .text {
+      margin-top: 5rem;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      letter-spacing: 0.16rem;
+    }
+  }
 }

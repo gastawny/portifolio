@@ -1,47 +1,44 @@
-import { IScroll } from "interfaces/Scroll";
-import { createContext, ReactNode, useContext } from "react";
+import { IScroll } from 'interfaces/Scroll'
+import { createContext, ReactNode, useContext } from 'react'
 
 interface ScrollProps {
-    children: ReactNode
+  children: ReactNode
 }
 
 const ScrollContext = createContext<IScroll[]>([])
 
 export const ScrollProvider = ({ children }: ScrollProps) => {
-    const breakpoints: IScroll[] = []
+  const breakpoints: IScroll[] = []
 
-    return (
-        <ScrollContext.Provider value={breakpoints}>
-            {children}
-        </ScrollContext.Provider>
-    )
+  return <ScrollContext.Provider value={breakpoints}>{children}</ScrollContext.Provider>
 }
 
 export const useScroll = () => {
-    const breakpoints = useContext(ScrollContext)
+  const breakpoints = useContext(ScrollContext)
 
-    const setBreakpoints = (newBreakpoint: IScroll) => {
-        if (breakpoints.filter(breakpoint => breakpoint.name === newBreakpoint.name).length !== 0) return
-        breakpoints.push(newBreakpoint)
-    }
+  const setBreakpoints = (newBreakpoint: IScroll) => {
+    if (breakpoints.filter((breakpoint) => breakpoint.name === newBreakpoint.name).length !== 0)
+      return
+    breakpoints.push(newBreakpoint)
+  }
 
-    const getBreakpoints = (): IScroll[] => {
-        const AuxBreakpoints = breakpoints
-        return AuxBreakpoints
-    }
+  const getBreakpoints = (): IScroll[] => {
+    const AuxBreakpoints = breakpoints
+    return AuxBreakpoints
+  }
 
-    const scrollToLocal = (local: string) => {
-        const breakpoint = breakpoints.filter(breakpoint => breakpoint.name === local)
+  const scrollToLocal = (local: string) => {
+    const breakpoint = breakpoints.filter((breakpoint) => breakpoint.name === local)
 
-        window.scrollTo({
-            top: breakpoint[0].offsetTop,
-            behavior: 'smooth'
-        })
-    }
+    window.scrollTo({
+      top: breakpoint[0].offsetTop,
+      behavior: 'smooth',
+    })
+  }
 
-    return {
-        setBreakpoints,
-        getBreakpoints,
-        scrollToLocal
-    }
+  return {
+    setBreakpoints,
+    getBreakpoints,
+    scrollToLocal,
+  }
 }

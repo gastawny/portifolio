@@ -1,24 +1,24 @@
 @import './variables';
 
 body {
-    position: relative;
-    background-color: $background-color;
-    color: $font-color;
-    font-family: $font;
+  position: relative;
+  background-color: $background-color;
+  color: $font-color;
+  font-family: $font;
 }
 
 ::-webkit-scrollbar {
-    width: .8rem;
+  width: 0.8rem;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(transparent, $blue 60%, $purple);
-    border-radius: .4rem;
+  background: linear-gradient(transparent, $blue 60%, $purple);
+  border-radius: 0.4rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(transparent, $blue 20%, $purple);
-    border-radius: .4rem;
+  background: linear-gradient(transparent, $blue 20%, $purple);
+  border-radius: 0.4rem;
 }
 
 div::selection,
@@ -30,5 +30,5 @@ h3::selection,
 h4::selection,
 h5::selection,
 h6::selection {
-    background-color: mix($blue, #000, 40%);
+  background-color: mix($blue, #000, 40%);
 }
