@@ -1,21 +1,23 @@
 import Home from "pages/Home"
-import { Route, Routes } from "react-router"
-import { BrowserRouter } from "react-router-dom"
+import { Routes, Route, useLocation } from "react-router"
 import Header from "components/Header"
 import Contact from "pages/Contact"
 import Projects from "pages/Projects"
+import { AnimatePresence } from "framer-motion"
 
 const AppRoutes = () => {
+    const location = useLocation()
+
     return (
-        <BrowserRouter>
-            <Routes>
+        <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Header />}>
                     <Route index element={<Home />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="projects" element={<Projects />} />
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </AnimatePresence>
     )
 }
 
