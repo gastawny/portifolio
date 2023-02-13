@@ -1,10 +1,11 @@
 import BackGroundSVG from 'components/BackgroundSVG'
-import './Contact.scss'
+import Form from './Form'
 
 const Contact = () => (
-    <div className='Contact'>
-        <BackGroundSVG />
-    </div>
+  <>
+    <BackGroundSVG />
+    <Form />
+  </>
 )
 
 export default Contact

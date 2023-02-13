@@ -64,12 +64,14 @@ const MenuLink = styled(Link) <StyledProps>`
     position: relative;
 
     &:before {
+        box-shadow: ${({ to, local }) => to === local ? '0 0 .5rem var(--purple), 0 0 1.75rem var(--purple)' : 'none'};
         width: 100%;
         ${textHighlight}
     }
 
     &:hover{
         &::before {
+            /* box-shadow: 0 0 .75rem var(--purple), 0 0 2.25rem var(--purple); */
             background: var(--purple);
             ${({ to, local }) => to !== local ? animationOn : animationOff}
         }
