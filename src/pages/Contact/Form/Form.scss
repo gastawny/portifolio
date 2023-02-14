@@ -1,7 +1,7 @@
 @import 'styles/_variables.scss';
 
 .Form {
-  height: calc(100vh - 6rem);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
   .box {
     position: relative;
     width: 40%;
-    height: 80%;
+    height: 85%;
     background: #000;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -58,9 +58,15 @@
       color: $blue;
       font-size: 2.8rem;
       font-weight: 600;
-      letter-spacing: 0.2rem;
+      letter-spacing: 0.25rem;
       text-align: center;
       margin-bottom: 0.625rem;
+
+      @media screen and (max-width: 1366px) {
+        font-size: 2.4rem;
+        letter-spacing: 0.22rem;
+        margin-bottom: 0.55rem;
+      }
     }
 
     .row100 {
@@ -69,12 +75,21 @@
       display: grid;
       grid-template-columns: repeat(autofit, minmax(18.75rem, 1fr));
 
+      @media screen and (max-width: 1366px) {
+        grid-template-columns: repeat(autofit, minmax(15rem, 1fr));
+      }
+
       .col {
         position: relative;
         width: 100%;
         padding: 0 0.625rem;
         margin: 1.875rem 0 0.625rem;
         transition: 0.5s;
+
+        @media screen and (max-width: 1366px) {
+          padding: 0 0.5rem;
+          margin: 1.5rem 0 0.4rem;
+        }
       }
 
       .inputBox {
@@ -82,6 +97,10 @@
         width: 100%;
         height: 2.5rem;
         color: mix($blue, #000, 80%);
+
+        @media screen and (max-width: 1366px) {
+          height: 2rem;
+        }
 
         input:focus ~ .line,
         input:valid ~ .line {
@@ -104,10 +123,20 @@
           font-family: $font;
           letter-spacing: 0.1rem;
 
+          @media screen and (max-width: 1366px) {
+            font-size: 0.9rem;
+            padding: 0 0.5rem;
+          }
+
           &:focus + .text,
           &:valid + .text {
             top: -2.1875rem;
             left: -0.625rem;
+
+            @media screen and (max-width: 1366px) {
+              top: -2rem;
+              left: -0.5rem;
+            }
           }
 
           &:focus + .line,
@@ -128,6 +157,11 @@
           display: block;
           transition: 0.5s;
           pointer-events: none;
+
+          @media screen and (max-width: 1366px) {
+            font-size: 1rem;
+            padding: 0 0.5rem;
+          }
         }
 
         .line {
@@ -147,6 +181,11 @@
           width: 100%;
           height: 6.25rem;
           padding: 0.625rem 0;
+
+          @media screen and (max-width: 1366px) {
+            height: 5rem;
+            padding: 0.5rem 0;
+          }
 
           &:focus + .text,
           &:valid + .text {
@@ -184,6 +223,11 @@
       border-radius: 0.125rem;
       transition: 0.3s ease-in-out;
 
+      @media screen and (max-width: 1366px) {
+        padding: 0.45rem 2rem;
+        font-size: 1.25rem;
+      }
+
       &:hover {
         background: mix($blue, #000, 60%);
       }
@@ -201,6 +245,12 @@
       font-family: $font;
       font-weight: 500;
       font-size: 1.6rem;
+
+      @media screen and (max-width: 1366px) {
+        font-size: 1.4rem;
+        letter-spacing: 0.08rem;
+        left: 10%;
+      }
 
       &.active {
         display: block;

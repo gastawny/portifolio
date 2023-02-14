@@ -1,10 +1,11 @@
 import BackGroundSVG from 'components/BackgroundSVG'
 import Form from './Form'
 import { motion } from 'framer-motion'
+import './Contact.scss'
 
 const Contact = () => (
   <motion.div
-    className="Home"
+    className="Contact"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
