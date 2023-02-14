@@ -9,6 +9,9 @@ import { useScroll } from 'contexts/Scroll'
 const Skills = () => {
   const SkillsRef = useRef<HTMLElement>(null)
   const { setBreakpoints } = useScroll()
+  const width = window.innerWidth
+  let widthConst = 1
+  if (width >= 768 && width <= 1366) widthConst = 0.8
 
   useEffect(
     () =>
@@ -27,24 +30,24 @@ const Skills = () => {
       </div>
       <div className="Programing-languages">
         <ProgressBar
+          fontSize={1.2}
+          progress={70}
           name=<span>
             React
             <br />
             Typescript
           </span>
-          fontSize="1.2rem"
-          progress={70}
         >
-          <DiReact size={90} color="var(--purple)" />
+          <DiReact size={90 * widthConst} color="var(--purple)" />
         </ProgressBar>
-        <ProgressBar name="Java" fontSize="2.2rem" progress={30}>
-          <DiJava size={90} color="var(--purple)" />
+        <ProgressBar name="Java" fontSize={2.2} progress={30}>
+          <DiJava size={90 * widthConst} color="var(--purple)" />
         </ProgressBar>
-        <ProgressBar name="MySQL" fontSize="1.8rem" progress={40}>
-          <DiMysql size={90} color="var(--purple)" />
+        <ProgressBar name="MySQL" fontSize={1.8} progress={40}>
+          <DiMysql size={90 * widthConst} color="var(--purple)" />
         </ProgressBar>
-        <ProgressBar name="Node.js" fontSize="1.6rem" progress={55}>
-          <DiNodejsSmall size={85} color="var(--purple)" />
+        <ProgressBar name="Node.js" fontSize={1.6} progress={55}>
+          <DiNodejsSmall size={85 * widthConst} color="var(--purple)" />
         </ProgressBar>
         <ProgressBar
           name=<span>
@@ -52,10 +55,10 @@ const Skills = () => {
             <br />
             Github
           </span>
-          fontSize="1.4rem"
+          fontSize={1.4}
           progress={85}
         >
-          <DiGit size={85} color="var(--purple)" />
+          <DiGit size={85 * widthConst} color="var(--purple)" />
         </ProgressBar>
       </div>
       <div className="sub-skills">

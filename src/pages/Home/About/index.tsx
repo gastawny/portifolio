@@ -19,7 +19,7 @@ const About = () => {
   return (
     <section ref={AboutRef} className="About">
       <div className="avatar">
-        <Avatar />
+        <Avatar className="icon" />
       </div>
       <div className="about-container">
         <div className="title-container">

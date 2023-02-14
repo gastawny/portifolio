@@ -5,6 +5,10 @@
   grid-area: Photograph;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1366px) {
+    margin-top: 2.8rem;
+  }
 }
 
 .discordAlert {
@@ -40,17 +44,35 @@
   height: 19rem;
   transition: 0.5s;
 
+  @media screen and (max-width: 1366px) {
+    width: 28rem;
+    height: 15.2rem;
+  }
+
   &:hover {
     height: 36rem;
+
+    @media screen and (max-width: 1366px) {
+      height: 28.8rem;
+    }
 
     .imgBx {
       width: 20rem;
       height: 20rem;
+
+      @media screen and (max-width: 1366px) {
+        width: 16rem;
+        height: 16rem;
+      }
     }
 
     .content .details {
       transform: translateY(0px);
       padding: 3.2rem;
+
+      @media screen and (max-width: 1366px) {
+        padding: 2.56rem;
+      }
     }
   }
 
@@ -69,6 +91,11 @@
       height: 12rem;
       background: linear-gradient(transparent, $blue, $blue, $blue, transparent);
       animation: animate 4s linear infinite;
+
+      @media screen and (max-width: 1366px) {
+        width: 48rem;
+        height: 9.6;
+      }
     }
 
     &::after {
@@ -76,6 +103,10 @@
       position: absolute;
       inset: 0.3rem;
       background: mix($background-color, #000, 50%);
+
+      @media screen and (max-width: 1366px) {
+        inset: 0.24rem;
+      }
     }
   }
 
@@ -91,6 +122,12 @@
     z-index: 10;
     overflow: hidden;
 
+    @media screen and (max-width: 1366px) {
+      top: -4rem;
+      width: 12rem;
+      height: 12rem;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -101,6 +138,11 @@
       transform: translate(-50%, -50%);
       background: linear-gradient(transparent, $purple, $purple, $purple, transparent);
       animation: animate2 6s linear infinite;
+
+      @media screen and (max-width: 1366px) {
+        width: 40rem;
+        height: 12rem;
+      }
     }
 
     &::after {
@@ -108,6 +150,10 @@
       position: absolute;
       inset: 0.3rem;
       background: mix($background-color, #000, 50%);
+
+      @media screen and (max-width: 1366px) {
+        inset: 0.24rem;
+      }
     }
 
     img {
@@ -117,6 +163,13 @@
       z-index: 1;
       width: calc(100% - 2rem);
       height: calc(100% - 2rem);
+
+      @media screen and (max-width: 1366px) {
+        top: 0.8rem;
+        left: 0.8rem;
+        width: calc(100% - 1.6rem);
+        height: calc(100% - 1.6rem);
+      }
     }
   }
 
@@ -136,16 +189,30 @@
       transition: 0.5s;
       transform: translateY(14.5rem);
 
+      @media screen and (max-width: 1366px) {
+        padding: 3.6rem;
+        transform: translateY(11.6rem);
+      }
+
       h2 {
         font-size: 2.5rem;
         font-weight: 600;
         color: $blue;
         line-height: 2.4rem;
 
+        @media screen and (max-width: 1366px) {
+          font-size: 2rem;
+          line-height: 1.92rem;
+        }
+
         span {
           font-size: 1.5rem;
           font-weight: 500;
           color: $font-color;
+
+          @media screen and (max-width: 1366px) {
+            font-size: 1.2rem;
+          }
         }
       }
 
@@ -155,12 +222,20 @@
         justify-content: space-between;
         margin: 2.5rem 0;
 
+        @media screen and (max-width: 1366px) {
+          margin: 2rem 0;
+        }
+
         svg {
           opacity: 0.6;
           width: 3rem;
           height: auto;
           cursor: pointer;
           color: mix($purple, $background-color, 60%);
+
+          @media screen and (max-width: 1366px) {
+            width: 2.4rem;
+          }
         }
 
         a:hover svg {
@@ -177,6 +252,10 @@
         display: flex;
         justify-content: space-between;
         gap: 2rem;
+
+        @media screen and (max-width: 1366px) {
+          gap: 1.6rem;
+        }
       }
     }
   }

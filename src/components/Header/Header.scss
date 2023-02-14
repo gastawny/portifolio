@@ -9,17 +9,30 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 10%;
+
+    @media screen and (max-width: 1366px) {
+      height: 4.4rem;
+    }
   }
 
   .name {
     font-family: $font-spooky;
     letter-spacing: 0.1rem;
     font-size: 2rem;
+
+    @media screen and (max-width: 1366px) {
+      letter-spacing: 0.08rem;
+      font-size: 1.8rem;
+    }
   }
 
   .links {
     display: flex;
     gap: 2.2rem;
     align-items: center;
+
+    @media screen and (max-width: 1366px) {
+      gap: 1.8rem;
+    }
   }
 }

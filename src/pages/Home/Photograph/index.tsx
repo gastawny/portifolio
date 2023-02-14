@@ -15,6 +15,10 @@ const Photograph = () => {
     alertRef.current?.classList?.toggle('active')
   }
 
+  const width = window.innerWidth
+  let widthConst = 1
+  if (width >= 768 && width <= 1366) widthConst = 0.8
+
   return (
     <>
       <div ref={alertRef} className="discordAlert">
@@ -58,10 +62,18 @@ const Photograph = () => {
                 </a>
               </div>
               <div className="actionBtn">
-                <Button clicked={() => scrollToLocal('About')} width="8.5rem">
+                <Button
+                  clicked={() => scrollToLocal('About')}
+                  width={(8.5 * widthConst).toString() + 'rem'}
+                  fontSize={(1.6 * widthConst).toString() + 'rem'}
+                >
                   About
                 </Button>
-                <Button clicked={() => scrollToLocal('Skills')} width="8.5rem">
+                <Button
+                  clicked={() => scrollToLocal('Skills')}
+                  fontSize={(1.6 * widthConst).toString() + 'rem'}
+                  width={(8.5 * widthConst).toString() + 'rem'}
+                >
                   Skills
                 </Button>
               </div>

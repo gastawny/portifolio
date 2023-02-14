@@ -5,29 +5,50 @@ interface ProgressBarProps {
   name: string | ReactElement
   progress: number
   children: ReactElement
-  fontSize: string
+  fontSize: number
 }
 
 interface StyledProps {
   progress?: number
   fontSize?: string
+  widthConst?: number
 }
 
-const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) => (
-  <ProgressBarStyled>
-    <Percent>
-      <Dot progress={progress}></Dot>
-      <CircleProgressContainer>
-        <CircleProgress cx="84" cy="84" r="84"></CircleProgress>
-        <CircleProgress progress={progress} cx="84" cy="84" r="84"></CircleProgress>
-      </CircleProgressContainer>
-      <Content>
-        {children}
-        <LanguageName fontSize={fontSize}>{name}</LanguageName>
-      </Content>
-    </Percent>
-  </ProgressBarStyled>
-)
+const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) => {
+  const width = window.innerWidth
+  let widthConst = 1
+  if (width >= 768 && width <= 1366) widthConst = 0.8
+
+  return widthConst ? (
+    <ProgressBarStyled>
+      <Percent widthConst={widthConst}>
+        <Dot progress={progress}></Dot>
+        <CircleProgressContainer widthConst={widthConst}>
+          <CircleProgress
+            progress={progress}
+            widthConst={widthConst}
+            cx={84 * widthConst}
+            cy={84 * widthConst}
+            r={84 * widthConst}
+          ></CircleProgress>
+          <CircleProgress
+            progress={progress}
+            widthConst={widthConst}
+            cx={84 * widthConst}
+            cy={84 * widthConst}
+            r={84 * widthConst}
+          ></CircleProgress>
+        </CircleProgressContainer>
+        <Content>
+          {children}
+          <LanguageName fontSize={(fontSize * widthConst).toString() + 'rem'}>{name}</LanguageName>
+        </Content>
+      </Percent>
+    </ProgressBarStyled>
+  ) : (
+    <></>
+  )
+}
 
 const ProgressBarStyled = styled.div`
   position: relative;
@@ -36,10 +57,10 @@ const ProgressBarStyled = styled.div`
   align-items: center;
 `
 
-const Percent = styled.div`
+const Percent = styled.div<StyledProps>`
   position: relative;
-  width: 11.25rem;
-  height: 11.25rem;
+  width: ${({ widthConst }) => (widthConst ? 11.25 * widthConst : 11.25)}rem;
+  height: ${({ widthConst }) => (widthConst ? 11.25 * widthConst : 11.25)}rem;
 `
 
 const fadeIn = keyframes`
@@ -64,24 +85,24 @@ const animateDot = (props: StyledProps) => keyframes`
 
 const Dot = styled.div<StyledProps>`
   position: absolute;
-  inset: 0.375rem;
+  inset: ${({ widthConst }) => (widthConst ? 0.375 * widthConst : 0.375)}rem;
   z-index: 10;
   animation: ${(props) => animateDot(props)} 2s linear forwards;
 
   &:before {
     content: '';
     position: absolute;
-    top: -0.45rem;
+    top: ${({ widthConst }) => (widthConst ? -0.45 * widthConst : -0.45)}rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 0.9rem;
-    height: 0.9rem;
+    width: ${({ widthConst }) => (widthConst ? 0.9 * widthConst : 0.9)}rem;
+    height: ${({ widthConst }) => (widthConst ? 0.9 * widthConst : 0.9)}rem;
     border-radius: 50%;
     background: var(--blue);
     box-shadow: 0 0 0.75rem var(--blue), 0 0 2.25rem var(--blue);
   }
 `
-
+/* eslint-disable */
 const CircleProgress = styled.circle<StyledProps>`
   width: 100%;
   height: 100%;
@@ -89,17 +110,32 @@ const CircleProgress = styled.circle<StyledProps>`
   stroke-width: 6;
   stroke: #191919;
   transform: translate(0.375rem, 0.375rem);
+  stroke-width: ${({ widthConst }) => (widthConst ? 6 * widthConst : 6)};
+  stroke: #191919;
+  transform: ${({ widthConst }) =>
+    widthConst
+      ? 'translate(' +
+        (0.375 * widthConst).toString() +
+        'rem' +
+        ',' +
+        (0.375 * widthConst).toString() +
+        'rem' +
+        ')'
+      : 'translate(0.375rem, 0.375rem)'};
 
   &:nth-child(2) {
     stroke: var(--blue);
-    stroke-dasharray: 528;
-    stroke-dashoffset: calc(528 - (528 * ${(props) => props.progress}) / 100);
+    stroke-dasharray: ${({ widthConst }) => (widthConst ? 528 * widthConst : 528)};
+    stroke-dashoffset: calc(
+      ${({ widthConst, progress }) =>
+        widthConst && progress ? 528 * widthConst - (528 * widthConst * progress) / 100 : 0}
+    );
     opacity: 0;
     animation: ${fadeIn} 1s linear forwards;
     animation-delay: 2.2s;
   }
 `
-
+/* eslint-enable */
 const Content = styled.div`
   position: absolute;
   inset: 0;
@@ -115,15 +151,15 @@ const Content = styled.div`
 
 const LanguageName = styled.div<StyledProps>`
   font-weight: 600;
-  font-size: ${(props) => props.fontSize};
+  font-size: ${({ fontSize }) => fontSize};
   text-align: center;
   margin-bottom: 5%;
 `
 
-const CircleProgressContainer = styled.svg`
+const CircleProgressContainer = styled.svg<StyledProps>`
   transform: rotate(270deg);
   position: relative;
-  width: 11.25rem;
-  height: 11.25rem;
+  width: ${({ widthConst }) => (widthConst ? 11.25 * widthConst : 11.25)}rem;
+  height: ${({ widthConst }) => (widthConst ? 11.25 * widthConst : 11.25)}rem;
 `
 export default ProgressBar
