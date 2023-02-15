@@ -1,4 +1,17 @@
 .Projects {
-  color: red;
   height: calc(100vh - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1366px) {
+    height: calc(100vh - 4.4rem);
+  }
+
+  .Projects-Container {
+    margin-top: 25rem;
+    display: flex;
+    gap: 8rem;
+    flex-direction: column;
+  }
 }

@@ -30,5 +30,6 @@ h3::selection,
 h4::selection,
 h5::selection,
 h6::selection {
+  color: #fbfbfb;
   background-color: mix($blue, #000, 40%);
 }

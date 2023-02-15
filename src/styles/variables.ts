@@ -5,5 +5,7 @@ export default createGlobalStyle`
     --blue: #45f3ff;
     --purple: #573aff;
     --font-color: #FBFBFB;
+    --background-color: #1a202b;
+    --background-color-mixed: #10131a;
   }
 `
