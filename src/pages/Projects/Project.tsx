@@ -10,9 +10,10 @@ interface ProjectProps {
   link: string
   githubLink: string
   type: string
+  image: string
 }
 
-const Project = ({ title, technologies, text, link, githubLink, type }: ProjectProps) => (
+const Project = ({ title, technologies, text, link, githubLink, type, image }: ProjectProps) => (
   <ProjectContainer>
     <BoxContainer type={type}>
       <Box>
@@ -42,7 +43,7 @@ const Project = ({ title, technologies, text, link, githubLink, type }: ProjectP
         </Border>
       </Box>
     </BoxContainer>
-    <ProjectImage src={`assets/images/${title}.png`} />
+    <ProjectImage src={`assets/images/${image}`} />
   </ProjectContainer>
 )
 

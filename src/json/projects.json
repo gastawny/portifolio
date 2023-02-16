@@ -1,18 +1,20 @@
 [
   {
-    "title": "test",
+    "title": "Calculator",
     "technologies": ["React", "Sass"],
-    "text": "Test Test Test Test Test Test Test Test Test Test",
-    "link": "",
-    "githubLink": "",
-    "type": "left"
+    "text": "A simple calculator to learn react",
+    "link": "https://calculadora-gastawny.vercel.app/",
+    "githubLink": "https://github.com/gastawny/calculadora",
+    "type": "left",
+    "image": "Calculator.png"
   },
   {
-    "title": "test",
+    "title": "Sticker Album",
     "technologies": ["C"],
-    "text": "Test Test Test Test Test Test Test Test",
-    "link": "",
-    "githubLink": "",
-    "type": "right"
+    "text": "Project carried out using linked lists, for the subject of Data Structure (illustrative image)",
+    "link": "https://github.com/gastawny/Projeto-ED-LAB/blob/main/ED/Projeto-ED.pdf",
+    "githubLink": "https://github.com/gastawny/Projeto-ED-LAB/tree/main/ED",
+    "type": "right",
+    "image": "StickerAlbum.jpg"
   }
 ]

@@ -59,6 +59,7 @@ const MenuLinkStyled = styled(Link)<StyledProps>`
   letter-spacing: 0.1rem;
   font-weight: 500;
   position: relative;
+  z-index: 10;
 
   &:before {
     box-shadow: ${({ to, local }) =>
@@ -66,6 +67,10 @@ const MenuLinkStyled = styled(Link)<StyledProps>`
     /* eslint-enable */
     width: 100%;
     ${textHighlight}
+
+    @media screen and (max-width: 500px) {
+      box-shadow: none;
+    }
   }
 
   &:hover {

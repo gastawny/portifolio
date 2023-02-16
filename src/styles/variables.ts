@@ -7,5 +7,6 @@ export default createGlobalStyle`
     --font-color: #FBFBFB;
     --background-color: #1a202b;
     --background-color-mixed: #10131a;
+    --font-spooky: 'Mistery Zero';
   }
 `
