@@ -152,32 +152,52 @@
       }
     }
 
-    .studies-content {
-      margin-top: 10%;
-      display: flex;
-      align-items: center;
-      gap: 5%;
+    a {
+      color: $font-color;
+      transition: 0.3s;
 
-      .studies-type {
-        font-size: 2.5rem;
-        font-weight: 500;
-        letter-spacing: 0.2rem;
-        margin-bottom: 2%;
-
-        @media screen and (max-width: 1366px) {
-          font-size: 2rem;
-          letter-spacing: 0.15rem;
-        }
+      &:hover {
+        color: mix($purple, #000, 70%);
       }
+    }
 
-      .studies-complement {
-        font-size: 1.2rem;
-        font-weight: 300;
-        letter-spacing: 0.15rem;
+    .studies-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2%;
+
+      .studies-content {
+        margin-top: 7%;
+        display: flex;
+        align-items: center;
+        gap: 5%;
 
         @media screen and (max-width: 1366px) {
-          font-size: 1rem;
-          letter-spacing: 0.12rem;
+          gap: 3%;
+          margin-top: 5%;
+        }
+
+        .studies-type {
+          font-size: 2.5rem;
+          font-weight: 500;
+          letter-spacing: 0.2rem;
+          margin-bottom: 2%;
+
+          @media screen and (max-width: 1366px) {
+            font-size: 1.8rem;
+            letter-spacing: 0.15rem;
+          }
+        }
+
+        .studies-complement {
+          font-size: 1.2rem;
+          font-weight: 300;
+          letter-spacing: 0.15rem;
+
+          @media screen and (max-width: 1366px) {
+            font-size: 1rem;
+            letter-spacing: 0.12rem;
+          }
         }
       }
     }

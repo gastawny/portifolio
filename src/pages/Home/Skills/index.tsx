@@ -2,6 +2,7 @@ import './Skills.scss'
 import ProgressBar from './ProgressBar'
 import { DiJava, DiReact, DiNodejsSmall, DiGit, DiMysql } from 'react-icons/di'
 import { FiBook } from 'react-icons/fi'
+import { FiArrowDownCircle } from 'react-icons/fi'
 import styled, { keyframes } from 'styled-components'
 import { useEffect, useRef } from 'react'
 import { useScroll } from 'contexts/Scroll'
@@ -81,13 +82,26 @@ const Skills = () => {
         <div className="studies">
           <h3 className="sub-title">Studies</h3>
           <span className="horizontal-line"></span>
-          <div className="studies-content">
-            <div className="circle">
-              <FiBook size={40} />
+          <div className="studies-container">
+            <div className="studies-content">
+              <div className="circle">
+                <FiBook size={40} />
+              </div>
+              <div>
+                <h4 className="studies-type">Computer science</h4>
+                <h5 className="studies-complement">UTFPR 2022</h5>
+              </div>
             </div>
-            <div>
-              <h4 className="studies-type">Computer science</h4>
-              <h5 className="studies-complement">UTFPR 2022</h5>
+            <div className="studies-content">
+              <a href="https://imgur.com/a/58DyPmc" target="_blank" rel="noopener noreferrer">
+                <div className="circle">
+                  <FiArrowDownCircle size={45} />
+                </div>
+              </a>
+              <div>
+                <h4 className="studies-type">Algorithms monitor</h4>
+                <h5 className="studies-complement">2022/2</h5>
+              </div>
             </div>
           </div>
         </div>

@@ -14,7 +14,6 @@ const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) =
   const [widthConst, setWidthConst] = useState(1)
 
   useEffect(() => {
-    console.log(width)
     if (width >= 1366) setWidthConst(1)
     if (width <= 1366) setWidthConst(0.8)
   }, [width])

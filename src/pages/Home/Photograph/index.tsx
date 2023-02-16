@@ -1,13 +1,16 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import './Photograph.scss'
 import foto from 'assets/images/photograph.png'
 import Button from 'components/Button'
 import { BsLinkedin, BsGithub, BsDiscord, BsTelegram, BsWhatsapp } from 'react-icons/bs'
 import { useScroll } from 'contexts/Scroll'
+import useWidth from 'hooks/useWidth'
 
 const Photograph = () => {
   const alertRef = useRef<HTMLDivElement>(null)
   const { scrollToLocal } = useScroll()
+  const width = useWidth()
+  const [widthConst, setWidthConst] = useState(1)
 
   const discordClick = () => {
     navigator.clipboard.writeText('Gastawny#5067')
@@ -15,9 +18,11 @@ const Photograph = () => {
     alertRef.current?.classList?.toggle('active')
   }
 
-  const width = window.innerWidth
-  let widthConst = 1
-  if (width >= 768 && width <= 1366) widthConst = 0.8
+  useEffect(() => {
+    console.log(width)
+    if (width >= 1366) setWidthConst(1)
+    if (width <= 1366) setWidthConst(0.8)
+  }, [width])
 
   return (
     <>

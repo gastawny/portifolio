@@ -1,17 +1,47 @@
+@import 'styles/_variables.scss';
+
 .Projects {
-  height: calc(100vh - 6rem);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 
   @media screen and (max-width: 1366px) {
     height: calc(100vh - 4.4rem);
   }
 
-  .Projects-Container {
-    margin-top: 25rem;
+  .title {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    position: relative;
+    color: $font-color;
+    font-weight: 600;
+    font-size: 5.5rem;
+    letter-spacing: 0.4rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      bottom: 0.6rem;
+      height: 2.4rem;
+      background: $purple;
+      width: 100%;
+      box-shadow: 0 0 0.8rem $purple, 0 0 2rem $purple;
+    }
+  }
+
+  .sub-title {
+    color: $font-color;
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .projects-container {
+    margin-top: 6rem;
     display: flex;
     gap: 8rem;
     flex-direction: column;
+    margin-bottom: 5rem;
   }
 }

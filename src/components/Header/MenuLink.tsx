@@ -59,6 +59,7 @@ const MenuLinkStyled = styled(Link)<StyledProps>`
   letter-spacing: 0.1rem;
   font-weight: 500;
   position: relative;
+
   &:before {
     box-shadow: ${({ to, local }) =>
       to === local ? '0 0 .5rem var(--purple), 0 0 1.75rem var(--purple)' : 'none'};
@@ -69,7 +70,6 @@ const MenuLinkStyled = styled(Link)<StyledProps>`
 
   &:hover {
     &::before {
-      /* box-shadow: 0 0 .75rem var(--purple), 0 0 2.25rem var(--purple); */
       background: var(--purple);
       ${({ to, local }) => (to !== local ? animationOn : animationOff)}
     }

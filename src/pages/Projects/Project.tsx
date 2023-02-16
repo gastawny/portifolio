@@ -12,41 +12,39 @@ interface ProjectProps {
   type: string
 }
 
-const Project = ({ title, technologies, text, link, githubLink, type }: ProjectProps) => {
-  return (
-    <ProjectContainer>
-      <BoxContainer type={type}>
-        <Box>
-          <Border>
-            <ContentContainer>
-              <TitleContainer>
-                <Title>{title}</Title>
-                <Links>
-                  <a href={githubLink} target="_blank" rel="noreferrer">
-                    <BsGithub size={32} />
-                  </a>
-                  <a href={link} target="_blank" rel="noreferrer">
-                    <BiLinkExternal size={40} />
-                  </a>
-                </Links>
-              </TitleContainer>
-              <Technologies>
-                {technologies.map((technology) => (
-                  <Technology key={uuidv4()}>
-                    <img src={`assets/technologies/${technology}.svg`} />
-                    <h4>{technology}</h4>
-                  </Technology>
-                ))}
-              </Technologies>
-              <Text>{text}</Text>
-            </ContentContainer>
-          </Border>
-        </Box>
-      </BoxContainer>
-      <ProjectImage src={`assets/images/${title}.png`} />
-    </ProjectContainer>
-  )
-}
+const Project = ({ title, technologies, text, link, githubLink, type }: ProjectProps) => (
+  <ProjectContainer>
+    <BoxContainer type={type}>
+      <Box>
+        <Border>
+          <ContentContainer>
+            <TitleContainer>
+              <Title>{title}</Title>
+              <Links>
+                <a href={githubLink} target="_blank" rel="noreferrer">
+                  <BsGithub size={32} />
+                </a>
+                <a href={link} target="_blank" rel="noreferrer">
+                  <BiLinkExternal size={40} />
+                </a>
+              </Links>
+            </TitleContainer>
+            <Technologies>
+              {technologies.map((technology) => (
+                <Technology key={uuidv4()}>
+                  <img src={`assets/technologies/${technology}.svg`} />
+                  <h4>{technology}</h4>
+                </Technology>
+              ))}
+            </Technologies>
+            <Text>{text}</Text>
+          </ContentContainer>
+        </Border>
+      </Box>
+    </BoxContainer>
+    <ProjectImage src={`assets/images/${title}.png`} />
+  </ProjectContainer>
+)
 
 const animateProject = keyframes`
   0%{
