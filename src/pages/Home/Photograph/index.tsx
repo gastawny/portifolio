@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef } from 'react'
 import './Photograph.scss'
 import foto from 'assets/images/photograph.png'
 import Button from 'components/Button'
@@ -9,20 +9,13 @@ import useWidth from 'hooks/useWidth'
 const Photograph = () => {
   const alertRef = useRef<HTMLDivElement>(null)
   const { scrollToLocal } = useScroll()
-  const width = useWidth()
-  const [widthConst, setWidthConst] = useState(1)
+  const { widthConst } = useWidth()
 
   const discordClick = () => {
     navigator.clipboard.writeText('Gastawny#5067')
     setTimeout(() => alertRef.current?.classList?.toggle('active'), 800)
     alertRef.current?.classList?.toggle('active')
   }
-
-  useEffect(() => {
-    console.log(width)
-    if (width >= 1366) setWidthConst(1)
-    if (width <= 1366) setWidthConst(0.8)
-  }, [width])
 
   return (
     <>

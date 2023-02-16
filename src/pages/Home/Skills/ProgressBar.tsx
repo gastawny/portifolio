@@ -1,5 +1,5 @@
 import useWidth from 'hooks/useWidth'
-import { ReactElement, useEffect, useState } from 'react'
+import { ReactElement } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 interface ProgressBarProps {
@@ -10,13 +10,7 @@ interface ProgressBarProps {
 }
 
 const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) => {
-  const width = useWidth()
-  const [widthConst, setWidthConst] = useState(1)
-
-  useEffect(() => {
-    if (width >= 1366) setWidthConst(1)
-    if (width <= 1366) setWidthConst(0.8)
-  }, [width])
+  const { widthConst } = useWidth()
 
   return (
     <ProgressBarStyled>

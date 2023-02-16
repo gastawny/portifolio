@@ -6,13 +6,12 @@ import { FiArrowDownCircle } from 'react-icons/fi'
 import styled, { keyframes } from 'styled-components'
 import { useEffect, useRef } from 'react'
 import { useScroll } from 'contexts/Scroll'
+import useWidth from 'hooks/useWidth'
 
 const Skills = () => {
   const SkillsRef = useRef<HTMLElement>(null)
   const { setBreakpoints } = useScroll()
-  const width = window.innerWidth
-  let widthConst = 1
-  if (width >= 768 && width <= 1366) widthConst = 0.8
+  const { widthConst } = useWidth()
 
   useEffect(
     () =>
