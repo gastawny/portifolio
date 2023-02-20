@@ -24,6 +24,7 @@ export const useScroll = () => {
 
   const getBreakpoints = (): IScroll[] => {
     const AuxBreakpoints = breakpoints
+
     return AuxBreakpoints
   }
 

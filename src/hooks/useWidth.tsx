@@ -38,7 +38,6 @@ const useWidth = () => {
     }
   }, [size])
 
-  useEffect(() => console.log(layoutType), [layoutType])
   return {
     width: size !== 0 ? size : window.innerWidth,
     widthConst,
