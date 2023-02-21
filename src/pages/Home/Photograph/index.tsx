@@ -9,7 +9,7 @@ import useWidth from 'hooks/useWidth'
 const Photograph = () => {
   const alertRef = useRef<HTMLDivElement>(null)
   const { scrollToLocal } = useScroll()
-  const { widthConst } = useWidth()
+  const { widthConst, layoutType } = useWidth()
 
   const discordClick = () => {
     navigator.clipboard.writeText('Gastawny#5067')
@@ -59,22 +59,26 @@ const Photograph = () => {
                   <BsLinkedin />
                 </a>
               </div>
-              <div className="actionBtn">
-                <Button
-                  clicked={() => scrollToLocal('About')}
-                  width={(8.5 * widthConst).toString() + 'rem'}
-                  fontSize={(1.6 * widthConst).toString() + 'rem'}
-                >
-                  About
-                </Button>
-                <Button
-                  clicked={() => scrollToLocal('Skills')}
-                  fontSize={(1.6 * widthConst).toString() + 'rem'}
-                  width={(8.5 * widthConst).toString() + 'rem'}
-                >
-                  Skills
-                </Button>
-              </div>
+              {layoutType !== 'mobile' ? (
+                <div className="actionBtn">
+                  <Button
+                    clicked={() => scrollToLocal('About')}
+                    width={(8.5 * widthConst).toString() + 'rem'}
+                    fontSize={(1.6 * widthConst).toString() + 'rem'}
+                  >
+                    About
+                  </Button>
+                  <Button
+                    clicked={() => scrollToLocal('Skills')}
+                    fontSize={(1.6 * widthConst).toString() + 'rem'}
+                    width={(8.5 * widthConst).toString() + 'rem'}
+                  >
+                    Skills
+                  </Button>
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>

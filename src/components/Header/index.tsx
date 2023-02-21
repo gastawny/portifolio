@@ -14,23 +14,7 @@ const Header = () => {
   const openIcon = <HiOutlineMenuAlt3 size={40} color="#FBFBFB" />
   const closeIcon = <AiOutlineClose size={40} color="#FBFBFB" />
 
-  return layoutType !== 'mobile' ? (
-    <>
-      <header className="Header">
-        <div className="container">
-          <h2 className="name">Gabriel Stawny</h2>
-          <nav>
-            <ul className="links">
-              <MenuLink to="/">Portfolio</MenuLink>
-              <MenuLink to="/projects">Projects</MenuLink>
-              <MenuLink to="/contact">Contact</MenuLink>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <Outlet />
-    </>
-  ) : (
+  return layoutType === 'mobile' ? (
     <>
       <HeaderStyled>
         <div className="container">
@@ -51,6 +35,22 @@ const Header = () => {
           <></>
         )}
       </HeaderStyled>
+      <Outlet />
+    </>
+  ) : (
+    <>
+      <header className="Header">
+        <div className="container">
+          <h2 className="name">Gabriel Stawny</h2>
+          <nav>
+            <ul className="links">
+              <MenuLink to="/">Portfolio</MenuLink>
+              <MenuLink to="/projects">Projects</MenuLink>
+              <MenuLink to="/contact">Contact</MenuLink>
+            </ul>
+          </nav>
+        </div>
+      </header>
       <Outlet />
     </>
   )
@@ -81,15 +81,16 @@ const ModalButton = styled.div<{ active: boolean }>`
 
 const Menu = styled.nav`
   position: absolute;
-  height: 8rem;
+  height: 10rem;
   width: 100%;
-  bottom: -8rem;
-  background: #10131aaa;
+  bottom: -10rem;
+  background: #10131a;
+  z-index: 15;
 
   ul {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
     align-items: center;
     height: 100%;
   }

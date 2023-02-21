@@ -10,7 +10,7 @@ interface ProgressBarProps {
 }
 
 const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) => {
-  const { widthConst } = useWidth()
+  const { widthConst, layoutType } = useWidth()
 
   return (
     <ProgressBarStyled>
@@ -19,15 +19,15 @@ const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) =
         <CircleProgressContainer>
           <CircleProgress
             progress={progress}
-            cx={84 * widthConst}
-            cy={84 * widthConst}
-            r={84 * widthConst}
+            cx={84 * (layoutType !== 'mobile' ? widthConst : 0.8)}
+            cy={84 * (layoutType !== 'mobile' ? widthConst : 0.8)}
+            r={84 * (layoutType !== 'mobile' ? widthConst : 0.8)}
           ></CircleProgress>
           <CircleProgress
             progress={progress}
-            cx={84 * widthConst}
-            cy={84 * widthConst}
-            r={84 * widthConst}
+            cx={84 * (layoutType !== 'mobile' ? widthConst : 0.8)}
+            cy={84 * (layoutType !== 'mobile' ? widthConst : 0.8)}
+            r={84 * (layoutType !== 'mobile' ? widthConst : 0.8)}
           ></CircleProgress>
         </CircleProgressContainer>
         <Content>

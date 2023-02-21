@@ -5,7 +5,7 @@ type layouttypeOptions = 'mobile' | 'smallDesktop' | 'largeDesktop'
 const useWidth = () => {
   const [size, setSize] = useState(0)
   const [widthConst, setWidthConst] = useState(1)
-  const [layoutType, setLayoutType] = useState<layouttypeOptions>('largeDesktop')
+  const [layoutType, setLayoutType] = useState<layouttypeOptions>('mobile')
 
   useLayoutEffect(() => {
     function updateSize() {
@@ -28,6 +28,7 @@ const useWidth = () => {
       setLayoutType('smallDesktop')
     }
     if (size <= 500) {
+      setWidthConst(0.5)
       setLayoutType('mobile')
     }
     if (size === 0) {
