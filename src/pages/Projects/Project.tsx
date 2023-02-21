@@ -47,7 +47,9 @@ const Project = ({ title, technologies, text, link, githubLink, type, image }: P
           </Border>
         </Box>
       </BoxContainer>
-      <ProjectImage src={`assets/images/${image}`} />
+      <Bg>
+        <ProjectImage src={`assets/images/${image}`} />
+      </Bg>
     </ProjectContainer>
   )
 }
@@ -65,17 +67,36 @@ const ProjectContainer = styled.div`
   width: 80vw;
 `
 
-const ProjectImage = styled.img`
+/* eslint-disable */
+const Bg = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    ${() =>
+      ['0deg', '45deg', '90deg', '120deg', '180deg', '210deg', '270deg', '330deg'][
+        Math.floor(Math.random() * 8)
+      ]},
+    rgba(69, 243, 255, 1) 0%,
+    rgba(87, 58, 255, 1) 100%
+  );
   width: 80%;
+  height: 70vh;
   border-radius: 20px;
   margin-left: 10%;
+`
+/* eslint-enable */
+
+const ProjectImage = styled.img`
+  width: 70%;
+  border-radius: 20px;
 `
 
 const BoxContainer = styled.div<{ type: string }>`
   position: absolute;
   top: 32%;
-  left: ${({ type }) => (type === 'left' ? '-5%' : 'auto')};
-  right: ${({ type }) => (type === 'right' ? '-5%' : 'auto')};
+  left: ${({ type }) => (type === 'left' ? '-2%' : 'auto')};
+  right: ${({ type }) => (type === 'right' ? '-2%' : 'auto')};
   z-index: 2;
   width: 36%;
   height: 36%;
@@ -85,6 +106,7 @@ const Box = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 11.5rem;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 1.25rem;
   display: flex;
@@ -193,6 +215,7 @@ const Links = styled.div`
 
 const Technologies = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 
   @media screen and (max-width: 1366px) {
@@ -207,14 +230,12 @@ const Technology = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  margin-bottom: 1rem;
   border-radius: 0.5rem;
   background: #573aff26;
   padding: 0 0.5rem;
 
   @media screen and (max-width: 1366px) {
-    height: 1.7rem;
-    margin-bottom: 0.8rem;
+    height: 1.62rem;
   }
 
   img {
@@ -222,8 +243,8 @@ const Technology = styled.div`
     height: 1.4rem;
 
     @media screen and (max-width: 1366px) {
-      width: 1.16rem;
-      height: 1.16rem;
+      width: 1.12rem;
+      height: 1.12rem;
     }
   }
 
@@ -234,7 +255,7 @@ const Technology = styled.div`
     letter-spacing: 0.05rem;
 
     @media screen and (max-width: 1366px) {
-      font-size: 0.86rem;
+      font-size: 0.8rem;
     }
   }
 `
@@ -244,10 +265,12 @@ const Text = styled.p`
   font-size: 1.2rem;
   letter-spacing: 0.08rem;
   line-height: 1.4rem;
+  margin-top: 1rem;
 
   @media screen and (max-width: 1366px) {
     font-size: 1rem;
     line-height: 1.2rem;
+    margin-top: 0.75rem;
   }
 `
 

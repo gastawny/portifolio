@@ -15,6 +15,15 @@
     "link": "https://github.com/gastawny/Projeto-ED-LAB/blob/main/ED/Projeto-ED.pdf",
     "githubLink": "https://github.com/gastawny/Projeto-ED-LAB/tree/main/ED",
     "type": "right",
-    "image": "StickerAlbum.jpg"
+    "image": "Calculator.png"
+  },
+  {
+    "title": "My Portifolio",
+    "technologies": ["React", "Typescript", "Sass", "Styled-components"],
+    "text": "Create a personal portfolio in order to show my development",
+    "link": "https://gastawny.vercel.app/",
+    "githubLink": "https://github.com/gastawny/portifolio",
+    "type": "left",
+    "image": "Calculator.png"
   }
 ]
