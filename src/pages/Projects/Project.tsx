@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components'
 import { BiLinkExternal } from 'react-icons/bi'
 import { BsGithub } from 'react-icons/bs'
 import { v4 as uuidv4 } from 'uuid'
+import useWidth from 'hooks/useWidth'
 
 interface ProjectProps {
   title: string
@@ -13,40 +14,43 @@ interface ProjectProps {
   image: string
 }
 
-const Project = ({ title, technologies, text, link, githubLink, type, image }: ProjectProps) => (
-  <ProjectContainer>
-    <BoxContainer type={type}>
-      <Box>
-        <Border>
-          <ContentContainer>
-            <TitleContainer>
-              <Title>{title}</Title>
-              <Links>
-                <a href={githubLink} target="_blank" rel="noreferrer">
-                  <BsGithub size={32} />
-                </a>
-                <a href={link} target="_blank" rel="noreferrer">
-                  <BiLinkExternal size={40} />
-                </a>
-              </Links>
-            </TitleContainer>
-            <Technologies>
-              {technologies.map((technology) => (
-                <Technology key={uuidv4()}>
-                  <img src={`assets/technologies/${technology}.svg`} />
-                  <h4>{technology}</h4>
-                </Technology>
-              ))}
-            </Technologies>
-            <Text>{text}</Text>
-          </ContentContainer>
-        </Border>
-      </Box>
-    </BoxContainer>
-    <ProjectImage src={`assets/images/${image}`} />
-  </ProjectContainer>
-)
+const Project = ({ title, technologies, text, link, githubLink, type, image }: ProjectProps) => {
+  const { widthConst } = useWidth()
 
+  return (
+    <ProjectContainer>
+      <BoxContainer type={type}>
+        <Box>
+          <Border>
+            <ContentContainer>
+              <TitleContainer>
+                <Title>{title}</Title>
+                <Links>
+                  <a href={githubLink} target="_blank" rel="noreferrer">
+                    <BsGithub size={32 * widthConst} />
+                  </a>
+                  <a href={link} target="_blank" rel="noreferrer">
+                    <BiLinkExternal size={40 * widthConst} />
+                  </a>
+                </Links>
+              </TitleContainer>
+              <Technologies>
+                {technologies.map((technology) => (
+                  <Technology key={uuidv4()}>
+                    <img src={`assets/technologies/${technology}.svg`} />
+                    <h4>{technology}</h4>
+                  </Technology>
+                ))}
+              </Technologies>
+              <Text>{text}</Text>
+            </ContentContainer>
+          </Border>
+        </Box>
+      </BoxContainer>
+      <ProjectImage src={`assets/images/${image}`} />
+    </ProjectContainer>
+  )
+}
 const animateProject = keyframes`
   0%{
     transform: rotate(0deg);
@@ -58,28 +62,29 @@ const animateProject = keyframes`
 
 const ProjectContainer = styled.div`
   position: relative;
-  display: flex;
-  justify-content: center;
-  height: 32rem;
+  width: 80vw;
 `
 
 const ProjectImage = styled.img`
-  height: 100%;
+  width: 80%;
   border-radius: 20px;
+  margin-left: 10%;
 `
 
 const BoxContainer = styled.div<{ type: string }>`
   position: absolute;
-  top: 9rem;
-  left: ${({ type }) => (type === 'left' ? '-15rem' : 'auto')};
-  right: ${({ type }) => (type === 'right' ? '-15rem' : 'auto')};
+  top: 32%;
+  left: ${({ type }) => (type === 'left' ? '-5%' : 'auto')};
+  right: ${({ type }) => (type === 'right' ? '-5%' : 'auto')};
   z-index: 2;
+  width: 36%;
+  height: 36%;
 `
 
 const Box = styled.div`
   position: relative;
-  width: 30rem;
-  height: 14rem;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 1.25rem;
   display: flex;
@@ -90,8 +95,8 @@ const Box = styled.div`
   &::before {
     content: '';
     position: absolute;
-    width: 32.8rem;
-    height: 32.8rem;
+    width: 180%;
+    height: 260%;
     background-image: conic-gradient(transparent, transparent, transparent, var(--blue));
     animation: ${animateProject} 4s linear infinite;
   }
@@ -99,8 +104,8 @@ const Box = styled.div`
   &::after {
     content: '';
     position: absolute;
-    width: 32.8rem;
-    height: 32.8rem;
+    width: 180%;
+    height: 260%;
     background-image: conic-gradient(transparent, transparent, transparent, var(--purple));
     animation: ${animateProject} 4s linear infinite;
     animation-delay: -2s;
@@ -114,6 +119,10 @@ const Border = styled.span`
   background: var(--background-color-mixed);
   padding: 1rem;
   z-index: 1;
+
+  @media screen and (max-width: 1366px) {
+    padding: 0.8rem;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -133,6 +142,11 @@ const Title = styled.h2`
   font-size: 2.4rem;
   font-weight: 600;
   letter-spacing: 0.24rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
 `
 
 const linkAnimation = keyframes`
@@ -159,6 +173,10 @@ const Links = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 1366px) {
+    width: 4rem;
+  }
+
   svg {
     color: var(--purple);
 
@@ -176,6 +194,10 @@ const Links = styled.div`
 const Technologies = styled.div`
   display: flex;
   gap: 0.5rem;
+
+  @media screen and (max-width: 1366px) {
+    gap: 0.35rem;
+  }
 `
 
 const Technology = styled.div`
@@ -190,9 +212,19 @@ const Technology = styled.div`
   background: #573aff26;
   padding: 0 0.5rem;
 
+  @media screen and (max-width: 1366px) {
+    height: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+
   img {
     width: 1.4rem;
     height: 1.4rem;
+
+    @media screen and (max-width: 1366px) {
+      width: 1.16rem;
+      height: 1.16rem;
+    }
   }
 
   h4 {
@@ -200,6 +232,10 @@ const Technology = styled.div`
     font-weight: 500;
     font-size: 1rem;
     letter-spacing: 0.05rem;
+
+    @media screen and (max-width: 1366px) {
+      font-size: 0.86rem;
+    }
   }
 `
 
@@ -208,6 +244,11 @@ const Text = styled.p`
   font-size: 1.2rem;
   letter-spacing: 0.08rem;
   line-height: 1.4rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
 `
 
 export default Project
