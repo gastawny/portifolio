@@ -15,7 +15,16 @@
     "link": "https://github.com/gastawny/Projeto-ED-LAB/blob/main/ED/Projeto-ED.pdf",
     "githubLink": "https://github.com/gastawny/Projeto-ED-LAB/tree/main/ED",
     "type": "right",
-    "image": "Calculator.png"
+    "image": "StickerAlbum.png"
+  },
+  {
+    "title": "To Do",
+    "technologies": ["React", "CSS"],
+    "text": "A todo list to start practice with React.js",
+    "link": "https://todo-gastawny.vercel.app/",
+    "githubLink": "https://github.com/gastawny/todo-react",
+    "type": "left",
+    "image": "Todo.png"
   },
   {
     "title": "My Portifolio",
@@ -23,7 +32,7 @@
     "text": "Create a personal portfolio in order to show my development",
     "link": "https://gastawny.vercel.app/",
     "githubLink": "https://github.com/gastawny/portifolio",
-    "type": "left",
-    "image": "Calculator.png"
+    "type": "right",
+    "image": "Portifolio.png"
   }
 ]

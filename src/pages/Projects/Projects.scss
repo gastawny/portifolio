@@ -50,5 +50,11 @@
     gap: 8rem;
     flex-direction: column;
     margin-bottom: 5rem;
+
+    @media screen and (max-width: 1366px) {
+      margin-top: 4rem;
+      gap: 6rem;
+      margin-bottom: 3rem;
+    }
   }
 }

@@ -64,7 +64,7 @@ const animateProject = keyframes`
 
 const ProjectContainer = styled.div`
   position: relative;
-  width: 80vw;
+  width: 75vw;
 `
 
 /* eslint-disable */
