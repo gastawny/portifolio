@@ -30,7 +30,7 @@
     "title": "My Portifolio",
     "technologies": ["React", "TypeScript", "Sass", "Styled-components"],
     "text": "Create a personal portfolio in order to show my development",
-    "link": "https://gastawny.vercel.app/",
+    "link": "https://gastawny.com/",
     "githubLink": "https://github.com/gastawny/portifolio",
     "type": "right",
     "image": "Portifolio.png"
