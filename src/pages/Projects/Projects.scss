@@ -39,7 +39,7 @@
 
   .sub-title {
     color: $font-color;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.2rem;
     letter-spacing: 0.2rem;
   }
@@ -55,6 +55,57 @@
       margin-top: 4rem;
       gap: 6rem;
       margin-bottom: 3rem;
+    }
+  }
+
+  .repositories-title {
+    margin-top: 6rem;
+    margin-bottom: 1.8rem;
+    position: relative;
+    color: $font-color;
+    font-weight: 600;
+    font-size: 4.6rem;
+    letter-spacing: 0.34rem;
+
+    @media screen and (max-width: 1366px) {
+      margin-top: 4rem;
+      font-size: 4.2rem;
+      letter-spacing: 0.28rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      bottom: 0.6rem;
+      height: 1.8rem;
+      background: $purple;
+      width: 100%;
+      box-shadow: 0 0 0.8rem $purple, 0 0 2rem $purple;
+
+      @media screen and (max-width: 1366px) {
+        height: 1.4rem;
+      }
+    }
+  }
+
+  .repositories-sub-title {
+    color: $font-color;
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: 0.15rem;
+    margin-bottom: 4rem;
+  }
+
+  .repositories-container {
+    display: grid;
+    grid-template-columns: 34rem 34rem;
+    grid-template-rows: repeat(auto-fill, 6rem);
+    gap: 2rem;
+    margin-bottom: 5rem;
+
+    .repositorie {
+      width: 100%;
     }
   }
 }

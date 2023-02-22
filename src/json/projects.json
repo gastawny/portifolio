@@ -28,7 +28,7 @@
   },
   {
     "title": "My Portifolio",
-    "technologies": ["React", "Typescript", "Sass", "Styled-components"],
+    "technologies": ["React", "TypeScript", "Sass", "Styled-components"],
     "text": "Create a personal portfolio in order to show my development",
     "link": "https://gastawny.vercel.app/",
     "githubLink": "https://github.com/gastawny/portifolio",

@@ -3,6 +3,7 @@ import { BiLinkExternal } from 'react-icons/bi'
 import { BsGithub } from 'react-icons/bs'
 import { v4 as uuidv4 } from 'uuid'
 import useWidth from 'hooks/useWidth'
+import Technology from './Technology'
 
 interface ProjectProps {
   title: string
@@ -36,10 +37,7 @@ const Project = ({ title, technologies, text, link, githubLink, type, image }: P
               </TitleContainer>
               <Technologies>
                 {technologies.map((technology) => (
-                  <Technology key={uuidv4()}>
-                    <img src={`assets/technologies/${technology}.svg`} />
-                    <h4>{technology}</h4>
-                  </Technology>
+                  <Technology key={uuidv4()} technology={technology} />
                 ))}
               </Technologies>
               <Text>{text}</Text>
@@ -106,7 +104,7 @@ const Box = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 11.5rem;
+  min-height: 12rem;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 1.25rem;
   display: flex;
@@ -220,43 +218,6 @@ const Technologies = styled.div`
 
   @media screen and (max-width: 1366px) {
     gap: 0.35rem;
-  }
-`
-
-const Technology = styled.div`
-  display: flex;
-  width: auto;
-  height: 2rem;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  border-radius: 0.5rem;
-  background: #573aff26;
-  padding: 0 0.5rem;
-
-  @media screen and (max-width: 1366px) {
-    height: 1.62rem;
-  }
-
-  img {
-    width: 1.4rem;
-    height: 1.4rem;
-
-    @media screen and (max-width: 1366px) {
-      width: 1.12rem;
-      height: 1.12rem;
-    }
-  }
-
-  h4 {
-    color: #9c8aff;
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 0.05rem;
-
-    @media screen and (max-width: 1366px) {
-      font-size: 0.8rem;
-    }
   }
 `
 
