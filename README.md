@@ -1,5 +1,9 @@
 <h1 align="center">Personal Portfolio</h1>
 
+## :rocket: Link to portifolio
+
+[gastawny.com](https://gastawny.com)
+
 ## 💻 Project
 
 Create a personal portfolio in order to show my development. What was used in the structure of this portfolio:
@@ -17,8 +21,8 @@ Create a personal portfolio in order to show my development. What was used in th
 Make a clone of this repository and access the directory.
 
 ```bash
-# Instalando as dependências
+# Install the dependencies
 $ npm i
-# Executanto aplicação
+# Application execution
 $ npm start
 ```
