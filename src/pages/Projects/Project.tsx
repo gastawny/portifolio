@@ -16,10 +16,13 @@ interface ProjectProps {
 }
 
 const Project = ({ title, technologies, text, link, githubLink, type, image }: ProjectProps) => {
-  const { widthConst } = useWidth()
+  const { widthConst, layoutType } = useWidth()
 
   return (
     <ProjectContainer>
+      <Bg>
+        <ProjectImage src={`assets/images/${image}`} />
+      </Bg>
       <BoxContainer type={type}>
         <Box>
           <Border>
@@ -28,10 +31,10 @@ const Project = ({ title, technologies, text, link, githubLink, type, image }: P
                 <Title>{title}</Title>
                 <Links>
                   <a href={githubLink} target="_blank" rel="noreferrer">
-                    <BsGithub size={32 * widthConst} />
+                    <BsGithub size={32 * (layoutType !== 'mobile' ? widthConst : 0.8)} />
                   </a>
                   <a href={link} target="_blank" rel="noreferrer">
-                    <BiLinkExternal size={40 * widthConst} />
+                    <BiLinkExternal size={40 * (layoutType !== 'mobile' ? widthConst : 0.8)} />
                   </a>
                 </Links>
               </TitleContainer>
@@ -45,9 +48,6 @@ const Project = ({ title, technologies, text, link, githubLink, type, image }: P
           </Border>
         </Box>
       </BoxContainer>
-      <Bg>
-        <ProjectImage src={`assets/images/${image}`} />
-      </Bg>
     </ProjectContainer>
   )
 }
@@ -63,6 +63,14 @@ const animateProject = keyframes`
 const ProjectContainer = styled.div`
   position: relative;
   width: 75vw;
+
+  @media screen and (max-width: 500px) {
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `
 
 /* eslint-disable */
@@ -82,12 +90,23 @@ const Bg = styled.div`
   height: 70vh;
   border-radius: 20px;
   margin-left: 10%;
+
+  @media screen and (max-width: 500px) {
+    height: 35vh;
+    width: 90%;
+    margin-left: 0;
+    border-radius: 20px 20px 0 0;
+  }
 `
 /* eslint-enable */
 
 const ProjectImage = styled.img`
   width: 70%;
   border-radius: 20px;
+
+  @media screen and (max-width: 500px) {
+    width: 85%;
+  }
 `
 
 const BoxContainer = styled.div<{ type: string }>`
@@ -98,6 +117,11 @@ const BoxContainer = styled.div<{ type: string }>`
   z-index: 2;
   width: 36%;
   height: 36%;
+
+  @media screen and (max-width: 500px) {
+    position: static;
+    width: 90%;
+  }
 `
 
 const Box = styled.div`
@@ -111,6 +135,10 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  @media screen and (max-width: 500px) {
+    border-radius: 0 0 20px 20px;
+  }
 
   &::before {
     content: '';
@@ -143,6 +171,10 @@ const Border = styled.span`
   @media screen and (max-width: 1366px) {
     padding: 0.8rem;
   }
+
+  @media screen and (max-width: 500px) {
+    border-radius: 0 0 1rem 1rem;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -166,6 +198,11 @@ const Title = styled.h2`
   @media screen and (max-width: 1366px) {
     font-size: 2rem;
     letter-spacing: 0.2rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.6rem;
+    letter-spacing: 0.16rem;
   }
 `
 
@@ -231,6 +268,12 @@ const Text = styled.p`
   @media screen and (max-width: 1366px) {
     font-size: 1rem;
     line-height: 1.2rem;
+    margin-top: 0.75rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+    line-height: 1.1rem;
     margin-top: 0.75rem;
   }
 `

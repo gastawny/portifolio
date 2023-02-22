@@ -21,6 +21,11 @@
       letter-spacing: 0.36rem;
     }
 
+    @media screen and (max-width: 500px) {
+      font-size: 3.2rem;
+      letter-spacing: 0.3rem;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -34,6 +39,10 @@
       @media screen and (max-width: 1366px) {
         height: 1.8rem;
       }
+
+      @media screen and (max-width: 500px) {
+        height: 1rem;
+      }
     }
   }
 
@@ -42,6 +51,11 @@
     font-weight: 400;
     font-size: 1.2rem;
     letter-spacing: 0.2rem;
+
+    @media screen and (max-width: 1366px) {
+      font-size: 1.1rem;
+      letter-spacing: 0.1rem;
+    }
   }
 
   .projects-container {
@@ -55,6 +69,12 @@
       margin-top: 4rem;
       gap: 6rem;
       margin-bottom: 3rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      margin-top: 3rem;
+      gap: 4rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -73,6 +93,11 @@
       letter-spacing: 0.28rem;
     }
 
+    @media screen and (max-width: 500px) {
+      font-size: 2.6rem;
+      letter-spacing: 0.2rem;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -86,6 +111,10 @@
       @media screen and (max-width: 1366px) {
         height: 1.4rem;
       }
+
+      @media screen and (max-width: 500px) {
+        height: 0.8rem;
+      }
     }
   }
 
@@ -95,6 +124,15 @@
     font-size: 1.2rem;
     letter-spacing: 0.15rem;
     margin-bottom: 4rem;
+
+    @media screen and (max-width: 500px) {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      line-height: 1.2rem;
+      padding: 0 2rem;
+      margin-bottom: 3rem;
+    }
   }
 
   .repositories-container {
@@ -103,6 +141,13 @@
     grid-template-rows: repeat(auto-fill, 6rem);
     gap: 2rem;
     margin-bottom: 5rem;
+
+    @media screen and (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      width: 85vw;
+      margin-bottom: 4rem;
+    }
 
     .repositorie {
       width: 100%;

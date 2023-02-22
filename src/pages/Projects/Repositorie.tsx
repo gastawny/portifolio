@@ -2,8 +2,11 @@ import styled, { keyframes } from 'styled-components'
 import { BsGithub } from 'react-icons/bs'
 import { IRepositorie } from 'interfaces/Repositorie'
 import Technology from './Technology'
+import useWidth from 'hooks/useWidth'
 
 const Repositorie = ({ repo, technology, description, url }: IRepositorie) => {
+  const { layoutType } = useWidth()
+
   return (
     <RepositorieContainer>
       <TitleContainer>
@@ -12,7 +15,7 @@ const Repositorie = ({ repo, technology, description, url }: IRepositorie) => {
           <Technology technology={technology} />
         </div>
         <Link href={url} target="_blank" rel="noreferrer">
-          <BsGithub size={28} />
+          <BsGithub size={layoutType !== 'mobile' ? 28 : 36} />
         </Link>
       </TitleContainer>
       <Description>{description}</Description>
@@ -29,6 +32,11 @@ const RepositorieContainer = styled.div`
   background: #10131abb;
   height: 6rem;
   padding: 1rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 0.8rem;
+    height: 8rem;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -40,14 +48,25 @@ const TitleContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
   }
 `
 
 const Title = styled.h4`
   color: var(--font-color);
+  font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 0.2rem;
-  font-size: 1.8rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+  }
 `
 
 const linkAnimation = keyframes`
@@ -91,7 +110,11 @@ const Description = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 0.6rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.1rem;
+    letter-spacing: 0.08rem;
+  }
 `
 
 export default Repositorie
