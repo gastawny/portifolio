@@ -259,14 +259,18 @@
         font-weight: 600;
         color: $blue;
         line-height: 2.4rem;
+        font-family: $font-TradeMarker;
+        letter-spacing: 0.16rem;
 
         @media screen and (max-width: 1366px) {
           font-size: 2rem;
+          letter-spacing: 0.1rem;
           line-height: 1.92rem;
         }
 
         @media screen and (max-width: 500px) {
           font-size: 1.5rem;
+          letter-spacing: 0.08rem;
           line-height: 1.44rem;
         }
 

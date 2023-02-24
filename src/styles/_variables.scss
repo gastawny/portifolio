@@ -5,8 +5,14 @@
   src: url(../assets/fonts/Misteryzero-Regular.ttf) format('opentype');
 }
 
+@font-face {
+  font-family: 'Trademarker';
+  src: url(../assets/fonts/trademarker-light.otf) format('opentype');
+}
+
 $font: 'Poppins';
 $font-spooky: 'Mistery Zero';
+$font-TradeMarker: 'Trademarker';
 
 $background-color: #1a202b;
 $font-color: #fbfbfb;
