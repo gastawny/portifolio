@@ -1,8 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 @font-face {
   font-family: 'Mistery Zero';
   src: url(../assets/fonts/Misteryzero-Regular.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url(../assets/fonts/CascadiaCode/CascadiaCode-Light.woff2) format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url(../assets/fonts/CascadiaCode/CascadiaCode.woff2) format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url(../assets/fonts/CascadiaCode/CascadiaCode-SemiBold.woff2) format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url(../assets/fonts/CascadiaCode/CascadiaCode-Bold.woff2) format('opentype');
+  font-weight: 600;
 }
 
 @font-face {
@@ -10,7 +32,7 @@
   src: url(../assets/fonts/trademarker-light.otf) format('opentype');
 }
 
-$font: 'Poppins';
+$font: 'Cascadia Code';
 $font-spooky: 'Mistery Zero';
 $font-TradeMarker: 'Trademarker';
 

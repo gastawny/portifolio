@@ -36,7 +36,7 @@ const Photograph = () => {
               <h2>
                 Gabriel Stawny
                 <br />
-                <span>Dev</span>
+                <span>Full Stack Dev</span>
               </h2>
               <div className="medias">
                 <a onClick={() => discordClick()}>
