@@ -27,7 +27,6 @@ const Skills = () => {
     const intersectionObserver = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting) && !renderFlag) {
         setTimeout(() => setRenderFlag(true), 50)
-        console.log('asd')
       }
     })
 
