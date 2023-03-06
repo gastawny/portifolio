@@ -2,25 +2,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#0b5ec4",
-    "activityBar.background": "#0b5ec4",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#f768a8",
-    "activityBarBadge.foreground": "#15202b",
-    "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#0b5ec4",
-    "statusBar.background": "#084794",
-    "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#0b5ec4",
-    "statusBarItem.remoteBackground": "#084794",
-    "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#084794",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#08479499",
-    "titleBar.inactiveForeground": "#e7e7e799"
-  },
-  "peacock.color": "#084794"
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
