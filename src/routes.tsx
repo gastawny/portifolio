@@ -8,7 +8,7 @@ import { lazy } from 'react'
 
 const Admin = lazy(() => import('pages/Admin'))
 const Users = lazy(() => import('pages/Admin/users'))
-const Technologies = lazy(() => import('pages/Admin/technologies'))
+const Technologies = lazy(() => import('pages/Admin/Technologies/technologies'))
 
 const AppRoutes = () => {
   const location = useLocation()

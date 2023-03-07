@@ -1,9 +1,12 @@
-import ITechnology from 'interfaces/Technology'
-import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useEffect, useState } from 'react'
+import ITechnology from 'interfaces/Technology'
+import Modal from './modal'
 
 const Technologies = () => {
   const [technologies, setTechnologies] = useState<ITechnology[]>([])
+  const [modalVisibility, setModalVisibility] = useState(false)
+  const [technologyModal, setTechnologyModal] = useState<ITechnology | null>(null)
 
   useEffect(() => {
     fetch('http://api.gastawny.com/technologies')
@@ -12,21 +15,40 @@ const Technologies = () => {
   }, [])
 
   return (
-    <>
+    <div style={{ minHeight: '95vh' }}>
       <Title>Technologies</Title>
       {technologies.map((technology, index) => (
-        <Technology key={index}>
-          <div>
-            <h2>{technology.technology}</h2>
-            <h3>value: {technology.value}</h3>
-          </div>
-          <div>
-            <button>Update value</button>
-            <button>Remove</button>
-          </div>
-        </Technology>
+        <div key={index}>
+          <Technology>
+            <div>
+              <h2>{technology.technology}</h2>
+              <h3>value: {technology.value}</h3>
+            </div>
+            <div>
+              <button
+                onClick={() => {
+                  setTechnologyModal(technology)
+                  console.log(technology)
+                  setModalVisibility((actualModalVisibility) => !actualModalVisibility)
+                }}
+              >
+                Update
+              </button>
+              <button>Remove</button>
+            </div>
+          </Technology>
+        </div>
       ))}
-    </>
+      {technologyModal ? (
+        <Modal
+          {...technologyModal}
+          modalVisibility={modalVisibility}
+          setModal={() => setModalVisibility((actualModalVisibility) => !actualModalVisibility)}
+        />
+      ) : (
+        <></>
+      )}
+    </div>
   )
 }
 
