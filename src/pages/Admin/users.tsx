@@ -1,21 +1,31 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 
 const Users = () => {
+  const [auth, setAuth] = useState({ username: '', password: '', confirmPassword: '' })
+
+  const updateAuth = (key: string, event: React.ChangeEvent<HTMLInputElement>) => {
+    setAuth((currentAuth) => ({
+      ...currentAuth,
+      [key]: currentAuth + event.target.value,
+    }))
+  }
+
   return (
     <LoginContainer>
       <h1>Register new user</h1>
       <Login>
         <div>
           <label>Username</label>
-          <input type="text" />
+          <input type="text" onChange={(event) => updateAuth('username', event)} />
         </div>
         <div>
           <label>Password</label>
-          <input type="password" />
+          <input type="password" onChange={(event) => updateAuth('password', event)} />
         </div>
         <div>
           <label>Confirm Password</label>
-          <input type="password" />
+          <input type="password" onChange={(event) => updateAuth('confirmPassword', event)} />
         </div>
         <button type="submit">Register</button>
       </Login>
