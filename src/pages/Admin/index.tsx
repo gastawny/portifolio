@@ -4,12 +4,20 @@ import Cookies from 'universal-cookie'
 
 const Admin = () => {
   const [login, setLogin] = useState({ username: '', password: '' })
+  const [message, setMessage] = useState('')
 
   function updateLogin(key: string, event: React.ChangeEvent<HTMLInputElement>) {
     setLogin((currentLogin) => ({
       ...currentLogin,
       [key]: event.target.value,
     }))
+  }
+
+  const resultMessage = (currentMessage: string) => {
+    setMessage(currentMessage)
+    setTimeout(() => {
+      setMessage('')
+    }, 1200)
   }
 
   async function loginSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -23,8 +31,11 @@ const Admin = () => {
 
     const response = await fetch('https://api.gastawny.com/auth', requestOptions)
     const data = await response.json()
+    resultMessage(data.message)
 
-    if (!data?.token) return
+    setLogin({ username: '', password: '' })
+
+    if (data?.token === undefined) return
 
     const cookies = new Cookies()
     cookies.set(
@@ -40,16 +51,29 @@ const Admin = () => {
         <div>
           <label>
             Username
-            <input type="text" onChange={(event) => updateLogin('username', event)} />
+            <input
+              type="text"
+              value={login.username}
+              onChange={(event) => updateLogin('username', event)}
+            />
           </label>
           <label>
             Password
-            <input type="password" onChange={(event) => updateLogin('password', event)} />
+            <input
+              type="password"
+              value={login.password}
+              onChange={(event) => updateLogin('password', event)}
+            />
           </label>
         </div>
         <button type="submit" onClick={loginSubmit}>
           Login
         </button>
+        {message !== '' && (
+          <div className="message">
+            <h3>{message}</h3>
+          </div>
+        )}
       </Login>
     </LoginContainer>
   )
@@ -70,11 +94,27 @@ const Login = styled.form`
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  position: relative;
 
   div {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .message {
+    background: #10151e;
+    padding: 1rem;
+    border-radius: 15px;
+    position: absolute;
+    bottom: -6rem;
+    max-width: min-content;
+
+    h3 {
+      font-size: 2.4rem;
+      letter-spacing: 0.2rem;
+      text-align: center;
+    }
   }
 
   label {
