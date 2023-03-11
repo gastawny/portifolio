@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Cookies from 'universal-cookie'
 
 const Admin = () => {
   const [login, setLogin] = useState({ username: '', password: '' })
   const [message, setMessage] = useState('')
+  const [registered, setRegistered] = useState(false)
+  const navigate = useNavigate()
 
   function updateLogin(key: string, event: React.ChangeEvent<HTMLInputElement>) {
     setLogin((currentLogin) => ({
@@ -45,7 +48,21 @@ const Admin = () => {
     )
   }
 
-  return (
+  useEffect(() => {
+    const cookies = new Cookies()
+    const result = cookies.get('authorization')
+
+    if (result !== undefined) setRegistered(true)
+  }, [])
+
+  return registered ? (
+    <>
+      <RegisteredContainer>
+        <Button onClick={() => navigate('/admin/technologies')}>Update technologies</Button>
+        <Button onClick={() => navigate('/admin/users')}>Register new user</Button>
+      </RegisteredContainer>
+    </>
+  ) : (
     <LoginContainer>
       <Login>
         <div>
@@ -66,9 +83,9 @@ const Admin = () => {
             />
           </label>
         </div>
-        <button type="submit" onClick={loginSubmit}>
+        <Button type="submit" onClick={loginSubmit}>
           Login
-        </button>
+        </Button>
         {message !== '' && (
           <div className="message">
             <h3>{message}</h3>
@@ -80,6 +97,15 @@ const Admin = () => {
 }
 
 export default Admin
+
+const RegisteredContainer = styled.div`
+  height: 80vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+`
 
 const LoginContainer = styled.div`
   display: flex;
@@ -140,20 +166,19 @@ const Login = styled.form`
       outline: none;
     }
   }
+`
+const Button = styled.button`
+  font-size: 2rem;
+  padding: 1rem 5rem;
+  background: #10151e;
+  color: #fbfbfb;
+  letter-spacing: 0.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s;
 
-  button {
-    font-size: 2rem;
-    padding: 1rem 5rem;
-    background: #10151e;
-    color: #fbfbfb;
-    letter-spacing: 0.4rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: 0.5s;
-
-    &:hover {
-      background: #07090e;
-    }
+  &:hover {
+    background: #07090e;
   }
 `

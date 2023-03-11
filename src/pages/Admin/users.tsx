@@ -1,14 +1,39 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import Cookies from 'universal-cookie'
 
 const Users = () => {
   const [auth, setAuth] = useState({ username: '', password: '', confirmPassword: '' })
+  const [message, setMessage] = useState('')
 
   const updateAuth = (key: string, event: React.ChangeEvent<HTMLInputElement>) => {
     setAuth((currentAuth) => ({
       ...currentAuth,
-      [key]: currentAuth + event.target.value,
+      [key]: event.target.value,
     }))
+  }
+
+  const cookies = new Cookies()
+  const authorizationCookie = cookies.get('authorization')
+
+  if (authorizationCookie === undefined) return <></>
+
+  async function registerSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    event.preventDefault()
+
+    if (auth.password !== auth.confirmPassword) return setMessage('Different passwords')
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', authorization: authorizationCookie.key },
+      body: JSON.stringify({ username: auth.username, password: auth.password }),
+    }
+
+    const response = await fetch('https://api.gastawny.com/users', requestOptions)
+    const data = await response.json()
+    setMessage(data.message)
+
+    setAuth({ username: '', password: '', confirmPassword: '' })
   }
 
   return (
@@ -17,17 +42,36 @@ const Users = () => {
       <Login>
         <div>
           <label>Username</label>
-          <input type="text" onChange={(event) => updateAuth('username', event)} />
+          <input
+            type="text"
+            value={auth.username}
+            onChange={(event) => updateAuth('username', event)}
+          />
         </div>
         <div>
           <label>Password</label>
-          <input type="password" onChange={(event) => updateAuth('password', event)} />
+          <input
+            type="password"
+            value={auth.password}
+            onChange={(event) => updateAuth('password', event)}
+          />
         </div>
         <div>
           <label>Confirm Password</label>
-          <input type="password" onChange={(event) => updateAuth('confirmPassword', event)} />
+          <input
+            type="password"
+            value={auth.confirmPassword}
+            onChange={(event) => updateAuth('confirmPassword', event)}
+          />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" onClick={registerSubmit}>
+          Register
+        </button>
+        {message !== '' && (
+          <div className="message">
+            <h3>{message}</h3>
+          </div>
+        )}
       </Login>
     </LoginContainer>
   )

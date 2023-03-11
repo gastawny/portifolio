@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import ITechnology from 'interfaces/Technology'
+import Cookies from 'universal-cookie'
 import Modal from './modal'
 
 const Technologies = () => {
@@ -13,6 +14,11 @@ const Technologies = () => {
       .then((response) => response.json())
       .then((data) => setTechnologies(data))
   }, [])
+
+  const cookies = new Cookies()
+  const authorizationCookie = cookies.get('authorization')
+
+  if (authorizationCookie === undefined) return <></>
 
   return (
     <div style={{ minHeight: '95vh' }}>
