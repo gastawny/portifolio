@@ -5,10 +5,10 @@
   "jsxSingleQuote": false,
   "quoteProps": "as-needed",
   "singleQuote": true,
-  "semi": false,
   "printWidth": 100,
   "useTabs": false,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "semi": [true, "always", "ignore-bound-class-methods"]
 }

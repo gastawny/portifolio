@@ -1,16 +1,25 @@
+import useApi from 'hooks/useApi'
+import useCookies from 'hooks/useCookies'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import Cookies from 'universal-cookie'
 
 const Admin = () => {
-  const [login, setLogin] = useState({ username: '', password: '' })
+  const [loginData, setLoginData] = useState({ username: '', password: '' })
   const [message, setMessage] = useState('')
   const [registered, setRegistered] = useState(false)
   const navigate = useNavigate()
+  const { login } = useApi()
+  const {
+    getCookies: { responseCookies },
+  } = useCookies()
+
+  useEffect(() => {
+    if (responseCookies) setRegistered(true)
+  }, [])
 
   function updateLogin(key: string, event: React.ChangeEvent<HTMLInputElement>) {
-    setLogin((currentLogin) => ({
+    setLoginData((currentLogin) => ({
       ...currentLogin,
       [key]: event.target.value,
     }))
@@ -26,34 +35,12 @@ const Admin = () => {
   async function loginSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     event.preventDefault()
 
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: login.username, password: login.password }),
-    }
+    const data = await login(loginData)
 
-    const response = await fetch('https://api.gastawny.com/auth', requestOptions)
-    const data = await response.json()
-    resultMessage(data.message)
-
-    setLogin({ username: '', password: '' })
-
-    if (data?.token === undefined) return
-
-    const cookies = new Cookies()
-    cookies.set(
-      'authorization',
-      { key: data.token },
-      { path: '/admin', expires: new Date(Date.now() + 600000) }
-    )
+    resultMessage(data?.message)
+    setLoginData({ username: '', password: '' })
+    setRegistered(true)
   }
-
-  useEffect(() => {
-    const cookies = new Cookies()
-    const result = cookies.get('authorization')
-
-    if (result !== undefined) setRegistered(true)
-  }, [])
 
   return registered ? (
     <>
@@ -70,7 +57,7 @@ const Admin = () => {
             Username
             <input
               type="text"
-              value={login.username}
+              value={loginData.username}
               onChange={(event) => updateLogin('username', event)}
             />
           </label>
@@ -78,7 +65,7 @@ const Admin = () => {
             Password
             <input
               type="password"
-              value={login.password}
+              value={loginData.password}
               onChange={(event) => updateLogin('password', event)}
             />
           </label>

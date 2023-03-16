@@ -1,13 +1,9 @@
 import { IScroll } from 'interfaces/Scroll'
 import { createContext, ReactNode, useContext } from 'react'
 
-interface ScrollProps {
-  children: ReactNode
-}
-
 const ScrollContext = createContext<IScroll[]>([])
 
-export const ScrollProvider = ({ children }: ScrollProps) => {
+export const ScrollProvider = ({ children }: { children: ReactNode }) => {
   const breakpoints: IScroll[] = []
 
   return <ScrollContext.Provider value={breakpoints}>{children}</ScrollContext.Provider>
