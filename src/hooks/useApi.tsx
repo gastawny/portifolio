@@ -2,6 +2,10 @@ import ITechnology from 'interfaces/Technology'
 import useCookies from './useCookies'
 
 const useApi = () => {
+  const {
+    getCookies: { token },
+  } = useCookies()
+
   async function login(loginData: { username: string; password: string }) {
     const requestOptions = {
       method: 'POST',
@@ -36,10 +40,6 @@ const useApi = () => {
     fontSize,
     iconName,
   }: ITechnology) {
-    const {
-      getCookies: { token },
-    } = useCookies()
-
     const requestOptions = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', authorization: token },
@@ -49,7 +49,16 @@ const useApi = () => {
     await fetch(`https://api.gastawny.com/technologies/${technology}`, requestOptions)
   }
 
-  return { login, updateTechnology, getTechnologies }
+  async function deleteTechnology(technology: string) {
+    const requestOptions = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json', authorization: token },
+    }
+
+    await fetch(`https://api.gastawny.com/technologies/${technology}`, requestOptions)
+  }
+
+  return { login, updateTechnology, getTechnologies, deleteTechnology }
 }
 
 export default useApi

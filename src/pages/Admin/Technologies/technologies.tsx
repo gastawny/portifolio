@@ -11,7 +11,7 @@ const Technologies = () => {
   const [modalVisibility, setModalVisibility] = useState(false)
   const [technologyModal, setTechnologyModal] = useState<ITechnology | null>(null)
   const navigate = useNavigate()
-  const { getTechnologies } = useApi()
+  const { getTechnologies, deleteTechnology } = useApi()
   const {
     getCookies: { responseCookies },
   } = useCookies()
@@ -21,6 +21,7 @@ const Technologies = () => {
   }, [])
 
   useEffect(() => {
+    // prettier-ignore
     (async () => {
       setTechnologies(await getTechnologies())
     })()
@@ -45,7 +46,7 @@ const Technologies = () => {
               >
                 Update
               </button>
-              <button>Remove</button>
+              <button onClick={() => deleteTechnology(technology.technology)}>Remove</button>
             </div>
           </Technology>
         </div>
