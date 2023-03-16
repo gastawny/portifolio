@@ -1,29 +1,35 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import ITechnology from 'interfaces/Technology'
-import Cookies from 'universal-cookie'
 import Modal from './modal'
+import { useNavigate } from 'react-router-dom'
+import useCookies from 'hooks/useCookies'
+import useApi from 'hooks/useApi'
 
 const Technologies = () => {
   const [technologies, setTechnologies] = useState<ITechnology[]>([])
   const [modalVisibility, setModalVisibility] = useState(false)
   const [technologyModal, setTechnologyModal] = useState<ITechnology | null>(null)
+  const navigate = useNavigate()
+  const { getTechnologies } = useApi()
+  const {
+    getCookies: { responseCookies },
+  } = useCookies()
 
   useEffect(() => {
-    fetch('http://api.gastawny.com/technologies')
-      .then((response) => response.json())
-      .then((data) => setTechnologies(data))
+    if (!responseCookies) navigate('/admin')
   }, [])
 
-  const cookies = new Cookies()
-  const authorizationCookie = cookies.get('authorization')
-
-  if (authorizationCookie === undefined) return <></>
+  useEffect(() => {
+    (async () => {
+      setTechnologies(await getTechnologies())
+    })()
+  }, [modalVisibility === false])
 
   return (
     <div style={{ minHeight: '95vh' }}>
       <Title>Technologies</Title>
-      {technologies.map((technology, index) => (
+      {technologies.map((technology: ITechnology, index: number) => (
         <div key={index}>
           <Technology>
             <div>
@@ -34,8 +40,7 @@ const Technologies = () => {
               <button
                 onClick={() => {
                   setTechnologyModal(technology)
-                  console.log(technology)
-                  setModalVisibility((actualModalVisibility) => !actualModalVisibility)
+                  setModalVisibility(true)
                 }}
               >
                 Update
@@ -49,7 +54,7 @@ const Technologies = () => {
         <Modal
           {...technologyModal}
           modalVisibility={modalVisibility}
-          setModal={() => setModalVisibility((actualModalVisibility) => !actualModalVisibility)}
+          setModal={() => setModalVisibility(false)}
         />
       ) : (
         <></>

@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ITechnology from 'interfaces/Technology'
 import { AiOutlineClose } from 'react-icons/ai'
+import useApi from 'hooks/useApi'
 
 interface ModalProps extends ITechnology {
   modalVisibility: boolean
@@ -17,28 +18,47 @@ const Modal = ({
   iconSize,
   setModal,
 }: ModalProps) => {
-  const [TechValue, TechVetValue] = useState(value)
-  const [techIconSize, setTechIconSize] = useState<number>(iconSize)
+  const [techValue, setTechValue] = useState(value)
+  const [techIconSize, setTechIconSize] = useState(iconSize)
   const [techIconName, setTechIconName] = useState(iconName)
   const [techFontSize, setTechFontSize] = useState(fontSize)
+  const { updateTechnology } = useApi()
+
+  useEffect(() => {
+    setTechValue(value)
+    setTechIconSize(iconSize)
+    setTechIconName(iconName)
+    setTechFontSize(fontSize)
+  }, [modalVisibility === true])
 
   return (
     <ModalContainer style={{ display: modalVisibility ? 'flex' : 'none' }}>
-      <button className="update">Update</button>
-      <h2>{technology}</h2>
-      <button>
-        <AiOutlineClose size={50} color={'#FBFBFB'} onClick={setModal} />
+      <button
+        className="update"
+        onClick={() =>
+          updateTechnology({
+            technology,
+            value: techValue,
+            iconSize: techIconSize,
+            iconName: techIconName,
+            fontSize: techFontSize,
+          })
+        }
+      >
+        Update
       </button>
+      <h2>{technology}</h2>
+      <AiOutlineClose size={50} color={'#FBFBFB'} onClick={setModal} />
       <div>
         <h3>Value:</h3>
         <input
           type="range"
           min={0}
           max={100}
-          value={TechValue}
-          onInput={(e: any) => TechVetValue(e.target.value)} // eslint-disable-line
+          value={techValue}
+          onInput={(e: any) => setTechValue(e.target.value)} // eslint-disable-line
         />
-        <output style={{ color: '#FBFBFB' }}>{TechValue}</output>
+        <output style={{ color: '#FBFBFB' }}>{techValue}</output>
       </div>
       <div>
         <h3>Icon size:</h3>
@@ -64,7 +84,7 @@ const Modal = ({
           value={techFontSize * 10}
           onInput={(e: any) => setTechFontSize(e.target.value / 10)} // eslint-disable-line
         />
-        <output style={{ color: '#FBFBFB' }}>{fontSize}</output>
+        <output style={{ color: '#FBFBFB' }}>{techFontSize}</output>
       </div>
     </ModalContainer>
   )
@@ -88,11 +108,9 @@ const ModalContainer = styled.div`
     text-align: center;
   }
 
-  button {
-    background: transparent;
+  svg {
     cursor: pointer;
     padding: 0;
-    border: none;
     position: absolute;
     right: 2rem;
     top: 2rem;
@@ -108,6 +126,7 @@ const ModalContainer = styled.div`
     letter-spacing: 0.2rem;
     width: min-content;
     padding: 0.6rem 1.2rem;
+    cursor: pointer;
 
     &:hover {
       background: #2f2956;
@@ -122,7 +141,7 @@ const ModalContainer = styled.div`
   }
 
   input[type='range'] {
-    width: 92%;
+    width: 90%;
     margin-right: 1rem;
   }
 

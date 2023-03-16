@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import useCookies from 'hooks/useCookies'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import Cookies from 'universal-cookie'
 
 const Users = () => {
   const [auth, setAuth] = useState({ username: '', password: '', confirmPassword: '' })
   const [message, setMessage] = useState('')
+  const {
+    getCookies: { responseCookies },
+  } = useCookies()
+  const navigate = useNavigate()
 
   const updateAuth = (key: string, event: React.ChangeEvent<HTMLInputElement>) => {
     setAuth((currentAuth) => ({
@@ -13,10 +18,11 @@ const Users = () => {
     }))
   }
 
-  const cookies = new Cookies()
-  const authorizationCookie = cookies.get('authorization')
+  let authorizationCookie: any = undefined // eslint-disable-line
 
-  if (authorizationCookie === undefined) return <></>
+  useEffect(() => {
+    if (!responseCookies) navigate('/admin')
+  }, [])
 
   async function registerSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     event.preventDefault()
