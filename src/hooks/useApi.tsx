@@ -33,6 +33,22 @@ const useApi = () => {
     return data
   }
 
+  async function createTechnology({
+    technology,
+    value,
+    iconSize,
+    fontSize,
+    iconName,
+  }: ITechnology) {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', authorization: token },
+      body: JSON.stringify({ technology, value, iconSize, fontSize, iconName }),
+    }
+
+    await fetch('https://api.gastawny.com/technologies', requestOptions)
+  }
+
   async function updateTechnology({
     technology,
     value,
@@ -58,7 +74,7 @@ const useApi = () => {
     await fetch(`https://api.gastawny.com/technologies/${technology}`, requestOptions)
   }
 
-  return { login, updateTechnology, getTechnologies, deleteTechnology }
+  return { login, updateTechnology, getTechnologies, deleteTechnology, createTechnology }
 }
 
 export default useApi

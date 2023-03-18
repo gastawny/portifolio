@@ -7,9 +7,10 @@ import useApi from 'hooks/useApi'
 interface ModalProps extends ITechnology {
   modalVisibility: boolean
   setModal: () => void
+  setUpdateScreen: () => void
 }
 
-const Modal = ({
+const UpdateModal = ({
   technology,
   value,
   iconName,
@@ -17,6 +18,7 @@ const Modal = ({
   fontSize,
   iconSize,
   setModal,
+  setUpdateScreen,
 }: ModalProps) => {
   const [techValue, setTechValue] = useState(value)
   const [techIconSize, setTechIconSize] = useState(iconSize)
@@ -35,7 +37,7 @@ const Modal = ({
     <ModalContainer style={{ display: modalVisibility ? 'flex' : 'none' }}>
       <button
         className="update"
-        onClick={() =>
+        onClick={() => {
           updateTechnology({
             technology,
             value: techValue,
@@ -43,7 +45,8 @@ const Modal = ({
             iconName: techIconName,
             fontSize: techFontSize,
           })
-        }
+          setUpdateScreen()
+        }}
       >
         Update
       </button>
@@ -166,4 +169,4 @@ const ModalContainer = styled.div`
   }
 `
 
-export default Modal
+export default UpdateModal

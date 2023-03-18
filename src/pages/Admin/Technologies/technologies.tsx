@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import ITechnology from 'interfaces/Technology'
-import Modal from './modal'
+import UpdateModal from './updateModal'
 import { useNavigate } from 'react-router-dom'
 import useCookies from 'hooks/useCookies'
 import useApi from 'hooks/useApi'
+import CreateModal from './createModal'
 
 const Technologies = () => {
   const [technologies, setTechnologies] = useState<ITechnology[]>([])
-  const [modalVisibility, setModalVisibility] = useState(false)
+  const [modalVisibility, setModalVisibility] = useState({ update: false, create: false })
   const [technologyModal, setTechnologyModal] = useState<ITechnology | null>(null)
+  const [updateScreen, setUpdateScreen] = useState(false)
   const navigate = useNavigate()
   const { getTechnologies, deleteTechnology } = useApi()
   const {
@@ -23,9 +25,10 @@ const Technologies = () => {
   useEffect(() => {
     // prettier-ignore
     (async () => {
-      setTechnologies(await getTechnologies())
+      const newSetTechnologies = await getTechnologies()
+      setTechnologies(() => newSetTechnologies)
     })()
-  }, [modalVisibility === false])
+  }, [updateScreen])
 
   return (
     <div style={{ minHeight: '95vh' }}>
@@ -38,28 +41,66 @@ const Technologies = () => {
               <h3>value: {technology.value}</h3>
             </div>
             <div>
-              <button
+              <Button
                 onClick={() => {
                   setTechnologyModal(technology)
-                  setModalVisibility(true)
+                  setModalVisibility((currentVisibility) => ({
+                    ...currentVisibility,
+                    update: true,
+                  }))
                 }}
               >
                 Update
-              </button>
-              <button onClick={() => deleteTechnology(technology.technology)}>Remove</button>
+              </Button>
+              <Button
+                onClick={() => {
+                  deleteTechnology(technology.technology)
+                  setInterval(() => setUpdateScreen(!updateScreen), 500)
+                }}
+              >
+                Remove
+              </Button>
             </div>
           </Technology>
         </div>
       ))}
       {technologyModal ? (
-        <Modal
+        <UpdateModal
           {...technologyModal}
-          modalVisibility={modalVisibility}
-          setModal={() => setModalVisibility(false)}
+          modalVisibility={modalVisibility.update}
+          setModal={() =>
+            setModalVisibility((currentVisibility) => ({
+              ...currentVisibility,
+              update: false,
+            }))
+          }
+          setUpdateScreen={() => setInterval(() => setUpdateScreen(!updateScreen), 500)}
         />
       ) : (
         <></>
       )}
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
+        <Button
+          onClick={() =>
+            setModalVisibility((currentVisibility) => ({
+              ...currentVisibility,
+              create: true,
+            }))
+          }
+        >
+          Create new Technology
+        </Button>
+        <CreateModal
+          setUpdateScreen={() => setInterval(() => setUpdateScreen(!updateScreen), 500)}
+          modalVisibility={modalVisibility.create}
+          setModal={() =>
+            setModalVisibility((currentVisibility) => ({
+              ...currentVisibility,
+              create: false,
+            }))
+          }
+        />
+      </div>
     </div>
   )
 }
@@ -98,21 +139,21 @@ const Technology = styled.div`
   h3 {
     font-size: 1.5rem;
   }
+`
 
-  button {
-    font-size: 1.4rem;
-    padding: 0.8rem 1.2rem;
-    background: #03383d;
-    color: #fbfbfb;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: 0.3s;
+const Button = styled.button`
+  font-size: 1.4rem;
+  padding: 0.8rem 1.2rem;
+  background: #03383d;
+  color: #fbfbfb;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
 
-    &:hover {
-      background: #022123;
-    }
+  &:hover {
+    background: #022123;
   }
 `
 
