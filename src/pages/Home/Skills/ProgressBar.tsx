@@ -7,9 +7,10 @@ interface ProgressBarProps {
   progress: number
   children: ReactElement
   fontSize: number
+  iconSize: number
 }
 
-const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) => {
+const ProgressBar = ({ progress, children, fontSize, name, iconSize }: ProgressBarProps) => {
   const { widthConst, layoutType } = useWidth()
 
   return (
@@ -30,7 +31,7 @@ const ProgressBar = ({ progress, children, fontSize, name }: ProgressBarProps) =
             r={84 * (layoutType !== 'mobile' ? widthConst : 0.8)}
           ></CircleProgress>
         </CircleProgressContainer>
-        <Content>
+        <Content iconSize={iconSize * widthConst}>
           {children}
           <LanguageName fontSize={fontSize}>{name}</LanguageName>
         </Content>
@@ -135,20 +136,26 @@ const CircleProgress = styled.circle<{ progress: number }>`
   }
 `
 
-const Content = styled.div`
+const Content = styled.div<{ iconSize: number }>`
   position: absolute;
   inset: 0;
   display: flex;
   margin: 10% 0;
   justify-content: center;
   align-items: center;
+  gap: 0.28rem;
   flex-direction: column;
   animation: ${fadeIn} 1s linear forwards;
   opacity: 0;
   animation-delay: 2.2s;
+
+  img {
+    height: ${({ iconSize }) => iconSize}rem;
+  }
 `
 
 const LanguageName = styled.div<{ fontSize: number }>`
+  width: 72%;
   font-weight: 600;
   font-size: ${({ fontSize }) => fontSize}rem;
   text-align: center;

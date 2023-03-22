@@ -11,7 +11,7 @@ interface ModalProps {
 
 const CreateModal = ({ modalVisibility, setModal, setUpdateScreen }: ModalProps) => {
   const [value, setValue] = useState(0)
-  const [iconSize, setIconSize] = useState(25)
+  const [iconSize, setIconSize] = useState(0)
   const [fontSize, setFontSize] = useState(0)
   const [iconName, setIconName] = useState('')
   const [technology, setTechnology] = useState('')
@@ -19,7 +19,7 @@ const CreateModal = ({ modalVisibility, setModal, setUpdateScreen }: ModalProps)
 
   useEffect(() => {
     setValue(0)
-    setIconSize(25)
+    setIconSize(0)
     setFontSize(0)
     setIconName('')
     setTechnology('')
@@ -54,13 +54,13 @@ const CreateModal = ({ modalVisibility, setModal, setUpdateScreen }: ModalProps)
         <output style={{ color: '#FBFBFB' }}>{value}</output>
       </div>
       <div>
-        <h3>Icon size:</h3>
+        <h3>Icon size (rem):</h3>
         <input
           type="range"
-          min={25}
-          max={150}
-          value={iconSize}
-          onInput={(e: any) => setIconSize(e.target.value)} // eslint-disable-line
+          min={0}
+          max={100}
+          value={iconSize * 10}
+          onInput={(e: any) => setIconSize(e.target.value / 10)} // eslint-disable-line
         />
         <output style={{ color: '#FBFBFB' }}>{iconSize}</output>
       </div>

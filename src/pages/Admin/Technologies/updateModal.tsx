@@ -64,13 +64,13 @@ const UpdateModal = ({
         <output style={{ color: '#FBFBFB' }}>{techValue}</output>
       </div>
       <div>
-        <h3>Icon size:</h3>
+        <h3>Icon size (rem):</h3>
         <input
           type="range"
-          min={25}
-          max={150}
-          value={techIconSize}
-          onInput={(e: any) => setTechIconSize(e.target.value)} // eslint-disable-line
+          min={0}
+          max={100}
+          value={techIconSize * 10}
+          onInput={(e: any) => setTechIconSize(e.target.value / 10)} // eslint-disable-line
         />
         <output style={{ color: '#FBFBFB' }}>{techIconSize}</output>
       </div>

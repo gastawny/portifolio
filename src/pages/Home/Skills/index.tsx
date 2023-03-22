@@ -1,18 +1,19 @@
 import './Skills.scss'
 import ProgressBar from './ProgressBar'
-import { DiJava, DiReact, DiNodejsSmall, DiGit, DiMysql } from 'react-icons/di'
 import { FiBook } from 'react-icons/fi'
 import { FiArrowDownCircle } from 'react-icons/fi'
 import styled, { keyframes } from 'styled-components'
 import { useEffect, useRef, useState } from 'react'
 import { useScroll } from 'contexts/Scroll'
-import useWidth from 'hooks/useWidth'
+import useApi from 'hooks/useApi'
+import ITechnology from 'interfaces/Technology'
 
 const Skills = () => {
   const SkillsRef = useRef<HTMLElement>(null)
   const { setBreakpoints } = useScroll()
-  const { widthConst } = useWidth()
   const [renderFlag, setRenderFlag] = useState(false)
+  const { getTechnologies } = useApi()
+  const [technologies, setTechnologies] = useState<ITechnology[]>([])
 
   useEffect(
     () =>
@@ -24,14 +25,19 @@ const Skills = () => {
   )
 
   useEffect(() => {
+    // prettier-ignore
+    (async () => {
+      setTechnologies(await getTechnologies())
+    })()
+  }, [])
+
+  useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting) && !renderFlag) {
         setTimeout(() => setRenderFlag(true), 50)
       }
     })
-
     intersectionObserver.observe(SkillsRef.current!) // eslint-disable-line
-
     return () => intersectionObserver.disconnect()
   }, [renderFlag])
 
@@ -44,37 +50,17 @@ const Skills = () => {
       {renderFlag ? (
         <>
           <div className="Programing-languages">
-            <ProgressBar
-              fontSize={1.2}
-              progress={70}
-              name=<span>
-                React
-                <br />
-                Typescript
-              </span>
-            >
-              <DiReact size={90 * widthConst} color="var(--purple)" />
-            </ProgressBar>
-            <ProgressBar name="Java" fontSize={2.2} progress={30}>
-              <DiJava size={90 * widthConst} color="var(--purple)" />
-            </ProgressBar>
-            <ProgressBar name="MySQL" fontSize={1.8} progress={40}>
-              <DiMysql size={90 * widthConst} color="var(--purple)" />
-            </ProgressBar>
-            <ProgressBar name="Node.js" fontSize={1.6} progress={55}>
-              <DiNodejsSmall size={85 * widthConst} color="var(--purple)" />
-            </ProgressBar>
-            <ProgressBar
-              name=<span>
-                Git
-                <br />
-                Github
-              </span>
-              fontSize={1.4}
-              progress={85}
-            >
-              <DiGit size={85 * widthConst} color="var(--purple)" />
-            </ProgressBar>
+            {technologies.map((technology, index) => (
+              <ProgressBar
+                key={index}
+                name={technology.technology}
+                fontSize={technology.fontSize}
+                progress={technology.value}
+                iconSize={technology.iconSize}
+              >
+                <img src={`assets/technologies/${technology.iconName}.svg`} />
+              </ProgressBar>
+            ))}
           </div>
           <div className="sub-skills">
             <div className="language">
