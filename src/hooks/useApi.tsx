@@ -27,7 +27,7 @@ const useApi = () => {
   }
 
   async function getTechnologies() {
-    const response = await fetch('http://api.gastawny.com/technologies')
+    const response = await fetch('https://api.gastawny.com/technologies')
     const data: ITechnology[] = await response.json()
 
     return data
