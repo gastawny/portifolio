@@ -1,10 +1,12 @@
 import './Home.scss'
-import About from './About'
 import Photograph from './Photograph'
-import Skills from './Skills'
 import { ScrollProvider } from 'contexts/Scroll'
 import BackGroundSVG from 'components/BackgroundSVG'
 import { motion } from 'framer-motion'
+import { lazy } from 'react'
+
+const About = lazy(() => import('./About'))
+const Skills = lazy(() => import('./Skills'))
 
 const Home = () => (
   <ScrollProvider>

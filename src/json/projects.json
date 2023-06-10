@@ -3,7 +3,7 @@
     "title": "Calculator",
     "technologies": ["React", "Sass"],
     "text": "A simple calculator to learn react",
-    "link": "https://calculadora-gastawny.vercel.app/",
+    "link": "https://calculadora.gastawny.com",
     "githubLink": "https://github.com/gastawny/calculadora",
     "type": "left",
     "image": "Calculator.png"
@@ -21,7 +21,7 @@
     "title": "To Do",
     "technologies": ["React", "CSS"],
     "text": "A todo list to start practice with React.js",
-    "link": "https://todo-gastawny.vercel.app/",
+    "link": "https://todo.gastawny.com/",
     "githubLink": "https://github.com/gastawny/todo-react",
     "type": "left",
     "image": "Todo.png"

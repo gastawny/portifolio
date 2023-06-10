@@ -2,10 +2,12 @@ import { useLayoutEffect, useState, useEffect } from 'react'
 
 type layouttypeOptions = 'mobile' | 'smallDesktop' | 'largeDesktop'
 
+const initialValue = window.innerWidth <= 500 ? 'mobile' : 'smallDesktop'
+
 const useWidth = () => {
   const [size, setSize] = useState(0)
   const [widthConst, setWidthConst] = useState(1)
-  const [layoutType, setLayoutType] = useState<layouttypeOptions>('mobile')
+  const [layoutType, setLayoutType] = useState<layouttypeOptions>(initialValue)
 
   useLayoutEffect(() => {
     function updateSize() {

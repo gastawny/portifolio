@@ -1,5 +1,5 @@
 import './About.scss'
-import { ReactComponent as Avatar } from 'assets/avatar.svg'
+import { ReactComponent as Avatar } from 'assets/svgs/avatar.svg'
 import { useRef, useEffect } from 'react'
 import { useScroll } from 'contexts/Scroll'
 
