@@ -1,17 +1,21 @@
-import { useEffect, useState } from 'react'
-import SVG from './GeometricShapesSVG'
-import UpDown from './GeometricShapesSVG/Animations'
+'use client'
 
-const BackGroundSVG = () => {
+import { useEffect, useState } from 'react'
+import { GeometricShapesSVG as SVG } from './GeometricShapesSVG'
+import { UpDown } from './GeometricShapesSVG/Animations'
+
+const hiddenlowHeight = 1000
+const hiddenMediumHeight = 2000
+
+export function BackGroundSVG() {
   const [height, setHeight] = useState(0)
+
   useEffect(() => {
     setHeight(document.body.scrollHeight)
   }, [])
-  const hiddenlowHeight = 1000
-  const hiddenMediumHeight = 2000
 
-  return height ? (
-    <>
+  return (
+    <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
       <UpDown type="normal">
         <SVG icon="triangle" width={4 * 48} stroke left="30%" top="30%" />
         <SVG icon="hexa" width={4 * 48} stroke left="65%" top="95%" />
@@ -76,10 +80,6 @@ const BackGroundSVG = () => {
         <SVG icon="circle" width={4 * 6} left="4%" top="20%" />
         <SVG icon="circle" width={4 * 12} left="50%" top="60%" />
       </UpDown>
-    </>
-  ) : (
-    <></>
+    </div>
   )
 }
-
-export default BackGroundSVG
