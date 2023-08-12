@@ -57,7 +57,7 @@ const StyledButton = styled.button`
   transition: 0.5s;
   font-weight: 500;
   border: none;
-  font-family: var(--font-trademarker);
+  font-family: var(--font-cascadiaCode);
 
   &:hover {
     letter-spacing: 0.3rem;
