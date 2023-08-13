@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${CascadiaCode.variable} ${TradeMaker.variable}`}>
-      <body className="bg-bgColor font-cascadiaCode">
+      <body className="bg-bgColor font-cascadiaCode text-fontColor">
         <StyledComponentsRegistry>
           <div className="relative w-full min-h-screen overflow-hidden">
             <Header />

@@ -20,7 +20,7 @@ export function Root({ children, onSubmit, message }: IRootProps) {
               <input
                 type="submit"
                 value="Send"
-                className="py-2 px-7 2xl:px-8 tracking-wider text-lg 2xl:text-xl cursor-pointer bg-primaryExtraDark text-fontColor rounded-sm duration-300 ease-in-out hover:bg-primaryDark"
+                className="py-2 px-7 2xl:px-8 tracking-wider text-lg 2xl:text-xl cursor-pointer bg-primaryExtraDark rounded-sm duration-300 ease-in-out hover:bg-primaryDark"
               />
               <div className="text-secondary text-xl 2xl:text-2xl tracking-widest">{message}</div>
             </div>

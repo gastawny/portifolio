@@ -19,7 +19,7 @@ export function MenuLink({ href, children }: MenuLinkProps) {
   return (
     <li>
       <MenuLinkStyled
-        className="text-fontColor text-2xl tracking-widest font-medium relative z-10"
+        className="text-2xl tracking-widest font-medium relative z-10"
         href={href}
         path={path}
       >
