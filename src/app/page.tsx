@@ -1,9 +1,12 @@
-import { Button } from '@/components/Button'
+import Home from '@/screens/Home'
 
-export default function Home() {
+const HomePage = () => {
   return (
     <>
-      <Button>Click</Button>
+      {/* <Home.Photograph /> */}
+      <Home.Skills />
     </>
   )
 }
+
+export default HomePage
