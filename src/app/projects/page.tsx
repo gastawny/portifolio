@@ -1,6 +1,5 @@
-import Projects from '@/components/screens/Projects'
-import { GitHub, LinkExternal } from '@/components/svgs'
-import projects from '@/json/projects.json'
+import Projects from '@/screens/Projects'
+import projects from '@/utils/projects.json'
 
 export default function ProjectsPage() {
   return (

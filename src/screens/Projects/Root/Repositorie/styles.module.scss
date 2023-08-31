@@ -1,0 +1,32 @@
+.Link {
+  svg {
+    color: var(--secondary);
+
+    &:hover {
+      opacity: 1;
+      fill: var(--primary);
+
+      path {
+        animation: linkAnimation 3s ease alternate;
+      }
+    }
+  }
+}
+
+@keyframes linkAnimation {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+
+  25% {
+    stroke-width: 1;
+  }
+
+  60%,
+  100% {
+    stroke-width: 0.3;
+    stroke-dasharray: 100 1;
+  }
+}
