@@ -1,0 +1,47 @@
+.terminal {
+  position: relative;
+  overflow: hidden;
+  width: 55%;
+  border-radius: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.4); /* Define a cor de fundo com opacidade */
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 2rem;
+    background-color: var(--bgColorExtraDark);
+    opacity: 0.6;
+  }
+}
+
+.topBarButtons {
+  position: absolute;
+  height: 0.8rem;
+  width: 0.8rem;
+  background-color: #f56565;
+  border-radius: 50%;
+  top: 0.6rem;
+  left: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: #ed8936;
+    border-radius: 50%;
+    left: 1.25rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: #32cc77;
+    border-radius: 50%;
+    left: 2.5rem;
+  }
+}

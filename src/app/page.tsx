@@ -4,7 +4,8 @@ const HomePage = () => {
   return (
     <>
       {/* <Home.Photograph /> */}
-      <Home.Skills />
+      <Home.About />
+      {/* <Home.Skills /> */}
     </>
   )
 }

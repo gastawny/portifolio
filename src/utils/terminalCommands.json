@@ -1,0 +1,18 @@
+[
+  {
+    "title": "About-me",
+    "text": "Hi, I'm Gabriel Stawny, a software developer with focus on performance enhancement. Currently, I'm pursuing my Computer Science degree at the Federal Technological University of Paraná (UTFPR)."
+  },
+  {
+    "title": "Skills",
+    "text": "Skilled in full-stack development, crafting dynamic web apps, integrating databases and APIs."
+  },
+  {
+    "title": "Technologies",
+    "text": "Skilled in TypeScript, Next.js, and NestJS. Well-versed in data structures, with proficiency in low-level languages."
+  },
+  {
+    "title": "What-I-do",
+    "text": "What deeply intrigues me in focusing on performance optimization is its fusion of creativity and analytical thinking, yielding unmatched user experiences."
+  }
+]
