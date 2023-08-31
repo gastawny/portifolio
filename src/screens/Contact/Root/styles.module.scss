@@ -1,0 +1,47 @@
+.box {
+  position: relative;
+  width: 40%;
+  height: 85%;
+  background: #000;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @media screen and (max-width: 500px) {
+    width: 92%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, transparent, var(--primary));
+    transform-origin: bottom right;
+    animation: animateForm 6s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, transparent, var(--secondary));
+    transform-origin: bottom right;
+    animation: animateForm 6s linear infinite;
+    animation-delay: -3s;
+  }
+}
+
+@keyframes animateForm {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

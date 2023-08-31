@@ -1,6 +1,6 @@
 'use client'
 
-import Contact from '@/components/screens/Contact'
+import Contact from '@/screens/Contact'
 import { useState } from 'react'
 import emailjs from 'emailjs-com'
 
