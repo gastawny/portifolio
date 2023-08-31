@@ -6,6 +6,11 @@
   justify-content: center;
   align-items: center;
   transition: 0.5s;
+
+  @media screen and (max-width: 1366px) {
+    width: 6.8rem;
+    height: 6.8rem;
+  }
 }
 
 .box::before {
@@ -63,6 +68,13 @@
   width: 42px;
   height: 42px;
   opacity: 1;
+
+  @media screen and (max-width: 1366px) {
+    top: -20px;
+    left: 15px;
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .box span::after {
@@ -88,6 +100,13 @@
   height: 42px;
   width: 42px;
   opacity: 1;
+
+  @media screen and (max-width: 1366px) {
+    bottom: -10px;
+    right: -15px;
+    width: 32px;
+    height: 32px;
+  }
 }
 
 @keyframes animate {

@@ -1,4 +1,6 @@
-import { useLayoutEffect, useState } from 'react'
+'use client'
+
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { useThrottle } from './useThrottle'
 
 export function useWidth() {
@@ -6,10 +8,12 @@ export function useWidth() {
 
   const throttledSetSize = useThrottle(() => {
     setWidth(window.innerWidth)
-  }, 500)
+  }, 200)
 
   useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
+      setWidth(window.innerWidth)
+
       window.addEventListener('resize', throttledSetSize)
 
       return () => window.removeEventListener('resize', throttledSetSize)
@@ -18,9 +22,8 @@ export function useWidth() {
 
   return {
     layout: (() => {
-      const widthLayoutType = typeof window !== 'undefined' ? window.innerWidth : width
-      if (widthLayoutType > 1536) return '2xl'
-      else if (widthLayoutType >= 500) return 'xl'
+      if (width > 1536) return '2xl'
+      else if (width >= 500) return 'xl'
       else return 'sm'
     })(),
   }

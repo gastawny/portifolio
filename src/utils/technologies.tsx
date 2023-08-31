@@ -18,38 +18,40 @@ import {
   TypeScript,
 } from '@/components/svgs'
 
+const responsiveSize = { sm: '2.25rem', xl: '3rem', '2xl': '4rem' }
+
 export const technologies = [
   {
     name: 'Frontend',
     techs: [
       {
-        icon: <Nextjs responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Nextjs responsiveSize={responsiveSize} />,
         link: 'https://nextjs.org/',
         name: 'Next.js',
       },
 
       {
-        icon: <React responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <React responsiveSize={responsiveSize} />,
         link: 'https://reactjs.org/',
         name: 'React',
       },
       {
-        icon: <Sass responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Sass responsiveSize={responsiveSize} />,
         link: 'https://sass-lang.com/',
         name: 'Sass',
       },
       {
-        icon: <StyledComponents responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <StyledComponents responsiveSize={responsiveSize} />,
         link: 'https://styled-components.com/',
         name: 'Styled Components',
       },
       {
-        icon: <Tailwind responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Tailwind responsiveSize={responsiveSize} />,
         link: 'https://tailwindcss.com/',
         name: 'Tailwind',
       },
       {
-        icon: <JavaScript responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <JavaScript responsiveSize={responsiveSize} />,
         link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
         name: 'JavaScript',
       },
@@ -59,37 +61,37 @@ export const technologies = [
     name: 'Backend',
     techs: [
       {
-        icon: <TypeScript responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <TypeScript responsiveSize={responsiveSize} />,
         link: 'https://www.typescriptlang.org/',
         name: 'TypeScript',
       },
       {
-        icon: <Nestjs responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Nestjs responsiveSize={responsiveSize} />,
         link: 'https://nestjs.com/',
         name: 'Nestjs',
       },
       {
-        icon: <Nodejs responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Nodejs responsiveSize={responsiveSize} />,
         link: 'https://nodejs.org/',
         name: 'Node.js',
       },
       {
-        icon: <Rust responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Rust responsiveSize={responsiveSize} />,
         link: 'https://www.rust-lang.org/',
         name: 'Rust',
       },
       {
-        icon: <Golang responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Golang responsiveSize={responsiveSize} />,
         link: 'https://go.dev/',
         name: 'Go',
       },
       {
-        icon: <Spring responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Spring responsiveSize={responsiveSize} />,
         link: 'https://www.spring.io/',
         name: 'Spring',
       },
       {
-        icon: <Java responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Java responsiveSize={responsiveSize} />,
         link: 'https://www.java.com/',
         name: 'Java',
       },
@@ -99,22 +101,22 @@ export const technologies = [
     name: 'Database',
     techs: [
       {
-        icon: <MySQL responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <MySQL responsiveSize={responsiveSize} />,
         link: 'https://www.mysql.com/',
         name: 'MySQL',
       },
       {
-        icon: <Postgres responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Postgres responsiveSize={responsiveSize} />,
         link: 'https://www.postgresql.org/',
         name: 'Postgres',
       },
       {
-        icon: <MongoDB responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <MongoDB responsiveSize={responsiveSize} />,
         link: 'https://www.mongodb.com/',
         name: 'MongoDB',
       },
       {
-        icon: <Prisma responsiveSize={{ sm: '2.25rem', xl: '1.75rem', '2xl': '4rem' }} />,
+        icon: <Prisma responsiveSize={responsiveSize} />,
         link: 'https://www.prisma.io/',
         name: 'Prisma',
       },

@@ -5,11 +5,11 @@ import { technologies } from '@/utils/technologies'
 
 export function Skills() {
   return (
-    <section className="flex flex-col gap-20">
+    <section className="flex flex-col gap-8 2xl:gap-20">
       <Title className="absolute left-1/2 -translate-x-1/2">Skills</Title>
-      <div className="flex flex-col gap-16 items-center justify-center">
+      <div className="flex flex-col gap-10 items-center justify-center">
         {technologies.map((area) => (
-          <div className="flex flex-col md:flex-row gap-12 flex-wrap mx-auto items-center justify-center">
+          <div className="flex flex-col md:flex-row gap-9 flex-wrap mx-auto items-center justify-center">
             <h2 className={styles['tech-title']}>{area.name}</h2>
             {area.techs.map((technology, index) => (
               <Card key={index}>
