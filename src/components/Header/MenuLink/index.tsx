@@ -16,6 +16,7 @@ interface StyledProps {
 
 export function MenuLink({ href, children }: MenuLinkProps) {
   const path = usePathname()
+
   return (
     <li>
       <MenuLinkStyled
@@ -42,9 +43,10 @@ const textHighlight = css<StyledProps>`
   content: '';
   position: absolute;
   z-index: -1;
-  bottom: 0.2rem;
-  height: 0.8rem;
+  bottom: 0.15rem;
+  height: 0.75rem;
   background: ${({ href, path }) => (href === path ? 'var(--secondary)' : 'transparent')};
+  opacity: 0.3;
 `
 
 const animationOn = css`
@@ -57,15 +59,8 @@ const animationOff = css`
 
 const MenuLinkStyled = styled(Link)<StyledProps>`
   &:before {
-    box-shadow: ${({ href, path }) =>
-      href === path ? '0 0 .25rem var(--secondary), 0 0 1.25rem var(--secondary)' : 'none'};
-
     width: 100%;
     ${textHighlight}
-
-    @media screen and (max-width: 500px) {
-      box-shadow: none;
-    }
   }
 
   &:hover {
