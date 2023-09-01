@@ -6,9 +6,9 @@ export function Container({ children }: { children: React.ReactNode }) {
       <div className={styles['lines']}></div>
       <div className={styles['imgBx']}>
         <img src="/assets/images/photograph.png" />
-        <div className={styles['content']}>
-          <div className={styles['details']}>{children}</div>
-        </div>
+      </div>
+      <div className={styles['content']}>
+        <div className={styles['details']}>{children}</div>
       </div>
     </div>
   )
