@@ -19,7 +19,7 @@ const Bg = styled.div`
   border-radius: 20px;
   margin-left: 10%;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 768px) {
     height: 35vh;
     width: 90%;
     margin-left: 0;
@@ -36,7 +36,7 @@ const BoxContainer = styled.div<{ type: string }>`
   width: 36%;
   height: 36%;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 768px) {
     position: static;
     width: 90%;
     height: 100%;

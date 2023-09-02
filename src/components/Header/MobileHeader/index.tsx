@@ -19,9 +19,15 @@ export function MobileHeader() {
       {menu && (
         <Menu>
           <ul>
-            <MenuLink href="/">Portfolio</MenuLink>
-            <MenuLink href="/projects">Projects</MenuLink>
-            <MenuLink href="/contact">Contact</MenuLink>
+            <MenuLink onClick={() => setTimeout(() => setMenu(false), 200)} href="/">
+              Portfolio
+            </MenuLink>
+            <MenuLink onClick={() => setTimeout(() => setMenu(false), 200)} href="/projects">
+              Projects
+            </MenuLink>
+            <MenuLink onClick={() => setTimeout(() => setMenu(false), 200)} href="/contact">
+              Contact
+            </MenuLink>
           </ul>
         </Menu>
       )}

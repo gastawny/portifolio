@@ -7,6 +7,7 @@ import Link from 'next/link'
 interface MenuLinkProps {
   href: string
   children: string
+  onClick?: () => void
 }
 
 interface StyledProps {
@@ -14,7 +15,7 @@ interface StyledProps {
   path: string
 }
 
-export function MenuLink({ href, children }: MenuLinkProps) {
+export function MenuLink({ href, children, onClick }: MenuLinkProps) {
   const path = usePathname()
 
   return (
@@ -23,6 +24,7 @@ export function MenuLink({ href, children }: MenuLinkProps) {
         className="text-2xl tracking-widest font-medium relative z-10"
         href={href}
         path={path}
+        onClick={onClick}
       >
         {children}
       </MenuLinkStyled>
