@@ -9,7 +9,7 @@ export function MobileAbout() {
           <div className="flex flex-col mt-4 p-4 gap-4">
             <div className="flex flex-col md:gap-2 2xl:gap-4">
               {terminalCommands[0].commands.map((command, index) => (
-                <Terminal.Command key={index} title={command.title}>
+                <Terminal.Command key={command.title} title={command.title}>
                   {command.text}
                 </Terminal.Command>
               ))}
@@ -22,7 +22,7 @@ export function MobileAbout() {
           <div className="flex flex-col mt-4 p-4 gap-4">
             <div className="flex flex-col md:gap-2 2xl:gap-4">
               {terminalCommands[1].commands.map((command, index) => (
-                <Terminal.Command key={index} title={command.title}>
+                <Terminal.Command key={command.title} title={command.title}>
                   {command.text}
                 </Terminal.Command>
               ))}
