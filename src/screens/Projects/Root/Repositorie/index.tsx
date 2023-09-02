@@ -9,9 +9,9 @@ export function Repositorie({ repo, technology, description, url }: IRepositorie
     <div className="flex flex-col justify-around rounded-xl w-full bg-bgColorDark/80 h-32 md:h-24 p-3 md:p-4">
       <div className="flex items-center justify-between">
         <div className="flex flex-col md:flex-row items-baseline md:items-center gap-2 md:gap-4">
-          <h3 className="text-fontColor font-medium text-2xl md:text-[1.8rem] tracking-wider md:tracking-widest">
+          <h2 className="text-fontColor font-medium text-2xl md:text-[1.8rem] tracking-wider md:tracking-widest">
             {repo}
-          </h3>
+          </h2>
           {technology && <Technology technology={technology} />}
         </div>
         <Link

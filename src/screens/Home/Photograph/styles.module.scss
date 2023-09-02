@@ -85,6 +85,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .buttons {
+    display: none;
+  }
+}
+
 @keyframes svg-animation {
   0% {
     stroke-width: 0;

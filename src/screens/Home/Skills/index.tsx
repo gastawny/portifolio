@@ -5,7 +5,7 @@ import { technologies } from '@/utils/technologies'
 
 export function Skills() {
   return (
-    <section className="flex flex-col gap-8 2xl:gap-20">
+    <section id="Skills" className="flex flex-col gap-4 2xl:gap-20">
       <Title className="absolute left-1/2 -translate-x-1/2">Skills</Title>
       <div className="flex flex-col gap-10 items-center justify-center">
         {technologies.map((area) => (
@@ -13,7 +13,13 @@ export function Skills() {
             <h2 className={styles['tech-title']}>{area.name}</h2>
             {area.techs.map((technology, index) => (
               <Card key={index}>
-                <a className={styles['link']} target="_blank" href={technology.link}>
+                <a
+                  className={styles['link']}
+                  rel="noreferrer"
+                  aria-label={`link to ${technology.name}`}
+                  target="_blank"
+                  href={technology.link}
+                >
                   <div className="flex flex-col gap-1">
                     {technology.icon}
                     <p>{technology.name}</p>

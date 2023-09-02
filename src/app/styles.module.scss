@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 85vh 105vh 90vh;
+  grid-template-rows: 85vh 105vh 92vh;
   grid-template-areas: 'Photograph' 'About' 'Skills';
 
   @media screen and (max-width: 500px) {

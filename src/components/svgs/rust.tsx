@@ -6,7 +6,7 @@ export function Rust({ responsiveSize, ...props }: ISVG) {
       {...props}
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       version="1.1"
       viewBox="0 0 27 32"
       height="1em"

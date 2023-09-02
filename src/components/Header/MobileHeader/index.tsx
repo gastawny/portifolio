@@ -15,9 +15,7 @@ export function MobileHeader() {
   return (
     <HeaderStyled>
       <img src="/assets/svgs/logo.svg" alt="Gabriel Stawny" className="w-52" />
-      <ModalButton active={!menu} onClick={() => setMenu(!menu)}>
-        {menu ? closeIcon : openIcon}
-      </ModalButton>
+      <ModalButton onClick={() => setMenu(!menu)}>{menu ? closeIcon : openIcon}</ModalButton>
       {menu && (
         <Menu>
           <ul>
@@ -45,7 +43,7 @@ const HeaderStyled = styled.div`
   }
 `
 
-const ModalButton = styled.div<{ active: boolean }>`
+const ModalButton = styled.div`
   background: transparent;
   border: none;
 `

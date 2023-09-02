@@ -1,3 +1,4 @@
+import styles from './styles.module.scss'
 import { icons } from './icons'
 
 type IconType = 'triangle' | 'circle' | 'hexa' | 'box'
@@ -10,7 +11,8 @@ interface SVGProps {
   zIndex?: number
   left: string
   top: string
-  hidden?: boolean
+  hiddenlowHeight?: boolean
+  hiddenMediumHeight?: boolean
 }
 
 export function GeometricShapesSVG({
@@ -34,23 +36,27 @@ export function GeometricShapesSVG({
   icon,
   left,
   top,
-  hidden,
+  hiddenlowHeight,
+  hiddenMediumHeight,
 }: SVGProps) {
+  const isHidden = hiddenMediumHeight
+    ? styles['hiddenMediumHeight']
+    : hiddenlowHeight
+    ? styles['hiddenlowHeight']
+    : ''
+
   return (
     <svg
       style={{
-        position: 'absolute',
         stroke: stroke ? 'currentColor' : 'none',
         fill: stroke ? 'none' : 'currentColor',
-        display: hidden ? 'none' : 'block',
-        overflow: 'visible',
         color: `${color}`,
         zIndex,
         width,
         left,
         top,
-        filter: 'blur(8px) saturate(160%)',
       }}
+      className={styles['svg'] + ' ' + isHidden}
       viewBox={icons[icon].viewBox}
     >
       {icons[icon].shape}
