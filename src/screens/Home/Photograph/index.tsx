@@ -3,26 +3,24 @@
 import styles from './styles.module.scss'
 import { Button } from '@/components/Button'
 import { Discord, GitHub, Linkedin, Telegram, WhatsApp } from '@/components/svgs'
-// import { useScroll } from '@/hooks/useScroll'
 import { useState } from 'react'
 import { Container } from './Container'
 
+function scrollToLocal(id: string) {
+  const element = document.getElementById(id)
+  window.scrollTo({
+    top: element?.offsetTop,
+    behavior: 'smooth',
+  })
+}
+
 export function Photograph() {
-  // const { scrollToLocal } = useScroll()
   const [discord, setDiscord] = useState(false)
 
   function discordClick() {
     navigator.clipboard.writeText('Gastawny')
     setDiscord(true)
     setTimeout(() => setDiscord(false), 1500)
-  }
-
-  function scrollToLocal(id: string) {
-    const element = document.getElementById(id)
-    window.scrollTo({
-      top: element?.offsetTop,
-      behavior: 'smooth',
-    })
   }
 
   return (
@@ -79,13 +77,13 @@ export function Photograph() {
           <div className={'flex justify-between gap-4 sm:gap-6 2xl:gap-8 ' + styles['buttons']}>
             <Button
               onClick={() => scrollToLocal('About')}
-              className="w-[1.2rem] xl:w-[9.6rem] 2xl:w-[12rem] text-[1.2rem] xl:text-[1.28rem] 2xl:text-[1.6rem]"
+              className="w-[8rem] xl:w-[9.6rem] 2xl:w-[12rem] text-[1.2rem] xl:text-[1.28rem] 2xl:text-[1.6rem]"
             >
               About
             </Button>
             <Button
               onClick={() => scrollToLocal('Skills')}
-              className="w-[1.2rem] xl:w-[9.6rem] 2xl:w-[12rem] text-[1.2rem] xl:text-[1.28rem] 2xl:text-[1.6rem]"
+              className="w-[8rem] xl:w-[9.6rem] 2xl:w-[12rem] text-[1.2rem] xl:text-[1.28rem] 2xl:text-[1.6rem]"
             >
               Skills
             </Button>

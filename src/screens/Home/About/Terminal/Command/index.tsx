@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 
 export function Command({ children, title }: { children: string[]; title: string }) {
   return (
-    <div className="tracking-wide lg:text-[0.95rem] 2xl:text-xl relative">
+    <div className="tracking-wide md:text-[0.95rem] 2xl:text-xl relative">
       <span className="text-zinc-500">{'> '}</span>
       <span className="text-primaryExtraDark font-medium">cat </span>
       <span className="text-primaryDark">{title}.txt</span>
@@ -21,7 +21,7 @@ export function Command({ children, title }: { children: string[]; title: string
       </div> */}
       <div>
         {children.length > 1 && <span className="text-zinc-200">{'['}</span>}
-        <div className="flex flex-col lg:gap-1 2xl:gap-2 lg:my-1 my-2">
+        <div className="flex flex-col md:gap-1 2xl:gap-2 md:my-1 my-2">
           {children.map((child, index) => (
             <p key={index} className="text-gray-400 font-normal">
               {'"' + child + '"' + (index < children.length - 1 ? ',' : '')}

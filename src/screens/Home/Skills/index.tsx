@@ -9,8 +9,8 @@ export function Skills() {
       <Title className="absolute left-1/2 -translate-x-1/2">Skills</Title>
       <div className="flex flex-col gap-10 items-center justify-center">
         {technologies.map((area) => (
-          <div className="flex flex-row p-4 md:p-0 gap-9 flex-wrap mx-auto items-center justify-center">
-            <div className="basis-full md:basis-auto  flex justify-center">
+          <div className="flex flex-row p-4 pt-0 md:p-0 gap-9 flex-wrap mx-auto items-center justify-center">
+            <div className="basis-full md:basis-auto flex justify-center">
               <h2 className={styles['tech-title']}>{area.name}</h2>
             </div>
             {area.techs.map((technology, index) => (
