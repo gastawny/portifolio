@@ -1,0 +1,26 @@
+.check {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--secondaryDark);
+  width: 1.2rem;
+  height: 1.2rem;
+  opacity: 0.8;
+  border-radius: 2px 4px 4px 2px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -0.52rem;
+    width: 0;
+    height: 0;
+    border-top: 0.6rem solid transparent;
+    border-bottom: 0.6rem solid transparent;
+    border-right: 0.6rem solid var(--secondaryDark);
+  }
+
+  svg {
+    margin-top: 0.25rem;
+    margin-left: 0.1rem;
+  }
+}

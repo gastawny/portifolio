@@ -1,7 +1,7 @@
 export interface IRepositorie {
   repo: string
-  technology: string
-  description: string
+  technology: string | null
+  description: string | null
   url: string
   pushed_at?: string
 }

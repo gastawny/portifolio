@@ -1,0 +1,38 @@
+.title {
+  width: max-content;
+  position: relative;
+  font-weight: 600;
+  font-size: 5rem;
+  letter-spacing: 0.5rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 4.2rem;
+    letter-spacing: 0.28rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 3.6rem;
+    letter-spacing: 0.2rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 1.5rem;
+    height: 2rem;
+    background: var(--primary);
+    width: 99%;
+    opacity: 0.1;
+
+    @media screen and (max-width: 1366px) {
+      height: 1.8rem;
+      bottom: 1.2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 1.6rem;
+      bottom: 1.2rem;
+    }
+  }
+}

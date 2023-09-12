@@ -1,18 +1,11 @@
-import { Outlet } from 'react-router-dom'
-import useWidth from 'hooks/useWidth'
-import MobileHeader from './mobileHeader'
-import DesktopHeader from './desktopHeader'
+import { DesktopHeader } from './DesktopHeader'
+import { MobileHeader } from './MobileHeader'
 
-const Header = () => {
-  const { layoutType } = useWidth()
-
+export function Header() {
   return (
-    <>
-      {layoutType === 'mobile' && <MobileHeader />}
-      {layoutType !== 'mobile' && <DesktopHeader />}
-      <Outlet />
-    </>
+    <header>
+      <DesktopHeader />
+      <MobileHeader />
+    </header>
   )
 }
-
-export default Header

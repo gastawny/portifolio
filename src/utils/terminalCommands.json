@@ -1,0 +1,50 @@
+[
+  {
+    "window": "Get to know me",
+    "commands": [
+      {
+        "title": "About-me",
+        "text": [
+          "Hi, I'm Gabriel Stawny, a software developer with focus on performance enhancement. Currently, I'm pursuing my Computer Science degree at the Federal Technological University of Paraná (UTFPR)."
+        ]
+      },
+      {
+        "title": "Adaptation",
+        "text": [
+          "Skilled in full stack development, crafting dynamic web apps, integrating databases and APIs."
+        ]
+      },
+      {
+        "title": "Tech-Skills",
+        "text": [
+          "Skilled in TypeScript, Next.js, and NestJS. Well-versed in data structures, with proficiency in low-level languages."
+        ]
+      },
+      {
+        "title": "Creative-Optimization",
+        "text": [
+          "What deeply intrigues me in focusing on performance optimization is its fusion of creativity and analytical thinking, yielding unmatched user experiences."
+        ]
+      }
+    ]
+  },
+  {
+    "window": "Experience",
+    "commands": [
+      {
+        "title": "Orion-Aerospace-Design",
+        "text": [
+          "May/23 - Present",
+          "I'm a full stack software developer at Orion Aerospace Design, a UTFPR voluntary service. We develop software for academics, social needs, and industry partnerships, with inputs from students and professors."
+        ]
+      },
+      {
+        "title": "Algorithm-Monitor",
+        "text": [
+          "Aug/22 - Jul/23",
+          "As an Algorithm Monitor, I significantly contributed to the university by helping peers understand complex computer science concepts, improving analytical skills, and enhancing communication. This experience also facilitated connections with outstanding professors."
+        ]
+      }
+    ]
+  }
+]

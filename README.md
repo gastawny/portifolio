@@ -8,12 +8,12 @@
 
 Create a personal portfolio in order to show my development. What was used in the structure of this portfolio:
 
+- [Next.js](https://nextjs.org/)
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 - [Sass](https://sass-lang.com/)
-- [React Router](https://reactrouter.com/en/main)
 - [Styled-Components](https://styled-components.com)
-- [React-icons](https://react-icons.github.io/react-icons)
 - [EmailJS](https://www.emailjs.com)
 
 ## 📥 Installation and execution
@@ -24,5 +24,5 @@ Make a clone of this repository and access the directory.
 # Install the dependencies
 $ npm i
 # Application execution
-$ npm start
+$ npm run dev
 ```
