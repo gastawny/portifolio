@@ -20,7 +20,7 @@ export function MobileHeader() {
         <Menu>
           <ul>
             <MenuLink onClick={() => setTimeout(() => setMenu(false), 200)} href="/">
-              Portfolio
+              Home
             </MenuLink>
             <MenuLink onClick={() => setTimeout(() => setMenu(false), 200)} href="/projects">
               Projects

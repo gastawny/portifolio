@@ -22,8 +22,8 @@ const config: Config = {
         bgColorExtraDark: '#0a0d11',
       },
       fontFamily: {
-        cascadiaCode: ['var(--font-cascadiaCode)'],
         tradeMarker: ['var(--font-trademarker)'],
+        ubuntu: ['var(--font-ubuntu)'],
       },
     },
   },

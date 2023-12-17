@@ -5,7 +5,7 @@ import { technologies } from '@/utils/technologies'
 
 export function Skills() {
   return (
-    <section id="Skills" className="flex flex-col gap-4 2xl:gap-20">
+    <section id="Skills" className="mt-6 flex flex-col gap-4 2xl:gap-20">
       <Title className="absolute left-1/2 -translate-x-1/2">Skills</Title>
       <div className="flex flex-col gap-10 items-center justify-center">
         {technologies.map((area) => (

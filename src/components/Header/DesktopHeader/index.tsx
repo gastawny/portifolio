@@ -6,7 +6,7 @@ export function DesktopHeader() {
       <img src="/assets/svgs/logo.svg" alt="Gabriel Stawny" className="w-72" />
       <nav>
         <ul className="flex items-center gap-7 2xl:gap-9">
-          <MenuLink href="/">Portfolio</MenuLink>
+          <MenuLink href="/">Home</MenuLink>
           <MenuLink href="/projects">Projects</MenuLink>
           <MenuLink href="/contact">Contact</MenuLink>
         </ul>
