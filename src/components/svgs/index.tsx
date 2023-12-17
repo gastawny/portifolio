@@ -24,6 +24,7 @@ import { MongoDB } from './mongodb'
 import { Rust } from './rust'
 import { Prisma } from './prisma'
 import { Spring } from './spring'
+import { Pause } from './pause'
 
 const DiscordWithSVG = svgHOC(Discord)
 const GitHubWithSVG = svgHOC(GitHub)
@@ -48,6 +49,7 @@ const MongoDBWithSVG = svgHOC(MongoDB)
 const RustWithSVG = svgHOC(Rust)
 const PrismaWithSVG = svgHOC(Prisma)
 const SpringWithSVG = svgHOC(Spring)
+const PauseWithSVG = svgHOC(Pause)
 
 export {
   DiscordWithSVG as Discord,
@@ -73,4 +75,5 @@ export {
   RustWithSVG as Rust,
   PrismaWithSVG as Prisma,
   SpringWithSVG as Spring,
+  PauseWithSVG as Pause,
 }

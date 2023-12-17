@@ -3,28 +3,13 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { BackGroundSVG } from '@/components/BackgroundSVG'
 import localFont from '@next/font/local'
+import { Ubuntu } from '@next/font/google'
 import StyledComponentsRegistry from '@/lib/registry'
 
-const CascadiaCode = localFont({
-  src: [
-    {
-      path: '../../public/fonts/CascadiaCode/CascadiaCode-Light.woff2',
-      weight: '300',
-    },
-    {
-      path: '../../public/fonts/CascadiaCode/CascadiaCode.woff2',
-      weight: '400',
-    },
-    {
-      path: '../../public/fonts/CascadiaCode/CascadiaCode-SemiBold.woff2',
-      weight: '500',
-    },
-    {
-      path: '../../public/fonts/CascadiaCode/CascadiaCode-Bold.woff2',
-      weight: '600',
-    },
-  ],
-  variable: '--font-cascadiaCode',
+const ubuntu = Ubuntu({
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-ubuntu',
+  subsets: ['latin'],
 })
 
 const TradeMaker = localFont({
@@ -43,8 +28,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${CascadiaCode.variable} ${TradeMaker.variable}`}>
-      <body className="bg-bgColor font-cascadiaCode text-fontColor">
+    <html lang="en" className={`${TradeMaker.variable} ${ubuntu.variable}`}>
+      <body className="bg-bgColor font-ubuntu text-fontColor">
         <StyledComponentsRegistry>
           <div className="relative w-full min-h-screen overflow-hidden">
             <Header />

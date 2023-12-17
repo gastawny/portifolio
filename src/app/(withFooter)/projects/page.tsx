@@ -3,7 +3,7 @@ import projects from '@/utils/projects.json'
 
 export default function ProjectsPage() {
   return (
-    <div>
+    <div className="mt-4">
       <Projects.Root>
         {projects.map((project) => (
           <Projects.Project

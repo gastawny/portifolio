@@ -61,6 +61,21 @@ export const technologies = [
     name: 'Backend',
     techs: [
       {
+        icon: <Spring responsiveSize={responsiveSize} />,
+        link: 'https://www.spring.io/',
+        name: 'Spring',
+      },
+      {
+        icon: <Java responsiveSize={responsiveSize} />,
+        link: 'https://www.java.com/',
+        name: 'Java',
+      },
+      {
+        icon: <Golang responsiveSize={responsiveSize} />,
+        link: 'https://go.dev/',
+        name: 'Go',
+      },
+      {
         icon: <TypeScript responsiveSize={responsiveSize} />,
         link: 'https://www.typescriptlang.org/',
         name: 'TypeScript',
@@ -74,26 +89,6 @@ export const technologies = [
         icon: <Nodejs responsiveSize={responsiveSize} />,
         link: 'https://nodejs.org/',
         name: 'Node.js',
-      },
-      {
-        icon: <Rust responsiveSize={responsiveSize} />,
-        link: 'https://www.rust-lang.org/',
-        name: 'Rust',
-      },
-      {
-        icon: <Golang responsiveSize={responsiveSize} />,
-        link: 'https://go.dev/',
-        name: 'Go',
-      },
-      {
-        icon: <Spring responsiveSize={responsiveSize} />,
-        link: 'https://www.spring.io/',
-        name: 'Spring',
-      },
-      {
-        icon: <Java responsiveSize={responsiveSize} />,
-        link: 'https://www.java.com/',
-        name: 'Java',
       },
     ],
   },

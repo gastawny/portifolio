@@ -1,8 +1,7 @@
 import styles from './styles.module.scss'
-
 import Home from '@/screens/Home'
 
-const HomePage = () => {
+export default async function HomePage() {
   return (
     <div className={styles['container']}>
       <Home.Photograph />
@@ -11,5 +10,3 @@ const HomePage = () => {
     </div>
   )
 }
-
-export default HomePage

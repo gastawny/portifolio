@@ -1,0 +1,49 @@
+.medias {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  svg {
+    opacity: 0.6;
+    width: 2rem;
+    height: auto;
+    cursor: pointer;
+    color: var(--secondary);
+
+    @media screen and (max-width: 1366px) {
+      width: 1.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 1.8rem;
+    }
+  }
+
+  a:hover svg {
+    opacity: 1;
+    fill: var(--primaryDark);
+
+    path {
+      animation: svg-animation 3s ease alternate;
+    }
+  }
+}
+
+@keyframes svg-animation {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+
+  25% {
+    stroke-width: 1;
+  }
+
+  60%,
+  100% {
+    stroke-width: 0.3;
+    stroke-dasharray: 100 1;
+  }
+}
