@@ -1,22 +1,22 @@
 import { ISong } from '@/interfaces/Song'
 import { SpotifyService } from '@/services/spotifyService'
 
-export async function GET() {
-  const res = await SpotifyService.getNowPlaying({ cache: 'no-store' })
+export async function GET(req: Request) {
+  const headers = req.headers
+
+  const res = await SpotifyService.getNowPlaying({ cache: 'no-cache' })
   if (res.status == 204 || res.status >= 400) return Response.json({ isPlaying: false })
 
-  const song = await res.json()
+  const { is_playing, item: song }: { is_playing: boolean; item: SpotifyApi.TrackObjectFull } =
+    await res.json()
 
-  const isPlaying = song.is_playing
-  const { name } = song.item
-  const artist = song.item.artists.map((_artist: any) => _artist.name).join(', ')
-  const albumImageUrl = song.item.album.images[2].url
-  const songUrl = song.item.external_urls.spotify
+  const { name } = song
+  const artist = song.artists.map((_artist: any) => _artist.name).join(', ')
+  const songUrl = song?.external_urls.spotify
 
   return Response.json({
-    isPlaying,
+    isPlaying: is_playing,
     song: {
-      albumImageUrl,
       artist,
       songUrl,
       name,

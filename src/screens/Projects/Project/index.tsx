@@ -62,7 +62,7 @@ export function Project({
               </div>
               <div className="flex flex-wrap gap-[0.35rem] 2xl:gap-2">
                 {technologies.map((technology) => (
-                  <Technology technology={technology} />
+                  <Technology key={title + technology} technology={technology} />
                 ))}
               </div>
               <p className={styles.text}>{text}</p>

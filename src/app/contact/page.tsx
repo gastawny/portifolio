@@ -31,23 +31,23 @@ export default function ContactPage() {
       name: form.name,
       email: form.email,
       phoneNumber: form.phoneNumber,
-      text: form.message,
+      message: form.message,
     }
 
-    setForm(() => initalValues)
-
     try {
-      emailjs.send(
+      await emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
         templateParams,
         process.env.NEXT_PUBLIC_PUBLIC_KEY as string
       )
       setSubmitMessage('Message Sent!')
+      setForm(() => initalValues)
     } catch (error) {
       setSubmitMessage('Message unset!')
+    } finally {
+      setTimeout(() => setSubmitMessage(''), 2000)
     }
-    setTimeout(() => setSubmitMessage(''), 2000)
   }
 
   return (

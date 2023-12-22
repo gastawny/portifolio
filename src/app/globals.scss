@@ -32,3 +32,8 @@
 ::-webkit-scrollbar-track {
   background: var(--bgColor);
 }
+
+::selection {
+  color: #fbfbfb;
+  background-color: mix(#45f3ff, #000, 20%);
+}

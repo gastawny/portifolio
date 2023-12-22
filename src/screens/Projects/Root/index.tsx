@@ -1,12 +1,14 @@
-import styles from './styles.module.scss'
+import { Endpoints } from '@octokit/types'
 import { Repositorie } from './Repositorie'
 import { IRepositorie } from '@/interfaces/Repositorie'
 import { Title } from '@/components/Title'
 
+type listUserReposParameters = Endpoints['GET /users/{username}/repos']['response']['data'][0]
+
 export async function Root({ children }: { children: React.ReactNode }) {
   const response = await fetch('https://api.github.com/users/gastawny/repos')
-  const data = await response.json()
-  const repositories: IRepositorie[] = data.map((repositorie: any) => ({
+  const data: listUserReposParameters[] = await response.json()
+  const repositories: IRepositorie[] = data.map((repositorie) => ({
     repo: repositorie.name,
     technology: repositorie.language,
     description: repositorie.description,
@@ -14,7 +16,8 @@ export async function Root({ children }: { children: React.ReactNode }) {
     pushed_at: repositorie.pushed_at,
   }))
   const orderedRepositories = repositories.sort(
-    (a: any, b: any) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
+    (a: IRepositorie, b: IRepositorie) =>
+      new Date(b.pushed_at ?? new Date()).getTime() - new Date(a.pushed_at ?? new Date()).getTime()
   )
 
   return (
@@ -32,7 +35,7 @@ export async function Root({ children }: { children: React.ReactNode }) {
         </p>
         <div className="flex flex-col w-[90%] mb-16 mx-auto gap-4 md:w-auto md:grid md:grid-cols-2 md:mx-[10%] md:2xl:mx-[20%] md:gap-6 2xl:gap-8">
           {orderedRepositories.map((repositorie) => (
-            <Repositorie {...repositorie} />
+            <Repositorie key={repositorie.repo} {...repositorie} />
           ))}
         </div>
       </section>

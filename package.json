@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@next/font": "^13.4.13",
+    "@octokit/types": "^12.4.0",
     "@types/node": "20.4.8",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
+    "@types/spotify-api": "^0.0.25",
     "autoprefixer": "10.4.14",
     "emailjs-com": "^3.2.0",
     "eslint": "8.46.0",
