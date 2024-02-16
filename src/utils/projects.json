@@ -1,12 +1,21 @@
 [
   {
-    "title": "Calculator",
-    "technologies": ["React", "Sass"],
-    "text": "A simple calculator to learn react",
-    "link": "https://calculadora.gastawny.com",
-    "githubLink": "https://github.com/gastawny/calculadora",
+    "title": "Syncgym API",
+    "technologies": ["Java", "Spring", "Mysql"],
+    "text": "Streamlined fitness data management solution",
+    "link": "https://github.com/syncgym/api",
+    "githubLink": "https://github.com/syncgym/api",
     "type": "left",
-    "image": "Calculator.webp"
+    "image": "Syncgym.webp"
+  },
+  {
+    "title": "Seisicite",
+    "technologies": ["React", "Tailwind", "Axios"],
+    "text": "OrionAerospace crafted a paper evaluation system at the UTFPR, enabling professors to assess student projects effortlessly",
+    "link": "https://avaliacao.seisicite.com.br/",
+    "githubLink": "https://github.com/gastawny/seisicite-front",
+    "type": "right",
+    "image": "Seisicite.webp"
   },
   {
     "title": "Sticker Album",
@@ -14,18 +23,10 @@
     "text": "Project carried out using linked lists, for the subject of Data Structure (illustrative image)",
     "link": "https://github.com/gastawny/Projeto-ED-LAB/blob/main/ED/Projeto-ED.pdf",
     "githubLink": "https://github.com/gastawny/Projeto-ED-LAB/tree/main/ED",
-    "type": "right",
+    "type": "left",
     "image": "StickerAlbum.webp"
   },
-  {
-    "title": "Seisicite",
-    "technologies": ["React", "Tailwind", "Axios"],
-    "text": "OrionAerospace crafted a paper evaluation system at the UTFPR, enabling professors to assess student projects effortlessly.",
-    "link": "https://avaliacao.seisicite.com.br/",
-    "githubLink": "https://github.com/gastawny/seisicite-front",
-    "type": "left",
-    "image": "Seisicite.webp"
-  },
+
   {
     "title": "My Portifolio",
     "technologies": ["Nextjs", "TypeScript", "Tailwind"],

@@ -4,17 +4,28 @@ import { IRepositorie } from '@/interfaces/Repositorie'
 import { Title } from '@/components/Title'
 
 type listUserReposParameters = Endpoints['GET /users/{username}/repos']['response']['data'][0]
+type listOrgReposParameters = Endpoints['GET /orgs/{org}/repos']['response']['data'][0]
 
 export async function Root({ children }: { children: React.ReactNode }) {
-  const response = await fetch('https://api.github.com/users/gastawny/repos')
-  const data: listUserReposParameters[] = await response.json()
-  const repositories: IRepositorie[] = data.map((repositorie) => ({
-    repo: repositorie.name,
-    technology: repositorie.language,
-    description: repositorie.description,
-    url: repositorie.html_url,
-    pushed_at: repositorie.pushed_at,
-  }))
+  const [userReposRes, orgReposRes] = await Promise.all([
+    fetch('https://api.github.com/users/gastawny/repos'),
+    fetch('https://api.github.com/orgs/syncgym/repos'),
+  ])
+  const userRepos: listUserReposParameters[] = await userReposRes.json()
+  const orgRepos: listOrgReposParameters[] = await orgReposRes.json()
+
+  function mapRepository(repositorie: listUserReposParameters | listOrgReposParameters) {
+    return {
+      repo: repositorie.name,
+      technology: repositorie.language,
+      description: repositorie.description,
+      url: repositorie.html_url,
+      pushed_at: repositorie.pushed_at,
+    }
+  }
+
+  const repositories = [...userRepos, ...orgRepos].map(mapRepository) satisfies IRepositorie[]
+
   const orderedRepositories = repositories.sort(
     (a: IRepositorie, b: IRepositorie) =>
       new Date(b.pushed_at ?? new Date()).getTime() - new Date(a.pushed_at ?? new Date()).getTime()
