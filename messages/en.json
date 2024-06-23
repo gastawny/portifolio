@@ -1,0 +1,61 @@
+{
+  "pages": {
+    "home": {
+      "about": {
+        "title": "📋 About me",
+        "link": "Read more",
+        "userDescription": "Hi, I'm Gabriel Stawny, a software developer with focus on performance enhancement. Currently, I'm pursuing my Computer Science degree at the Federal Technological University of Paraná (UTFPR)"
+      },
+      "experiences": {
+        "title": "💼 Experiences",
+        "link": "Hire me",
+        "downloadCv": "Download CV"
+      },
+      "education": {
+        "title": "🎓 Education"
+      },
+      "projects": {
+        "title": "📂 My projects",
+        "link": "See all"
+      }
+    },
+    "404": {
+      "image": "/images/gopher.png",
+      "alt": "A gopher golang mascot",
+      "message": "This was probably a mistake"
+    }
+  },
+  "config": {
+    "userData": {
+      "name": "Gabriel Stawny",
+      "role": "Full Stack developer",
+      "location": "Paraná, Brazil",
+      "interests": "Listen Music, Travel, Play Games and Watch Live Coding",
+      "avatarUrl": "/images/gs.jpg",
+      "avatarAltDescription": "A boy smiling",
+      "githubUrl": "https://github.com/gastawny",
+      "linkedinUrl": "https://www.linkedin.com/in/gabriel-stawny/?locale=en_US",
+      "cvUrl": "/documents/Gabriel Stawny - Fullstack Developer.pdf",
+      "company": {
+        "name": "Avalia Sistemas",
+        "url": "https://avalia.app/"
+      },
+      "languages": {
+        "english": {
+          "name": "English",
+          "proficiency": "Professional working proficiency"
+        },
+        "portuguese": {
+          "name": "Portuguese",
+          "proficiency": "Native proficiency"
+        }
+      }
+    },
+    "metadata": {
+      "description": "Hi, I'm Gabriel Stawny, a software developer with focus on performance enhancement. Currently, I'm pursuing my Computer Science degree at the Federal Technological University of Paraná (UTFPR)",
+      "opengraph": {
+        "title": "Gabriel Stawny"
+      }
+    }
+  }
+}

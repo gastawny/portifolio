@@ -1,0 +1,61 @@
+{
+  "pages": {
+    "home": {
+      "about": {
+        "title": "📋 Sobre mim",
+        "link": "Saber mais",
+        "userDescription": "Oi, meu nome é Gabriel Stawny, sou um desenvolvedor de software com foco em melhoria de desempenho. Atualmente, estou cursando meu bacharelado em Ciência da Computação na Universidade Tecnológica Federal do Paraná (UTFPR)"
+      },
+      "experiences": {
+        "title": "💼 Experiências",
+        "link": "Me contrate",
+        "downloadCv": "Baixar meu currículo"
+      },
+      "education": {
+        "title": "🎓 Educação"
+      },
+      "projects": {
+        "title": "📂 Meus projetos",
+        "link": "Ver todos"
+      }
+    },
+    "404": {
+      "image": "/images/gopher.png",
+      "alt": "Mascote gopher da linguagem golang",
+      "message": "Ops! Parece que você está perdido."
+    }
+  },
+  "config": {
+    "userData": {
+      "name": "Gabriel Stawny",
+      "role": "Desenvolvedor Full Stack",
+      "location": "Paraná, Brasil",
+      "interests": "Ouvir música, Viajar, Jogar videogames e Assistir Live Coding",
+      "avatarUrl": "/images/gs.jpg",
+      "avatarAltDescription": "Um piá sorrindo",
+      "githubUrl": "https://github.com/gastawny",
+      "linkedinUrl": "https://www.linkedin.com/in/gabriel-stawny/?locale=en_US",
+      "cvUrl": "/documents/Gabriel Stawny - Desenvolvedor Full Stack.pdf",
+      "company": {
+        "name": "Avalia Sistemas",
+        "url": "https://avalia.app/"
+      },
+      "languages": {
+        "english": {
+          "name": "Inglês",
+          "proficiency": "Proficiência profissional"
+        },
+        "portuguese": {
+          "name": "Português",
+          "proficiency": "Nativo"
+        }
+      }
+    },
+    "metadata": {
+      "description": "Oi, meu nome é Gabriel Stawny, sou um desenvolvedor de software com foco em melhoria de desempenho. Atualmente, estou cursando meu bacharelado em Ciência da Computação na Universidade Tecnológica Federal do Paraná (UTFPR)",
+      "opengraph": {
+        "title": "Gabriel Stawny"
+      }
+    }
+  }
+}
