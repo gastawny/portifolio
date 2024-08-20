@@ -5,7 +5,7 @@
   height: 19rem;
   transition: 0.5s;
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1536px) {
     width: 28rem;
     height: 15.2rem;
   }
@@ -18,7 +18,7 @@
   &:hover {
     height: 36rem;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       height: 28.8rem;
     }
 
@@ -30,7 +30,7 @@
       width: 20rem;
       height: 20rem;
 
-      @media screen and (max-width: 1366px) {
+      @media screen and (max-width: 1536px) {
         width: 16rem;
         height: 16rem;
       }
@@ -45,7 +45,7 @@
       transform: translateY(0px);
       padding: 3.2rem;
 
-      @media screen and (max-width: 1366px) {
+      @media screen and (max-width: 1536px) {
         padding: 2.56rem;
       }
 
@@ -84,7 +84,7 @@
     );
     animation: animate 4s linear infinite;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       width: 48rem;
       height: 9.6rem;
     }
@@ -101,7 +101,7 @@
     inset: 0.3rem;
     background: var(--bgColorDark);
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       inset: 0.24rem;
     }
 
@@ -127,7 +127,7 @@
     transition: 0.5s;
     transform: translateY(14.5rem);
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       padding: 3.6rem;
       transform: translateY(11.6rem);
     }
@@ -151,7 +151,7 @@
   z-index: 10;
   overflow: hidden;
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1536px) {
     top: -4rem;
     width: 12rem;
     height: 12rem;
@@ -180,7 +180,7 @@
     );
     animation: animate2 6s linear infinite;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       width: 40rem;
       height: 12rem;
     }
@@ -197,7 +197,7 @@
     inset: 0.3rem;
     background: var(--bgColorDark);
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       inset: 0.24rem;
     }
 
@@ -214,7 +214,7 @@
     width: calc(100% - 2rem);
     height: calc(100% - 2rem);
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       top: 0.8rem;
       left: 0.8rem;
       width: calc(100% - 1.6rem);

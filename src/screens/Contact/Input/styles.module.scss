@@ -4,7 +4,7 @@
   height: 2.5rem;
   color: var(--primaryDark);
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1536px) {
     height: 2rem;
   }
 
@@ -28,7 +28,7 @@
     color: var(--fontColor);
     letter-spacing: 0.1rem;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       font-size: 0.9rem;
       padding: 0 0.5rem;
     }
@@ -38,7 +38,7 @@
       top: -2.1875rem;
       left: -0.625rem;
 
-      @media screen and (max-width: 1366px) {
+      @media screen and (max-width: 1536px) {
         top: -2rem;
         left: -0.5rem;
       }
@@ -63,7 +63,7 @@
     transition: 0.5s;
     pointer-events: none;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       font-size: 1rem;
       padding: 0 0.5rem;
     }
@@ -87,7 +87,7 @@
     height: 6.25rem;
     padding: 0.625rem 0;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1536px) {
       height: 5rem;
       padding: 0.5rem 0;
     }
