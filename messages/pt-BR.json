@@ -4,12 +4,11 @@
       "about": {
         "title": "📋 Sobre mim",
         "link": "Saber mais",
-        "userDescription": "Oi, meu nome é Gabriel Stawny, sou um desenvolvedor de software com foco em melhoria de desempenho. Atualmente, estou cursando meu bacharelado em Ciência da Computação na Universidade Tecnológica Federal do Paraná (UTFPR)"
+        "userDescription": "Oi, sou um programador com experiência em diversas linguagens, forte capacidade analítica, facilidade de adaptação a novos desafios e foco em contribuir para projetos inovadores. Aqui você pode encontrar mais informações sobre <projects>meus projetos</projects>, as <technologies>tecnologias</technologies> que utilizo e meus dados de <contacts>contato</contacts>. Quem sabe nos vemos em alguma corrida de rua por aí 🏃‍♂️."
       },
       "experiences": {
         "title": "💼 Experiências",
-        "link": "Me contrate",
-        "downloadCv": "Baixar meu currículo"
+        "link": "Me contrate"
       },
       "education": {
         "title": "🎓 Educação"
@@ -17,6 +16,12 @@
       "projects": {
         "title": "📂 Meus projetos",
         "link": "Ver todos"
+      },
+      "technologies": {
+        "title": "💻 Tecnologias"
+      },
+      "contacts": {
+        "title": "📫 Contato"
       }
     },
     "404": {
@@ -35,7 +40,6 @@
       "avatarAltDescription": "Um piá sorrindo",
       "githubUrl": "https://github.com/gastawny",
       "linkedinUrl": "https://www.linkedin.com/in/gabriel-stawny/?locale=en_US",
-      "cvUrl": "/documents/Gabriel Stawny - Desenvolvedor Full Stack.pdf",
       "company": {
         "name": "Avalia Sistemas",
         "url": "https://avalia.app/"
@@ -52,9 +56,90 @@
       }
     },
     "metadata": {
-      "description": "Oi, meu nome é Gabriel Stawny, sou um desenvolvedor de software com foco em melhoria de desempenho. Atualmente, estou cursando meu bacharelado em Ciência da Computação na Universidade Tecnológica Federal do Paraná (UTFPR)",
+      "description": "Oi, sou um programador com experiência em diversas linguagens, forte capacidade analítica, facilidade de adaptação a novos desafios e foco em contribuir para projetos inovadores.Aqui você pode encontrar mais informações sobre meus projetos e tecnologias que eu uso.. Quem sabe nos vemos em alguma corrida de rua por aí",
       "opengraph": {
         "title": "Gabriel Stawny"
+      }
+    },
+    "roles": {
+      "Avalia Sistemas": {
+        "position": "Desenvolvedor Full Stack Júnior",
+        "topics": [
+          {
+            "title": "Área de Atuação",
+            "description": "Desenvolvimento de sistemas web para suporte a ensaios agrícolas e avaliações."
+          },
+          {
+            "title": "Tecnologias - Front-end",
+            "description": "Front-end com Svelte, incluindo construção e manutenção de fluxos, telas de dados e integrações avançadas com Highcharts."
+          },
+          {
+            "title": "Tecnologias - Back-end",
+            "description": "Back-end com Laravel, implementado de regras de negócio e integrações REST/JSON."
+          },
+          {
+            "title": "Banco de Dados",
+            "description": "Banco de dados MySQL, com criação de consultas SQL, filtros e paginação."
+          },
+          {
+            "title": "Otimização de Queries",
+            "description": "Otimização de queries e manipulação de dados complexos, incluindo estruturas baseadas em árvores para organização, processamento e performance."
+          },
+          {
+            "title": "Geração de Relatórios",
+            "description": "Exportação de relatórios completos em múltiplos formatos (PDF, Excel, Word e slides), utilizando templates ou geração totalmente dinâmica."
+          }
+        ]
+      },
+      "UTFPR": {
+        "position": "Bacharelado em Ciência da Computação",
+        "topics": [
+          {
+            "title": "Projetos de Extensão",
+            "description": "Atuei em projetos de extensão com foco em demandas reais. Dentre eles, destaca-se a liderança no desenvolvimento de um software utilizado por professores da UTFPR para avaliar trabalhos de iniciação científica durante o congresso da universidade. Mais de 1000 alunos foram avaliados utilizando essa ferramenta."
+          },
+          {
+            "title": "Monitor de Algoritmos",
+            "description": "Contribuí com a universidade ao ajudar colegas a compreender conceitos complexos de ciência da computação e aprimorar habilidades analíticas. Essa experiência também facilitou conexões com professores de referência."
+          }
+        ]
+      }
+    },
+    "projects": {
+      "shockwave": {
+        "shortDescription": "Projeto full stack desenvolvido em Spring Boot e Next.js, realizado em parceria com a Polícia Militar do Paraná, com foco na análise e avaliação do impacto real de explosivos."
+      },
+      "syncgym": {
+        "shortDescription": "API desenvolvida em Spring Boot, seguindo os princípios de Clean Architecture, utilizando como estudo de caso um backend para um aplicativo de gerenciamento de treinos de academia."
+      }
+    },
+    "technologies": {
+      "title": "Tecnologias",
+      "categories": {
+        "frontend": "Front-end",
+        "backend": "Back-end",
+        "database": "Banco de dados",
+        "infrastructure": "Infraestrutura",
+        "version-control": "Controle de versões"
+      }
+    }
+  },
+  "components": {
+    "experienceCard": {
+      "company": "Empresa",
+      "role": "Cargo",
+      "date": "Data",
+      "present": "Atualmente",
+      "duration": "{years, plural, =0 {} =1 {# ano} other {# anos}} {months, plural, =0 {} =1 {# mês} other {# meses}}"
+    },
+    "settingsToggle": {
+      "theme": {
+        "light": "Mudar para tema claro",
+        "dark": "Mudar para tema escuro"
+      },
+      "language": {
+        "en": "Mudar idioma para inglês",
+        "pt-BR": "Mudar idioma para português"
       }
     }
   }

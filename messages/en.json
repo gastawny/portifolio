@@ -3,39 +3,43 @@
     "home": {
       "about": {
         "title": "📋 About me",
-        "link": "Read more",
-        "userDescription": "Hi, I'm Gabriel Stawny, a software developer with focus on performance enhancement. Currently, I'm pursuing my Computer Science degree at the Federal Technological University of Paraná (UTFPR)"
+        "link": "Learn more",
+        "userDescription": "Hi, I’m a programmer with experience in multiple languages, strong analytical skills, adaptability to new challenges, and a focus on contributing to innovative projects. Here you can find more information about <projects>my projects</projects>, the <technologies>technologies</technologies> I use, and my <contacts>contact details</contacts>. Who knows—maybe we’ll run into each other at a street race someday 🏃‍♂️."
       },
       "experiences": {
-        "title": "💼 Experiences",
-        "link": "Hire me",
-        "downloadCv": "Download CV"
+        "title": "💼 Experience",
+        "link": "Hire me"
       },
       "education": {
         "title": "🎓 Education"
       },
       "projects": {
         "title": "📂 My projects",
-        "link": "See all"
+        "link": "View all"
+      },
+      "technologies": {
+        "title": "💻 Technologies"
+      },
+      "contacts": {
+        "title": "📫 Contact"
       }
     },
     "404": {
       "image": "/images/gopher.png",
-      "alt": "A gopher golang mascot",
-      "message": "This was probably a mistake"
+      "alt": "Golang gopher mascot",
+      "message": "Oops! Looks like you're lost."
     }
   },
   "config": {
     "userData": {
       "name": "Gabriel Stawny",
-      "role": "Full Stack developer",
+      "role": "Full Stack Developer",
       "location": "Paraná, Brazil",
-      "interests": "Listen Music, Travel, Play Games and Watch Live Coding",
+      "interests": "Listening to music, Traveling, Playing video games and Watching Live Coding",
       "avatarUrl": "/images/gs.jpg",
-      "avatarAltDescription": "A boy smiling",
+      "avatarAltDescription": "A smiling local kid",
       "githubUrl": "https://github.com/gastawny",
       "linkedinUrl": "https://www.linkedin.com/in/gabriel-stawny/?locale=en_US",
-      "cvUrl": "/documents/Gabriel Stawny - Fullstack Developer.pdf",
       "company": {
         "name": "Avalia Sistemas",
         "url": "https://avalia.app/"
@@ -43,18 +47,99 @@
       "languages": {
         "english": {
           "name": "English",
-          "proficiency": "Professional working proficiency"
+          "proficiency": "Professional proficiency"
         },
         "portuguese": {
           "name": "Portuguese",
-          "proficiency": "Native proficiency"
+          "proficiency": "Native"
         }
       }
     },
     "metadata": {
-      "description": "Hi, I'm Gabriel Stawny, a software developer with focus on performance enhancement. Currently, I'm pursuing my Computer Science degree at the Federal Technological University of Paraná (UTFPR)",
+      "description": "Hi, I'm a programmer with experience in several languages, strong analytical skills, ease of adapting to new challenges, and a focus on contributing to innovative projects. Here you can find more information about my projects and the technologies I use. Maybe we'll run into each other at a street race someday.",
       "opengraph": {
         "title": "Gabriel Stawny"
+      }
+    },
+    "roles": {
+      "Avalia Sistemas": {
+        "position": "Junior Full Stack Developer",
+        "topics": [
+          {
+            "title": "Area of Expertise",
+            "description": "Development of web systems to support agricultural trials and evaluations."
+          },
+          {
+            "title": "Technologies - Front-end",
+            "description": "Front-end development with Svelte, including building and maintaining flows, data screens, and advanced integrations with Highcharts."
+          },
+          {
+            "title": "Technologies - Back-end",
+            "description": "Back-end development with Laravel, implementing business rules and REST/JSON integrations."
+          },
+          {
+            "title": "Database",
+            "description": "MySQL database, including creation of SQL queries, filters, and pagination."
+          },
+          {
+            "title": "Query Optimization",
+            "description": "Query optimization and manipulation of complex data, including tree-based structures for organization, processing, and performance."
+          },
+          {
+            "title": "Report Generation",
+            "description": "Exporting complete reports in multiple formats (PDF, Excel, Word, and slides), using templates or fully dynamic generation."
+          }
+        ]
+      },
+      "UTFPR": {
+        "position": "Bachelor's Degree in Computer Science",
+        "topics": [
+          {
+            "title": "Extension Projects",
+            "description": "I worked on extension projects focused on real-world demands. Among them, I led the development of a software used by UTFPR professors to evaluate undergraduate research projects during the university congress. More than 1,000 students were evaluated using this tool."
+          },
+          {
+            "title": "Algorithms Teaching Assistant",
+            "description": "I contributed to the university by helping peers understand complex computer science concepts and improve analytical skills. This experience also facilitated connections with leading professors."
+          }
+        ]
+      }
+    },
+    "projects": {
+      "shockwave": {
+        "shortDescription": "Full stack project developed with Spring Boot and Next.js, carried out in partnership with the Paraná Military Police, focusing on the analysis and evaluation of the real impact of explosives."
+      },
+      "syncgym": {
+        "shortDescription": "API developed with Spring Boot, following Clean Architecture principles, using as a case study a backend for a gym workout management application."
+      }
+    },
+    "technologies": {
+      "title": "Technologies",
+      "categories": {
+        "frontend": "Front-end",
+        "backend": "Back-end",
+        "database": "Database",
+        "infrastructure": "Infrastructure",
+        "version-control": "Version control"
+      }
+    }
+  },
+  "components": {
+    "experienceCard": {
+      "company": "Company",
+      "role": "Role",
+      "date": "Date",
+      "present": "Present",
+      "duration": "{years, plural, =0 {} =1 {# year} other {# years}} {months, plural, =0 {} =1 {# month} other {# months}}"
+    },
+    "settingsToggle": {
+      "theme": {
+        "light": "Switch to light theme",
+        "dark": "Switch to dark theme"
+      },
+      "language": {
+        "en": "Switch language to English",
+        "pt-BR": "Switch language to Portuguese"
       }
     }
   }

@@ -2,12 +2,14 @@ import '@/styles/globals.css'
 import { Ubuntu } from '@next/font/google'
 import { appLocales } from '@/config/appLocales'
 import { notFound } from 'next/navigation'
-import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
-import { InternalizationProvider } from '@/providers/i18n'
+import { setRequestLocale } from 'next-intl/server'
 import { createTranslator } from 'next-intl'
 import { Metadata } from 'next'
 import { websiteUrl } from '@/config/site'
 import { userData } from '@/config/user'
+import { InternalizationProvider } from '@/providers/i18n-provider'
+import { ThemeProvider } from '@/providers/theme-provider'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -29,9 +31,28 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
   setRequestLocale(locale)
 
   return (
-    <html lang={locale} className={`${ubuntu.variable}`}>
-      <body className="dark font-ubuntu">
-        <InternalizationProvider locale={locale}>{children}</InternalizationProvider>
+    <html lang={locale} className={`${ubuntu.variable}`} suppressHydrationWarning>
+      <body
+        className="
+          font-ubuntu 
+          overflow-y-auto
+          [&::-webkit-scrollbar]:w-2
+          [&::-webkit-scrollbar-track]:rounded-full
+          [&::-webkit-scrollbar-track]:bg-background
+          [&::-webkit-scrollbar-thumb]:rounded-full
+          [&::-webkit-scrollbar-thumb]:bg-primary
+        "
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider>
+            <InternalizationProvider locale={locale}>{children}</InternalizationProvider>
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

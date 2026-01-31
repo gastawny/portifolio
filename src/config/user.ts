@@ -22,6 +22,42 @@ export const socials: UserSocialModel[] = [
     name: 'Email',
     href: 'mailto:gastawny@gmail.com',
   },
+  {
+    icon: 'strava',
+    name: 'Strava',
+    href: 'https://www.strava.com/athletes/141218751',
+  },
+  {
+    icon: 'instagram',
+    name: 'Instagram',
+    href: 'https://www.instagram.com/gastawny',
+  },
+]
+
+export type ExperienceModel = {
+  company: keyof IntlMessages['config']['roles']
+  startDate: Date
+  endDate?: Date
+  image: string
+  type: 'work' | 'educational'
+  highlight?: boolean
+}
+
+export const experiencesList: ExperienceModel[] = [
+  {
+    company: 'Avalia Sistemas',
+    startDate: new Date('2024-03-01'),
+    image: '/images/experiences/avalia.png',
+    type: 'work',
+    highlight: true,
+  },
+  {
+    company: 'UTFPR',
+    startDate: new Date('2022-02-01'),
+    endDate: new Date('2026-02-01'),
+    image: '/images/experiences/utfpr.png',
+    type: 'educational',
+  },
 ]
 
 export const userData = {
@@ -30,13 +66,4 @@ export const userData = {
   languages: ['english', 'portuguese'],
 }
 
-export const stack = [
-  'NextJS',
-  'ReactJS',
-  'Spring',
-  'Laravel',
-  'Svelte',
-  'TypeScript',
-  'Java',
-  'Go',
-]
+export const stack = ['NextJS', 'ReactJS', 'Spring', 'Laravel', 'Svelte', 'TypeScript', 'ElysiaJS']

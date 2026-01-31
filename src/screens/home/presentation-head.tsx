@@ -34,7 +34,7 @@ export async function PresentationHead() {
                   rel="noopener noreferrer"
                   className="text-primary"
                 >
-                  <span className="underline">{userData('company.name')}</span>
+                  <span className="underline text-secondary">{userData('company.name')}</span>
                 </Link>
               </>
             ) : null}
