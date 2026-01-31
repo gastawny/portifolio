@@ -66,11 +66,6 @@ export const techs: ITechCategory[] = [
     title: 'backend',
     items: [
       {
-        name: 'Express',
-        icon: '/images/techs/express.svg',
-        link: 'https://expressjs.com',
-      },
-      {
         name: 'Drizzle',
         icon: '/images/techs/drizzle.svg',
         link: 'https://orm.drizzle.team',
@@ -79,6 +74,11 @@ export const techs: ITechCategory[] = [
         name: 'ElysiaJS',
         icon: '/images/techs/elysiajs.svg',
         link: 'https://elysiajs.com',
+      },
+      {
+        name: 'Express',
+        icon: '/images/techs/express.svg',
+        link: 'https://expressjs.com',
       },
       {
         name: 'Java',
