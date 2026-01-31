@@ -43,12 +43,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
           [&::-webkit-scrollbar-thumb]:bg-primary
         "
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <TooltipProvider>
             <InternalizationProvider locale={locale}>{children}</InternalizationProvider>
           </TooltipProvider>
