@@ -13,11 +13,13 @@ interface ProjectCardProps {
 }
 
 export async function ProjectCard({ project, index }: ProjectCardProps) {
-  const { id, imagePreviewUrl, name, sourceUrl, projectUrl } = project
+  const { id, imagePreviewUrl, name, sourceUrl } = project
 
+  /* eslint-disable */
   const shortDescription = (await getTranslations('config.projects'))(
     `${id}.shortDescription` as any
   )
+  /* eslint-enable */
 
   return (
     <FadeIn

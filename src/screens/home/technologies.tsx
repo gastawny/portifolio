@@ -23,6 +23,7 @@ export async function Technologies({ techs }: ITechnologiesProps) {
             duration={0.5}
             startOnScrollIntersect
           >
+            {/* eslint-disable-next-line */}
             {t(`categories.${title}` as any)}
           </FadeIn>
           <FadeIn

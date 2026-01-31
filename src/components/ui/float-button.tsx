@@ -42,10 +42,13 @@ export const FloatButton: React.FC<FloatButtonProps> = ({
   }, [childrenArray.length])
 
   let containerFlex = 'flex-col items-end'
-  let childrenGap = 'gap-2'
+  const childrenGap = 'gap-2'
   let childrenMargin = ''
-  let childTransform = (visible: boolean) => ''
 
+  /* eslint-disable-next-line */
+  let childTransform = (_: boolean) => ''
+
+  /* eslint-disable */
   switch (orientation) {
     case 'top':
       containerFlex = 'flex-col items-end'
@@ -72,6 +75,7 @@ export const FloatButton: React.FC<FloatButtonProps> = ({
       childrenMargin = 'mb-2'
       childTransform = (visible) => (visible ? 'translateY(0)' : `translateY(${TRANSLATE_Y}px)`)
   }
+  /* eslint-enable */
 
   return (
     <div className={`fixed z-50 flex ${containerFlex} ${childrenGap} ${position}`}>
@@ -84,7 +88,7 @@ export const FloatButton: React.FC<FloatButtonProps> = ({
               <div
                 key={idx}
                 style={{
-                  transition: `opacity 0.3s, transform 0.3s`,
+                  transition: 'opacity 0.3s, transform 0.3s',
                   opacity: visible ? 1 : 0,
                   transform: childTransform(visible),
                   pointerEvents: visible ? 'auto' : 'none',

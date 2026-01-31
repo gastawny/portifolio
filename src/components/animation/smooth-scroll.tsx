@@ -3,7 +3,8 @@ import { useEffect } from 'react'
 
 export function SmoothScroll() {
   useEffect(() => {
-    function handleClick(e) {
+    /* eslint-disable-next-line */
+    function handleClick(e: any) {
       const target = e.target.closest('[data-scroll-link]')
       if (target) {
         const id = target.getAttribute('data-scroll-link')

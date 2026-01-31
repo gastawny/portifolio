@@ -17,9 +17,9 @@ export function Contact({ socials }: IContactProps) {
           delay={0.1 * index}
           id="project"
           duration={0.4}
+          key={social.name}
         >
           <Link
-            key={social.name}
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"

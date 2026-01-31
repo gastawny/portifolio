@@ -5,10 +5,15 @@ import { techs } from '@/config/techs'
 import { experiencesList, socials } from '@/config/user'
 import { Home } from '@/screens/home'
 import { SectionTitle } from '@/screens/home/section-title'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import React from 'react'
 
-export default async function HomePage() {
+interface PageProps {
+  params: { locale: string }
+}
+
+export default async function HomePage({ params }: PageProps) {
+  setRequestLocale(params.locale)
   const [t] = await Promise.all([getTranslations('pages.home')])
 
   const userDescription = t.rich('about.userDescription', {
