@@ -39,7 +39,7 @@ export async function Technologies({ techs }: ITechnologiesProps) {
                 <Link
                   href={item.link}
                   className={cn(
-                    'flex items-center gap-3 rounded-md p-3 bg-accent/50 dark:backdrop-blur-2xl hover:bg-accent/90 text-accent-foreground transition-colors',
+                    'flex items-center gap-2 md:gap-3 rounded-md p-2 md:p-3 min-h-[56px] h-full bg-accent/50 dark:backdrop-blur-2xl hover:bg-accent/90 text-accent-foreground transition-colors',
                     'focus:outline-none focus-visible:outline-2 focus-visible:outline focus-visible:outline-ring'
                   )}
                   target="_blank"
@@ -47,7 +47,7 @@ export async function Technologies({ techs }: ITechnologiesProps) {
                 >
                   <div
                     className={cn(
-                      'p-2 flex items-center justify-center rounded-lg relative overflow-hidden',
+                      'p-1.5 md:p-2 flex items-center justify-center rounded-lg relative overflow-hidden',
                       item.invert && 'dark:invert'
                     )}
                   >
