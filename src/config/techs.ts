@@ -141,6 +141,11 @@ export const techs: ITechCategory[] = [
         icon: '/images/techs/postgresql.svg',
         link: 'https://www.postgresql.org',
       },
+      {
+        name: 'Redis',
+        icon: '/images/techs/redis.svg',
+        link: 'https://redis.io',
+      },
     ],
   },
   {
@@ -155,6 +160,16 @@ export const techs: ITechCategory[] = [
         name: 'Docker',
         icon: '/images/techs/docker.svg',
         link: 'https://www.docker.com',
+      },
+      {
+        name: 'Github Actions',
+        icon: '/images/techs/github-actions.svg',
+        link: 'https://github.com/features/actions',
+      },
+      {
+        name: 'Google Cloud',
+        icon: '/images/techs/google-cloud.svg',
+        link: 'https://cloud.google.com',
       },
       {
         name: 'Vercel',
