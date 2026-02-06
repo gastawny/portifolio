@@ -15,11 +15,16 @@ interface ProjectCardProps {
 export async function ProjectCard({ project, index }: ProjectCardProps) {
   const { id, imagePreviewUrl, name, sourceUrl } = project
 
-  /* eslint-disable */
-  const shortDescription = (await getTranslations('config.projects'))(
-    `${id}.shortDescription` as any
+  const shortDescription = (await getTranslations('config.projects')).rich(
+    `${id}.shortDescription`,
+    {
+      police: (children) => (
+        <Link target="_blank" href="https://www.pmpr.pr.gov.br/" className="text-secondary">
+          {children}
+        </Link>
+      ),
+    }
   )
-  /* eslint-enable */
 
   return (
     <FadeIn

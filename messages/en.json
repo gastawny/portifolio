@@ -107,7 +107,7 @@
     },
     "projects": {
       "shockwave": {
-        "shortDescription": "Full stack project developed with Spring Boot and Next.js, carried out in partnership with the Paraná Military Police, focusing on the analysis and evaluation of the real impact of explosives."
+        "shortDescription": "Full stack project developed with Spring Boot and Next.js, carried out in partnership with the <police>Paraná Military Police</police>, focusing on the analysis and evaluation of the real impact of explosives."
       },
       "syncgym": {
         "shortDescription": "API developed with Spring Boot, following Clean Architecture principles, using as a case study a backend for a gym workout management application."

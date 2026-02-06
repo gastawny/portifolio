@@ -1,12 +1,4 @@
-export type ProjectModel = {
-  id: string
-  name: string
-  projectUrl?: string
-  sourceUrl?: string
-  imagePreviewUrl: string
-}
-
-export const projectsList: ProjectModel[] = [
+export const projectsList = [
   {
     id: 'shockwave',
     name: 'Shockwave',
@@ -21,4 +13,12 @@ export const projectsList: ProjectModel[] = [
     sourceUrl: 'https://github.com/syncgym/api',
     imagePreviewUrl: '/images/projects/syncgym.webp',
   },
-]
+] as const
+
+export type ProjectModel = {
+  id: (typeof projectsList)[number]['id']
+  name: string
+  projectUrl?: string
+  sourceUrl?: string
+  imagePreviewUrl: string
+}
