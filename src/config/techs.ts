@@ -20,6 +20,16 @@ export const techs: ITechCategory[] = [
         link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
       },
       {
+        name: 'Cypress',
+        icon: '/images/techs/cypress.svg',
+        link: 'https://www.cypress.io',
+      },
+      {
+        name: 'Figma',
+        icon: '/images/techs/figma.svg',
+        link: 'https://www.figma.com',
+      },
+      {
         name: 'HTML',
         icon: '/images/techs/html.svg',
         link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
@@ -51,6 +61,11 @@ export const techs: ITechCategory[] = [
         link: 'https://tailwindcss.com',
       },
       {
+        name: 'Tanstack (React) Query',
+        icon: '/images/techs/tanstack-query.svg',
+        link: 'https://tanstack.com/query/latest',
+      },
+      {
         name: 'Typescript',
         icon: '/images/techs/typescript.svg',
         link: 'https://www.typescriptlang.org',
@@ -65,6 +80,12 @@ export const techs: ITechCategory[] = [
   {
     title: 'backend',
     items: [
+      {
+        name: 'BullMQ',
+        icon: '/images/techs/bullmq.svg',
+        link: 'https://bullmq.io',
+        invert: true,
+      },
       {
         name: 'Drizzle',
         icon: '/images/techs/drizzle.svg',
@@ -96,6 +117,11 @@ export const techs: ITechCategory[] = [
         link: 'https://laravel.com',
       },
       {
+        name: 'NestJS',
+        icon: '/images/techs/nestjs.svg',
+        link: 'https://nestjs.com',
+      },
+      {
         name: 'Node.js',
         icon: '/images/techs/nodejs.svg',
         link: 'https://nodejs.org',
@@ -110,6 +136,11 @@ export const techs: ITechCategory[] = [
         icon: '/images/techs/prisma.svg',
         link: 'https://www.prisma.io',
         invert: true,
+      },
+      {
+        name: 'RabbitMQ',
+        icon: '/images/techs/rabbitmq.svg',
+        link: 'https://www.rabbitmq.com',
       },
       {
         name: 'Spring Boot',

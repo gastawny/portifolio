@@ -66,4 +66,4 @@ export const userData = {
   languages: ['english', 'portuguese'],
 }
 
-export const stack = ['NextJS', 'ReactJS', 'Spring', 'Laravel', 'Svelte', 'TypeScript', 'ElysiaJS']
+export const stack = ['NextJS', 'ReactJS', 'Spring', 'Laravel', 'Svelte', 'TypeScript', 'AWS']
