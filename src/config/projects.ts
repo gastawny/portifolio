@@ -19,6 +19,6 @@ export type ProjectModel = {
   id: (typeof projectsList)[number]['id']
   name: string
   projectUrl?: string
-  sourceUrl?: string
+  sourceUrl: string
   imagePreviewUrl: string
 }

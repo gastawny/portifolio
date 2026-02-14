@@ -8,14 +8,14 @@ export function ExperienceModal({
   topics,
   company,
 }: {
-  topics: Array<{ title: string; description: string }>
+  topics: Array<{ title: string; description: string[] | string }>
   company: string
 }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="link" className="px-0 mt-2 text-xs">
-          <Icon.info className="hover:text-secondary duration-100" />
+          <Icon.info className="hover:text-foreground duration-100" />
         </Button>
       </DialogTrigger>
       <DialogContent
@@ -25,9 +25,7 @@ export function ExperienceModal({
         <ScrollArea className="max-h-[90vh] z-50">
           <Terminal process={company}>
             {topics.map((topic, idx) => (
-              <TerminalCommand key={idx} title={topic.title}>
-                {[`${topic.description}`]}
-              </TerminalCommand>
+              <TerminalCommand key={idx} title={topic.title} description={topic.description} />
             ))}
           </Terminal>
         </ScrollArea>

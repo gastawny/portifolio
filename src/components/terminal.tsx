@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils'
+
 function Terminal({ children, process }: { children: React.ReactNode; process: string }) {
   return (
     <div className="overflow-hidden rounded-xl bg-muted/60 w-auto shadow">
@@ -16,22 +18,38 @@ function Terminal({ children, process }: { children: React.ReactNode; process: s
   )
 }
 
-function TerminalCommand({ children, title }: { children: string[]; title: string }) {
+function TerminalCommand({
+  description,
+  title,
+}: {
+  description: string | string[]
+  title: string
+}) {
+  if (typeof description === 'string') {
+    description = [description]
+  }
+
   return (
     <div className="tracking-wide relative text-sm lg:text-base">
       <span className="text-primary">{'>'} </span>
       <span className="text-muted-foreground font-medium">cat </span>
       <span className="text-secondary">{title}.txt</span>
       <div>
-        {children.length > 1 && <span className="text-accent-foreground">{'['}</span>}
+        {description.length > 1 && <span className="text-accent-foreground">{'['}</span>}
         <div className="flex flex-col md:gap-1 2xl:gap-2 my-1 lg:my-2">
-          {children.map((child, index) => (
-            <p key={index} className="text-accent-foreground font-normal">
-              {'"' + child + '"' + (index < children.length - 1 ? ',' : '')}
+          {description.map((d, index) => (
+            <p
+              key={index}
+              className={cn(
+                'text-accent-foreground font-normal',
+                description.length > 1 && 'ml-4 md:ml-6'
+              )}
+            >
+              {'"' + d + '"' + (index < description.length - 1 ? ',' : '')}
             </p>
           ))}
         </div>
-        {children.length > 1 && <span className="text-accent-foreground">{']'}</span>}
+        {description.length > 1 && <span className="text-accent-foreground">{']'}</span>}
       </div>
     </div>
   )

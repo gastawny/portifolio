@@ -23,7 +23,7 @@ export function Contact({ socials }: IContactProps) {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between gap-4 py-4 group hover:text-primary transition-colors"
+            className="flex items-center justify-between gap-4 py-4 group hover:text-secondary transition-colors"
           >
             <div className="flex items-center gap-4 min-w-0">
               <DynamicIcon name={social.icon} className="w-9 h-9 flex-shrink-0" />
@@ -39,7 +39,7 @@ export function Contact({ socials }: IContactProps) {
                 </span>
               </div>
             </div>
-            <Icon.chevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+            <Icon.chevronRight className="w-5 h-5 text-muted-foreground group-hover:text-secondary transition-colors" />
           </Link>
         </FadeIn>
       ))}

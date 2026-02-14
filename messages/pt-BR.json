@@ -33,7 +33,7 @@
   "config": {
     "userData": {
       "name": "Gabriel Stawny",
-      "role": "Desenvolvedor Full Stack",
+      "role": "Software Engineer",
       "location": "Paraná, Brasil",
       "interests": "Ouvir música, Viajar, Jogar videogames e Assistir Live Coding",
       "avatarUrl": "/images/gs.jpg",
@@ -63,31 +63,31 @@
     },
     "roles": {
       "Avalia Sistemas": {
-        "position": "Desenvolvedor Full Stack Júnior",
+        "position": "Software Engineer I",
         "topics": [
           {
             "title": "Área de Atuação",
-            "description": "Desenvolvimento de sistemas web para suporte a ensaios agrícolas e avaliações."
+            "description": "Atuação no desenvolvimento de sistemas web voltados ao suporte de ensaios agrícolas e processos de avaliação técnica."
           },
           {
             "title": "Tecnologias - Front-end",
-            "description": "Front-end com Svelte, incluindo construção e manutenção de fluxos, telas de dados e integrações avançadas com Highcharts."
+            "description": "Construção e manutenção de interfaces utilizando Svelte, incluindo fluxos de navegação, telas de visualização de dados e integrações avançadas com Highcharts."
           },
           {
             "title": "Tecnologias - Back-end",
-            "description": "Back-end com Laravel, implementado de regras de negócio e integrações REST/JSON."
+            "description": "Implementação de regras de negócio e integrações REST/JSON em PHP e Laravel, com foco em escalabilidade e organização da arquitetura."
           },
           {
             "title": "Banco de Dados",
-            "description": "Banco de dados MySQL, com criação de consultas SQL, filtros e paginação."
+            "description": "Modelagem e manipulação de dados em MySQL, com criação de consultas SQL eficientes, aplicação de filtros e paginação."
           },
           {
             "title": "Otimização de Queries",
-            "description": "Otimização de queries e manipulação de dados complexos, incluindo estruturas baseadas em árvores para organização, processamento e performance."
+            "description": "Aprimoramento de performance por meio da otimização de consultas e do tratamento de estruturas de dados complexas, incluindo modelos baseados em árvores."
           },
           {
             "title": "Geração de Relatórios",
-            "description": "Exportação de relatórios completos em múltiplos formatos (PDF, Excel, Word e slides), utilizando templates ou geração totalmente dinâmica."
+            "description": "Produção de relatórios completos em diversos formatos (PDF, Excel, Word e slides), utilizando templates ou geração dinâmica conforme a necessidade."
           }
         ]
       },
@@ -96,18 +96,48 @@
         "topics": [
           {
             "title": "Projetos de Extensão",
-            "description": "Atuei em projetos de extensão com foco em demandas reais. Dentre eles, destaca-se a liderança no desenvolvimento de um software utilizado por professores da UTFPR para avaliar trabalhos de iniciação científica durante o congresso da universidade. Mais de 1000 alunos foram avaliados utilizando essa ferramenta."
+            "description": [
+              "Liderança no desenvolvimento de uma plataforma institucional para avaliação científica.",
+              "+1.000 alunos avaliados por meio do sistema.",
+              "+100 professores utilizando a plataforma durante o congresso."
+            ]
           },
           {
             "title": "Monitor de Algoritmos",
-            "description": "Contribuí com a universidade ao ajudar colegas a compreender conceitos complexos de ciência da computação e aprimorar habilidades analíticas. Essa experiência também facilitou conexões com professores de referência."
+            "description": [
+              "Suporte acadêmico direto a +50 estudantes.",
+              "Foco em fundamentos de ciência da computação e raciocínio analítico.",
+              "Fortalecimento da colaboração acadêmica com docentes da área."
+            ]
           }
         ]
       }
     },
     "projects": {
       "shockwave": {
-        "shortDescription": "Projeto full stack desenvolvido em Spring Boot e Next.js, realizado em parceria com a <police>Polícia Militar do Paraná</police>, com foco na análise e avaliação do impacto real de explosivos."
+        "shortDescription": "Projeto full stack desenvolvido em Spring Boot e Next.js, realizado em parceria com a <police>Polícia Militar do Paraná</police>, com foco na análise e avaliação do impacto real de explosivos.",
+        "topics": [
+          {
+            "title": "Design Patterns",
+            "description": "Aplicação de padrões de projeto como Singleton, Factory e Strategy para promover reutilização de código, desacoplamento e manutenibilidade."
+          },
+          {
+            "title": "Motor de Fórmulas",
+            "description": "Desenvolvimento de um motor de fórmulas orientado a metadados, no qual os cálculos são definidos no banco de dados em vez de serem codificados diretamente na aplicação."
+          },
+          {
+            "title": "Grafo de Computação Relacional",
+            "description": "Implementação de um grafo de computação relacional que permite o encadeamento de fórmulas com dependências e composições entre si."
+          },
+          {
+            "title": "Modelagem de Dados Typed EAV",
+            "description": "Modelagem de dados baseada em Typed EAV (Entity-Attribute-Value) para suportar armazenamento flexível de atributos dinâmicos com tipagem."
+          },
+          {
+            "title": "Tecnologias Utilizadas",
+            "description": "Stack composta por Java 21, Spring, PostgreSQL e Docker no back-end, e Next.js com Zod, React Hook Form e TanStack Query no front-end."
+          }
+        ]
       },
       "syncgym": {
         "shortDescription": "API desenvolvida em Spring Boot, seguindo os princípios de Clean Architecture, utilizando como estudo de caso um backend para um aplicativo de gerenciamento de treinos de academia."

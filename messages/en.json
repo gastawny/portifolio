@@ -33,7 +33,7 @@
   "config": {
     "userData": {
       "name": "Gabriel Stawny",
-      "role": "Full Stack Developer",
+      "role": "Software Engineer I",
       "location": "Paraná, Brazil",
       "interests": "Listening to music, Traveling, Playing video games and Watching Live Coding",
       "avatarUrl": "/images/gs.jpg",
@@ -63,31 +63,31 @@
     },
     "roles": {
       "Avalia Sistemas": {
-        "position": "Junior Full Stack Developer",
+        "position": "Software Engineer",
         "topics": [
           {
             "title": "Area of Expertise",
-            "description": "Development of web systems to support agricultural trials and evaluations."
+            "description": "Work focused on developing web systems to support agricultural trials and technical evaluation processes."
           },
           {
             "title": "Technologies - Front-end",
-            "description": "Front-end development with Svelte, including building and maintaining flows, data screens, and advanced integrations with Highcharts."
+            "description": "Development and maintenance of interfaces using Svelte, including navigation flows, data visualization screens, and advanced integrations with Highcharts."
           },
           {
             "title": "Technologies - Back-end",
-            "description": "Back-end development with Laravel, implementing business rules and REST/JSON integrations."
+            "description": "Implementation of business logic and REST/JSON integrations in PHP and Laravel, with a focus on scalability and well-structured architecture."
           },
           {
             "title": "Database",
-            "description": "MySQL database, including creation of SQL queries, filters, and pagination."
+            "description": "Data modeling and manipulation in MySQL, including efficient SQL query creation, filtering, and pagination."
           },
           {
             "title": "Query Optimization",
-            "description": "Query optimization and manipulation of complex data, including tree-based structures for organization, processing, and performance."
+            "description": "Performance improvements through query optimization and handling of complex data structures, including tree-based models."
           },
           {
             "title": "Report Generation",
-            "description": "Exporting complete reports in multiple formats (PDF, Excel, Word, and slides), using templates or fully dynamic generation."
+            "description": "Creation of comprehensive reports in multiple formats (PDF, Excel, Word, and slides), using templates or fully dynamic generation as needed."
           }
         ]
       },
@@ -96,18 +96,48 @@
         "topics": [
           {
             "title": "Extension Projects",
-            "description": "I worked on extension projects focused on real-world demands. Among them, I led the development of a software used by UTFPR professors to evaluate undergraduate research projects during the university congress. More than 1,000 students were evaluated using this tool."
+            "description": [
+              "Led the development of an institutional platform for scientific evaluation.",
+              "+1,000 students evaluated through the system.",
+              "+100 professors using the platform during the congress."
+            ]
           },
           {
             "title": "Algorithms Teaching Assistant",
-            "description": "I contributed to the university by helping peers understand complex computer science concepts and improve analytical skills. This experience also facilitated connections with leading professors."
+            "description": [
+              "Provided direct academic support to +50 students.",
+              "Focused on computer science fundamentals and analytical problem-solving.",
+              "Strengthened academic collaboration with faculty members in the field."
+            ]
           }
         ]
       }
     },
     "projects": {
       "shockwave": {
-        "shortDescription": "Full stack project developed with Spring Boot and Next.js, carried out in partnership with the <police>Paraná Military Police</police>, focusing on the analysis and evaluation of the real impact of explosives."
+        "shortDescription": "Full stack project developed with Spring Boot and Next.js, carried out in partnership with the <police>Paraná Military Police</police>, focusing on the analysis and evaluation of the real impact of explosives.",
+        "topics": [
+          {
+            "title": "Design Patterns",
+            "description": "Application of design patterns such as Singleton, Factory, and Strategy to promote code reuse, decoupling, and maintainability."
+          },
+          {
+            "title": "Formula Engine",
+            "description": "Development of a metadata-driven formula engine in which calculations are defined in the database rather than hardcoded in the application."
+          },
+          {
+            "title": "Relational Computation Graph",
+            "description": "Implementation of a relational computation graph that enables chaining formulas with interdependent relationships and compositions."
+          },
+          {
+            "title": "Typed EAV Data Modeling",
+            "description": "Data modeling based on Typed EAV (Entity-Attribute-Value) to support flexible storage of dynamically typed attributes."
+          },
+          {
+            "title": "Technologies Used",
+            "description": "Stack composed of Java 21, Spring, PostgreSQL, and Docker on the back end, and Next.js with Zod, React Hook Form, and TanStack Query on the front end."
+          }
+        ]
       },
       "syncgym": {
         "shortDescription": "API developed with Spring Boot, following Clean Architecture principles, using as a case study a backend for a gym workout management application."
