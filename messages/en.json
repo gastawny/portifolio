@@ -70,12 +70,16 @@
             "description": "Work focused on developing web systems to support agricultural trials and technical evaluation processes."
           },
           {
-            "title": "Technologies - Front-end",
+            "title": "Front-end",
             "description": "Development and maintenance of interfaces using Svelte, including navigation flows, data visualization screens, and advanced integrations with Highcharts."
           },
           {
-            "title": "Technologies - Back-end",
+            "title": "Back-end",
             "description": "Implementation of business logic and REST/JSON integrations in PHP and Laravel, with a focus on scalability and well-structured architecture."
+          },
+          {
+            "title": "Mobile",
+            "description": "Building applications with an offline-first approach using C# with .NET MAUI."
           },
           {
             "title": "Database",
@@ -148,6 +152,7 @@
       "categories": {
         "frontend": "Front-end",
         "backend": "Back-end",
+        "mobile": "Mobile",
         "database": "Database",
         "infrastructure": "Infrastructure",
         "version-control": "Version control"

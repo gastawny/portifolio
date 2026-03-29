@@ -70,12 +70,16 @@
             "description": "Atuação no desenvolvimento de sistemas web voltados ao suporte de ensaios agrícolas e processos de avaliação técnica."
           },
           {
-            "title": "Tecnologias - Front-end",
+            "title": "Front-end",
             "description": "Construção e manutenção de interfaces utilizando Svelte, incluindo fluxos de navegação, telas de visualização de dados e integrações avançadas com Highcharts."
           },
           {
-            "title": "Tecnologias - Back-end",
+            "title": "Back-end",
             "description": "Implementação de regras de negócio e integrações REST/JSON em PHP e Laravel, com foco em escalabilidade e organização da arquitetura."
+          },
+          {
+            "title": "Mobile",
+            "description": "Construção de aplicativos com abordagem offline-first utilizando C# com .NET MAUI."
           },
           {
             "title": "Banco de Dados",
@@ -149,6 +153,7 @@
         "frontend": "Front-end",
         "backend": "Back-end",
         "database": "Banco de dados",
+        "mobile": "Mobile",
         "infrastructure": "Infraestrutura",
         "version-control": "Controle de versões"
       }

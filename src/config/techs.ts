@@ -155,6 +155,21 @@ export const techs: ITechCategory[] = [
     ],
   },
   {
+    title: 'mobile',
+    items: [
+      {
+        name: 'C#',
+        icon: '/images/techs/c-sharp.svg',
+        link: 'https://dotnet.microsoft.com/languages/csharp',
+      },
+      {
+        name: '.NET MAUI',
+        icon: '/images/techs/maui.svg',
+        link: 'https://dotnet.microsoft.com/apps/maui',
+      },
+    ],
+  },
+  {
     title: 'database',
     items: [
       {
