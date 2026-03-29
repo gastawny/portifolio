@@ -12,9 +12,6 @@ Create a personal portfolio in order to show my development. What was used in th
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [Sass](https://sass-lang.com/)
-- [Styled-Components](https://styled-components.com)
-- [EmailJS](https://www.emailjs.com)
 
 ## 📥 Installation and execution
 
@@ -22,7 +19,7 @@ Make a clone of this repository and access the directory.
 
 ```bash
 # Install the dependencies
-$ npm i
+$ pnpm i
 # Application execution
-$ npm run dev
+$ pnpm dev
 ```
