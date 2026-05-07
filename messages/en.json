@@ -33,7 +33,7 @@
   "config": {
     "userData": {
       "name": "Gabriel Stawny",
-      "role": "Software Engineer I",
+      "role": "Software Engineer",
       "location": "Paraná, Brazil",
       "interests": "Listening to music, Traveling, Playing video games and Watching Live Coding",
       "avatarUrl": "/images/gs.jpg",
@@ -62,8 +62,12 @@
       }
     },
     "roles": {
+      "Laon": {
+        "position": "Software Engineer II",
+        "topics": []
+      },
       "Avalia Sistemas": {
-        "position": "Software Engineer",
+        "position": "Software Engineer I",
         "topics": [
           {
             "title": "Area of Expertise",

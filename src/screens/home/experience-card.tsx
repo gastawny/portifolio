@@ -38,7 +38,7 @@ export async function ExperienceCard({ data }: ExperienceCardProps) {
           width={40}
           height={40}
           alt={`${company} logo`}
-          className="rounded-full aspect-square bg-white"
+          className="rounded-full aspect-square bg-white box-border p-0.5"
         />
       </div>
       <div className="flex justify-between w-full">

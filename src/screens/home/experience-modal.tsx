@@ -11,6 +11,10 @@ export function ExperienceModal({
   topics: Array<{ title: string; description: string[] | string }>
   company: string
 }) {
+  if (!topics || topics.length === 0) {
+    return null
+  }
+
   return (
     <Dialog>
       <DialogTrigger asChild>

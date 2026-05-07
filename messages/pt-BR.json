@@ -39,10 +39,10 @@
       "avatarUrl": "/images/gs.jpg",
       "avatarAltDescription": "Um piá sorrindo",
       "githubUrl": "https://github.com/gastawny",
-      "linkedinUrl": "https://www.linkedin.com/in/gabriel-stawny/?locale=en_US",
+      "linkedinUrl": "https://www.linkedin.com/in/gabriel-stawny",
       "company": {
-        "name": "Avalia Sistemas",
-        "url": "https://avalia.app/"
+        "name": "Laon",
+        "url": "https://laon.com.br/"
       },
       "languages": {
         "english": {
@@ -62,6 +62,10 @@
       }
     },
     "roles": {
+      "Laon": {
+        "position": "Software Engineer II",
+        "topics": []
+      },
       "Avalia Sistemas": {
         "position": "Software Engineer I",
         "topics": [
