@@ -163,6 +163,11 @@ export const techs: ITechCategory[] = [
         link: 'https://dotnet.microsoft.com/languages/csharp',
       },
       {
+        name: 'React Native',
+        icon: '/images/techs/react.svg',
+        link: 'https://reactnative.dev',
+      },
+      {
         name: '.NET MAUI',
         icon: '/images/techs/maui.svg',
         link: 'https://dotnet.microsoft.com/apps/maui',
